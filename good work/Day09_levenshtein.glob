@@ -1,0 +1,458 @@
+DIGEST 3ba4f9dcf41568372c909d2ea061474c
+FDMFP.Day09_levenshtein
+R15:29 DMFP.Day08_sets <> <> lib
+def 809:815 <> dna_src
+R820:825 DMFP.Day05_lists <> strand def
+R830:830 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R832:833 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R835:836 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R838:839 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R841:841 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R831:831 DMFP.Day01_intro <> G constr
+R834:834 DMFP.Day01_intro <> C constr
+R837:837 DMFP.Day01_intro <> A constr
+R840:840 DMFP.Day01_intro <> T constr
+def 855:862 <> dna_tgt1
+R866:871 DMFP.Day05_lists <> strand def
+R876:876 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R878:879 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R881:882 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R884:885 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R887:887 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R877:877 DMFP.Day01_intro <> T constr
+R880:880 DMFP.Day01_intro <> C constr
+R883:883 DMFP.Day01_intro <> A constr
+R886:886 DMFP.Day01_intro <> T constr
+def 901:908 <> dna_tgt2
+R912:917 DMFP.Day05_lists <> strand def
+R922:922 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R924:925 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R927:928 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R930:930 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R923:923 DMFP.Day01_intro <> C constr
+R926:926 DMFP.Day01_intro <> A constr
+R929:929 DMFP.Day01_intro <> T constr
+def 944:951 <> dna_tgt3
+R955:960 DMFP.Day05_lists <> strand def
+R965:965 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R967:968 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R970:971 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R973:974 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R976:976 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R966:966 DMFP.Day01_intro <> C constr
+R969:969 DMFP.Day01_intro <> A constr
+R972:972 DMFP.Day01_intro <> T constr
+R975:975 DMFP.Day01_intro <> G constr
+ind 1667:1670 <> edit
+constr 1684:1687 <> copy
+constr 1691:1696 <> delete
+constr 1700:1702 <> add
+constr 1717:1726 <> substitute
+R1709:1712 DMFP.Day01_intro <> base ind
+binder 1705:1705 <> e:554
+R1733:1736 DMFP.Day01_intro <> base ind
+binder 1729:1729 <> e:555
+def 2735:2738 <> cost
+R2748:2751 DMFP.Day09_levenshtein <> edit ind
+binder 2741:2744 <> edit:556
+R2756:2758 Coq.Init.Datatypes <> nat ind
+R2771:2774 DMFP.Day09_levenshtein <> edit:556 var
+R2785:2788 DMFP.Day09_levenshtein <> copy constr
+R2799:2804 DMFP.Day09_levenshtein <> delete constr
+R2815:2817 DMFP.Day09_levenshtein <> add constr
+R2830:2839 DMFP.Day09_levenshtein <> substitute constr
+def 2964:2973 <> total_cost
+R2984:2987 DMFP.Day04_structures <> list ind
+R2989:2992 DMFP.Day09_levenshtein <> edit ind
+binder 2976:2980 <> edits:558
+R2997:2999 Coq.Init.Datatypes <> nat ind
+R3012:3016 DMFP.Day09_levenshtein <> edits:558 var
+R3027:3028 DMFP.Day05_lists <> :::'['_']' not
+R3040:3041 DMFP.Day05_lists <> :::x_'::'_x not
+R3058:3060 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R3052:3055 DMFP.Day09_levenshtein <> cost def
+R3061:3070 DMFP.Day09_levenshtein <> total_cost:559 def
+def 3516:3525 <> apply_edit
+R3535:3538 DMFP.Day09_levenshtein <> edit ind
+binder 3528:3531 <> edit:561
+R3549:3554 DMFP.Day05_lists <> strand def
+binder 3542:3545 <> orig:562
+R3570:3572 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R3559:3564 Coq.Init.Datatypes <> option ind
+R3566:3569 DMFP.Day01_intro <> base ind
+R3573:3578 DMFP.Day05_lists <> strand def
+R3591:3594 DMFP.Day09_levenshtein <> edit:561 var
+R3605:3608 DMFP.Day09_levenshtein <> copy constr
+R3623:3626 DMFP.Day09_levenshtein <> orig:562 var
+R3639:3640 DMFP.Day05_lists <> :::'['_']' not
+R3645:3645 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3650:3651 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3654:3654 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3646:3649 Coq.Init.Datatypes <> None constr
+R3652:3653 DMFP.Day05_lists <> :::'['_']' not
+R3663:3664 DMFP.Day05_lists <> :::x_'::'_x not
+R3674:3674 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3681:3682 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3688:3688 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3675:3678 Coq.Init.Datatypes <> Some constr
+R3702:3707 DMFP.Day09_levenshtein <> delete constr
+R3712:3712 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3717:3718 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3832:3832 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3713:3716 Coq.Init.Datatypes <> None constr
+R3725:3728 DMFP.Day09_levenshtein <> orig:562 var
+R3758:3759 DMFP.Day05_lists <> :::'['_']' not
+R3764:3765 DMFP.Day05_lists <> :::'['_']' not
+R3791:3792 DMFP.Day05_lists <> :::x_'::'_x not
+R3838:3840 DMFP.Day09_levenshtein <> add constr
+R3847:3847 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3854:3855 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3860:3860 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3848:3851 Coq.Init.Datatypes <> Some constr
+R3856:3859 DMFP.Day09_levenshtein <> orig:562 var
+R3866:3875 DMFP.Day09_levenshtein <> substitute constr
+R3882:3882 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3889:3890 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R4052:4052 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R3883:3886 Coq.Init.Datatypes <> Some constr
+R3897:3900 DMFP.Day09_levenshtein <> orig:562 var
+R3938:3939 DMFP.Day05_lists <> :::'['_']' not
+R3944:3945 DMFP.Day05_lists <> :::'['_']' not
+R4003:4004 DMFP.Day05_lists <> :::x_'::'_x not
+def 5597:5607 <> apply_edits
+R5617:5622 DMFP.Day05_lists <> strand def
+binder 5610:5613 <> orig:567
+R5634:5637 DMFP.Day04_structures <> list ind
+R5639:5642 DMFP.Day09_levenshtein <> edit ind
+binder 5626:5630 <> edits:568
+R5647:5652 DMFP.Day05_lists <> strand def
+R5665:5669 DMFP.Day09_levenshtein <> edits:568 var
+R5680:5681 DMFP.Day05_lists <> :::'['_']' not
+R5686:5689 DMFP.Day09_levenshtein <> orig:567 var
+R5699:5700 DMFP.Day05_lists <> :::x_'::'_x not
+R5735:5744 DMFP.Day09_levenshtein <> apply_edit def
+R5751:5754 DMFP.Day09_levenshtein <> orig:567 var
+binder 5720:5722 <> new:571
+binder 5725:5729 <> orig':572
+R5769:5771 DMFP.Day09_levenshtein <> new:571 var
+R5784:5787 Coq.Init.Datatypes <> None constr
+R5792:5802 DMFP.Day09_levenshtein <> apply_edits:569 def
+R5804:5808 DMFP.Day09_levenshtein <> orig':572 var
+R5823:5826 Coq.Init.Datatypes <> Some constr
+R5834:5835 DMFP.Day05_lists <> :::x_'::'_x not
+R5836:5846 DMFP.Day09_levenshtein <> apply_edits:569 def
+R5848:5852 DMFP.Day09_levenshtein <> orig':572 var
+def 6076:6085 <> valid_edit
+R6094:6099 DMFP.Day05_lists <> strand def
+binder 6088:6090 <> src:574
+R6109:6114 DMFP.Day05_lists <> strand def
+binder 6103:6105 <> tgt:575
+R6126:6129 DMFP.Day04_structures <> list ind
+R6131:6134 DMFP.Day09_levenshtein <> edit ind
+binder 6118:6122 <> edits:576
+R6142:6150 DMFP.Day05_lists <> eq_strand def
+R6153:6163 DMFP.Day09_levenshtein <> apply_edits def
+R6165:6167 DMFP.Day09_levenshtein <> src:574 var
+R6169:6173 DMFP.Day09_levenshtein <> edits:576 var
+R6176:6178 DMFP.Day09_levenshtein <> tgt:575 var
+def 6193:6201 <> edit_tgt1
+R6205:6208 DMFP.Day04_structures <> list ind
+R6210:6213 DMFP.Day09_levenshtein <> edit ind
+R6218:6218 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6231:6232 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6237:6238 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6243:6244 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6249:6249 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6219:6228 DMFP.Day09_levenshtein <> substitute constr
+R6230:6230 DMFP.Day01_intro <> T constr
+R6233:6236 DMFP.Day09_levenshtein <> copy constr
+R6239:6242 DMFP.Day09_levenshtein <> copy constr
+R6245:6248 DMFP.Day09_levenshtein <> copy constr
+def 6263:6277 <> edit_tgt1_worse
+R6281:6284 DMFP.Day04_structures <> list ind
+R6286:6289 DMFP.Day09_levenshtein <> edit ind
+R6294:6294 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6301:6302 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6308:6309 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6314:6315 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6320:6321 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6326:6326 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6295:6300 DMFP.Day09_levenshtein <> delete constr
+R6303:6305 DMFP.Day09_levenshtein <> add constr
+R6307:6307 DMFP.Day01_intro <> T constr
+R6310:6313 DMFP.Day09_levenshtein <> copy constr
+R6316:6319 DMFP.Day09_levenshtein <> copy constr
+R6322:6325 DMFP.Day09_levenshtein <> copy constr
+def 6340:6353 <> edit_tgt1_same
+R6357:6360 DMFP.Day04_structures <> list ind
+R6362:6365 DMFP.Day09_levenshtein <> edit ind
+R6370:6370 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6383:6383 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6371:6380 DMFP.Day09_levenshtein <> substitute constr
+R6382:6382 DMFP.Day01_intro <> T constr
+R6396:6405 DMFP.Day09_levenshtein <> valid_edit def
+R6407:6413 DMFP.Day09_levenshtein <> dna_src def
+R6415:6422 DMFP.Day09_levenshtein <> dna_tgt1 def
+R6424:6432 DMFP.Day09_levenshtein <> edit_tgt1 def
+R6445:6454 DMFP.Day09_levenshtein <> valid_edit def
+R6456:6462 DMFP.Day09_levenshtein <> dna_src def
+R6464:6471 DMFP.Day09_levenshtein <> dna_tgt1 def
+R6473:6487 DMFP.Day09_levenshtein <> edit_tgt1_worse def
+R6500:6502 DMFP.Day02_types <> leb def
+R6505:6514 DMFP.Day09_levenshtein <> total_cost def
+R6516:6524 DMFP.Day09_levenshtein <> edit_tgt1 def
+R6528:6537 DMFP.Day09_levenshtein <> total_cost def
+R6539:6553 DMFP.Day09_levenshtein <> edit_tgt1_worse def
+R6567:6569 DMFP.Day02_types <> eqb def
+R6572:6581 DMFP.Day09_levenshtein <> total_cost def
+R6583:6591 DMFP.Day09_levenshtein <> edit_tgt1 def
+R6595:6604 DMFP.Day09_levenshtein <> total_cost def
+R6606:6619 DMFP.Day09_levenshtein <> edit_tgt1_same def
+def 6854:6862 <> edit_tgt2
+R6866:6869 DMFP.Day04_structures <> list ind
+R6871:6874 DMFP.Day09_levenshtein <> edit ind
+R6879:6879 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6886:6887 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6892:6893 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6898:6900 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6905:6905 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6880:6885 DMFP.Day09_levenshtein <> delete constr
+R6888:6891 DMFP.Day09_levenshtein <> copy constr
+R6894:6897 DMFP.Day09_levenshtein <> copy constr
+R6901:6904 DMFP.Day09_levenshtein <> copy constr
+R6918:6927 DMFP.Day09_levenshtein <> valid_edit def
+R6929:6935 DMFP.Day09_levenshtein <> dna_src def
+R6937:6944 DMFP.Day09_levenshtein <> dna_tgt2 def
+R6946:6954 DMFP.Day09_levenshtein <> edit_tgt2 def
+def 6970:6978 <> edit_tgt3
+R6982:6985 DMFP.Day04_structures <> list ind
+R6987:6990 DMFP.Day09_levenshtein <> edit ind
+R6995:6995 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7002:7003 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7008:7009 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7014:7015 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7020:7021 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7027:7027 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R6996:7001 DMFP.Day09_levenshtein <> delete constr
+R7004:7007 DMFP.Day09_levenshtein <> copy constr
+R7010:7013 DMFP.Day09_levenshtein <> copy constr
+R7016:7019 DMFP.Day09_levenshtein <> copy constr
+R7022:7024 DMFP.Day09_levenshtein <> add constr
+R7026:7026 DMFP.Day01_intro <> G constr
+R7040:7049 DMFP.Day09_levenshtein <> valid_edit def
+R7051:7057 DMFP.Day09_levenshtein <> dna_src def
+R7059:7066 DMFP.Day09_levenshtein <> dna_tgt3 def
+R7068:7076 DMFP.Day09_levenshtein <> edit_tgt3 def
+def 7131:7157 <> manual_grade_for_edit_tgt23
+R7161:7166 Coq.Init.Datatypes <> option ind
+R7172:7172 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R7169:7171 Coq.Init.Datatypes <> nat ind
+R7173:7178 Coq.Strings.String <> string ind
+R7184:7187 Coq.Init.Datatypes <> None constr
+def 8119:8129 <> delete_edit
+R8138:8143 DMFP.Day05_lists <> strand def
+binder 8132:8134 <> src:577
+R8148:8151 DMFP.Day04_structures <> list ind
+R8153:8156 DMFP.Day09_levenshtein <> edit ind
+R8161:8163 DMFP.Day05_lists <> map def
+R8185:8187 DMFP.Day09_levenshtein <> src:577 var
+binder 8170:8170 <> n:578
+R8176:8181 DMFP.Day09_levenshtein <> delete constr
+def 8202:8209 <> add_edit
+R8218:8223 DMFP.Day05_lists <> strand def
+binder 8212:8214 <> tgt:579
+R8228:8231 DMFP.Day04_structures <> list ind
+R8233:8236 DMFP.Day09_levenshtein <> edit ind
+R8241:8243 DMFP.Day05_lists <> map def
+R8249:8251 DMFP.Day09_levenshtein <> tgt:579 var
+R8245:8247 DMFP.Day09_levenshtein <> add constr
+def 8266:8280 <> delete_add_edit
+R8289:8294 DMFP.Day05_lists <> strand def
+binder 8283:8285 <> src:580
+R8304:8309 DMFP.Day05_lists <> strand def
+binder 8298:8300 <> tgt:581
+R8314:8317 DMFP.Day04_structures <> list ind
+R8319:8322 DMFP.Day09_levenshtein <> edit ind
+R8342:8345 DMFP.Day05_lists <> :::x_'++'_x not
+R8327:8337 DMFP.Day09_levenshtein <> delete_edit def
+R8339:8341 DMFP.Day09_levenshtein <> src:580 var
+R8346:8353 DMFP.Day09_levenshtein <> add_edit def
+R8355:8357 DMFP.Day09_levenshtein <> tgt:581 var
+def 8556:8569 <> naive_sub_edit
+R8578:8583 DMFP.Day05_lists <> strand def
+binder 8572:8574 <> src:582
+R8593:8598 DMFP.Day05_lists <> strand def
+binder 8587:8589 <> tgt:583
+R8603:8606 DMFP.Day04_structures <> list ind
+R8608:8611 DMFP.Day09_levenshtein <> edit ind
+R8624:8624 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8628:8629 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8633:8633 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8625:8627 DMFP.Day09_levenshtein <> src:582 var
+R8630:8632 DMFP.Day09_levenshtein <> tgt:583 var
+R8644:8644 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8647:8648 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8652:8652 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8645:8646 DMFP.Day05_lists <> :::'['_']' not
+R8657:8664 DMFP.Day09_levenshtein <> add_edit def
+R8666:8668 DMFP.Day09_levenshtein <> tgt:583 var
+R8674:8674 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8678:8679 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8682:8682 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8680:8681 DMFP.Day05_lists <> :::'['_']' not
+R8687:8697 DMFP.Day09_levenshtein <> delete_edit def
+R8699:8701 DMFP.Day09_levenshtein <> src:582 var
+R8707:8707 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8715:8716 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8725:8725 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R8709:8710 DMFP.Day05_lists <> :::x_'::'_x not
+R8719:8720 DMFP.Day05_lists <> :::x_'::'_x not
+R8747:8750 DMFP.Day05_lists <> :::x_'::'_x not
+R8734:8743 DMFP.Day09_levenshtein <> substitute constr
+R8751:8764 DMFP.Day09_levenshtein <> naive_sub_edit:584 def
+def 9060:9068 <> naive_src
+R9072:9077 DMFP.Day05_lists <> strand def
+R9082:9082 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9084:9085 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9087:9088 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9090:9091 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9093:9093 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9083:9083 DMFP.Day01_intro <> T constr
+R9086:9086 DMFP.Day01_intro <> G constr
+R9089:9089 DMFP.Day01_intro <> T constr
+R9092:9092 DMFP.Day01_intro <> C constr
+def 9107:9115 <> naive_tgt
+R9119:9124 DMFP.Day05_lists <> strand def
+R9129:9129 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9131:9132 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9134:9135 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9137:9138 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9140:9140 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R9130:9130 DMFP.Day01_intro <> A constr
+R9133:9133 DMFP.Day01_intro <> G constr
+R9136:9136 DMFP.Day01_intro <> T constr
+R9139:9139 DMFP.Day01_intro <> C constr
+def 9653:9660 <> sub_edit
+R9669:9674 DMFP.Day05_lists <> strand def
+binder 9663:9665 <> src:585
+R9684:9689 DMFP.Day05_lists <> strand def
+binder 9678:9680 <> tgt:586
+R9694:9697 DMFP.Day04_structures <> list ind
+R9699:9702 DMFP.Day09_levenshtein <> edit ind
+R9715:9715 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9719:9720 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9724:9724 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9716:9718 DMFP.Day09_levenshtein <> src:585 var
+R9721:9723 DMFP.Day09_levenshtein <> tgt:586 var
+R9735:9735 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9738:9739 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9743:9743 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9736:9737 DMFP.Day05_lists <> :::'['_']' not
+R9748:9755 DMFP.Day09_levenshtein <> add_edit def
+R9757:9759 DMFP.Day09_levenshtein <> tgt:586 var
+R9765:9765 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9769:9770 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9773:9773 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9771:9772 DMFP.Day05_lists <> :::'['_']' not
+R9778:9788 DMFP.Day09_levenshtein <> delete_edit def
+R9790:9792 DMFP.Day09_levenshtein <> src:585 var
+R9798:9798 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9807:9808 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9817:9817 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9801:9802 DMFP.Day05_lists <> :::x_'::'_x not
+R9811:9812 DMFP.Day05_lists <> :::x_'::'_x not
+R9828:9834 DMFP.Day05_lists <> eq_base def
+R9877:9880 DMFP.Day01_intro <> true constr
+R9888:9891 DMFP.Day05_lists <> :::x_'::'_x not
+R9884:9887 DMFP.Day09_levenshtein <> copy constr
+R9892:9899 DMFP.Day09_levenshtein <> sub_edit:587 def
+R9941:9945 DMFP.Day01_intro <> false constr
+R9963:9966 DMFP.Day05_lists <> :::x_'::'_x not
+R9950:9959 DMFP.Day09_levenshtein <> substitute constr
+R9967:9974 DMFP.Day09_levenshtein <> sub_edit:587 def
+def 11030:11040 <> levenshtein
+R11053:11058 DMFP.Day05_lists <> strand def
+binder 11043:11045 <> src:588
+binder 11047:11049 <> tgt:589
+R11063:11066 DMFP.Day04_structures <> list ind
+R11068:11071 DMFP.Day09_levenshtein <> edit ind
+binder 11092:11094 <> tgt:591
+R11116:11118 DMFP.Day09_levenshtein <> tgt:591 var
+R11111:11113 DMFP.Day09_levenshtein <> src:588 var
+R11138:11139 DMFP.Day05_lists <> :::'['_']' not
+R11144:11154 DMFP.Day09_levenshtein <> delete_edit def
+R11156:11158 DMFP.Day09_levenshtein <> src:588 var
+R11168:11169 DMFP.Day05_lists <> :::'['_']' not
+R11180:11187 DMFP.Day09_levenshtein <> add_edit def
+R11189:11191 DMFP.Day09_levenshtein <> tgt:591 var
+R11203:11206 DMFP.Day05_lists <> :::x_'::'_x not
+R11214:11217 DMFP.Day05_lists <> :::x_'::'_x not
+R11266:11266 DMFP.Day05_lists <> :::x_'::'_x not
+R11312:11316 DMFP.Day05_lists <> :::x_'::'_x not
+R11270:11276 DMFP.Day05_lists <> eq_base def
+R11299:11308 DMFP.Day09_levenshtein <> substitute constr
+R11289:11292 DMFP.Day09_levenshtein <> copy constr
+R11317:11327 DMFP.Day09_levenshtein <> levenshtein:590 def
+R11333:11335 DMFP.Day09_levenshtein <> tgt:591 var
+R11329:11331 DMFP.Day09_levenshtein <> src:588 var
+binder 11237:11249 <> copy_sub_edit:595
+R11364:11364 DMFP.Day05_lists <> :::x_'::'_x not
+R11371:11375 DMFP.Day05_lists <> :::x_'::'_x not
+R11365:11367 DMFP.Day09_levenshtein <> add constr
+R11376:11380 DMFP.Day09_levenshtein <> inner:592 var
+R11382:11384 DMFP.Day09_levenshtein <> tgt:591 var
+binder 11352:11359 <> add_edit:596
+R11422:11425 DMFP.Day05_lists <> :::x_'::'_x not
+R11416:11421 DMFP.Day09_levenshtein <> delete constr
+R11426:11436 DMFP.Day09_levenshtein <> levenshtein:590 def
+R11445:11448 DMFP.Day05_lists <> :::x_'::'_x not
+R11449:11451 DMFP.Day09_levenshtein <> tgt:591 var
+R11438:11440 DMFP.Day09_levenshtein <> src:588 var
+binder 11401:11411 <> delete_edit:597
+R11465:11471 DMFP.Day02_types <> argmin3 def
+R11507:11517 DMFP.Day09_levenshtein <> delete_edit:597 var
+R11498:11505 DMFP.Day09_levenshtein <> add_edit:596 var
+R11484:11496 DMFP.Day09_levenshtein <> copy_sub_edit:595 var
+R11473:11482 DMFP.Day09_levenshtein <> total_cost def
+binder 11086:11090 <> inner:598
+R11536:11540 DMFP.Day09_levenshtein <> inner:598 var
+R11542:11544 DMFP.Day09_levenshtein <> tgt:589 var
+R12459:12469 DMFP.Day09_levenshtein <> apply_edits def
+R12471:12477 DMFP.Day09_levenshtein <> dna_src def
+R12480:12490 DMFP.Day09_levenshtein <> levenshtein def
+R12492:12498 DMFP.Day09_levenshtein <> dna_src def
+R12500:12507 DMFP.Day09_levenshtein <> dna_tgt3 def
+def 12876:12900 <> levenshtein__sub_edit_src
+R12904:12909 DMFP.Day05_lists <> strand def
+R12914:12914 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12916:12917 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12919:12919 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12915:12915 DMFP.Day01_intro <> A constr
+R12918:12918 DMFP.Day01_intro <> T constr
+def 12933:12957 <> levenshtein__sub_edit_tgt
+R12961:12966 DMFP.Day05_lists <> strand def
+R12971:12971 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12973:12974 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12976:12977 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12979:12980 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12982:12982 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R12972:12972 DMFP.Day01_intro <> C constr
+R12975:12975 DMFP.Day01_intro <> G constr
+R12978:12978 DMFP.Day01_intro <> A constr
+R12981:12981 DMFP.Day01_intro <> T constr
+R13075:13078 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R13155:13155 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R13079:13088 DMFP.Day09_levenshtein <> total_cost def
+R13091:13101 DMFP.Day09_levenshtein <> levenshtein def
+R13103:13127 DMFP.Day09_levenshtein <> levenshtein__sub_edit_src def
+R13129:13153 DMFP.Day09_levenshtein <> levenshtein__sub_edit_tgt def
+R13173:13182 DMFP.Day09_levenshtein <> total_cost def
+R13185:13192 DMFP.Day09_levenshtein <> sub_edit def
+R13197:13221 DMFP.Day09_levenshtein <> levenshtein__sub_edit_src def
+R13223:13247 DMFP.Day09_levenshtein <> levenshtein__sub_edit_tgt def
+def 14052:14093 <> manual_grade_for_levenshtein__sub_edit_tgt
+R14097:14102 Coq.Init.Datatypes <> option ind
+R14108:14108 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R14105:14107 Coq.Init.Datatypes <> nat ind
+R14109:14114 Coq.Strings.String <> string ind
+R14120:14123 Coq.Init.Datatypes <> None constr

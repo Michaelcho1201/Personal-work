@@ -1,0 +1,353 @@
+DIGEST 1d446f3b95aeed66c9128ddd38e9bc1f
+FDMFP.Day08_sets
+R15:30 DMFP.Day07_trees <> <> lib
+def 2029:2034 <> natset
+R2046:2049 DMFP.Day04_structures <> list ind
+R2051:2053 Coq.Init.Datatypes <> nat ind
+def 2413:2424 <> empty_natset
+R2428:2433 DMFP.Day08_sets <> natset def
+R2438:2439 DMFP.Day05_lists <> :::'['_']' not
+def 2687:2698 <> evens_to_ten
+R2703:2708 DMFP.Day08_sets <> natset def
+R2713:2713 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2715:2716 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2718:2719 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2721:2722 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2724:2725 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2727:2728 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2731:2731 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2745:2757 <> evens_to_ten'
+R2761:2766 DMFP.Day08_sets <> natset def
+R2771:2771 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2773:2774 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2776:2777 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2779:2780 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2783:2784 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2786:2787 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2789:2789 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 2905:2916 <> non_set_list
+R2920:2923 DMFP.Day04_structures <> list ind
+R2925:2927 Coq.Init.Datatypes <> nat ind
+R2932:2932 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2934:2935 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2937:2938 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2940:2941 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R2943:2943 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 3154:3165 <> natset_yikes
+R3169:3174 DMFP.Day08_sets <> natset def
+R3179:3179 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R3181:3182 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R3184:3185 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R3187:3188 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R3190:3190 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 4041:4046 <> member
+R4053:4055 Coq.Init.Datatypes <> nat ind
+binder 4049:4049 <> x:504
+R4063:4068 DMFP.Day08_sets <> natset def
+binder 4059:4059 <> l:505
+R4073:4076 DMFP.Day01_intro <> bool ind
+R4089:4089 DMFP.Day08_sets <> l:505 var
+R4100:4101 DMFP.Day05_lists <> :::'['_']' not
+R4106:4110 DMFP.Day01_intro <> false constr
+R4117:4118 DMFP.Day05_lists <> :::x_'::'_x not
+R4132:4135 DMFP.Day01_intro <> :::x_'||'_x not
+R4125:4127 DMFP.Day02_types <> eqb def
+R4129:4129 DMFP.Day08_sets <> x:504 var
+R4136:4141 DMFP.Day08_sets <> member:506 def
+R4143:4143 DMFP.Day08_sets <> x:504 var
+R4165:4170 DMFP.Day08_sets <> member def
+R4174:4185 DMFP.Day08_sets <> empty_natset def
+R4216:4221 DMFP.Day08_sets <> member def
+R4225:4236 DMFP.Day08_sets <> evens_to_ten def
+R4267:4272 DMFP.Day08_sets <> member def
+R4276:4287 DMFP.Day08_sets <> evens_to_ten def
+R4317:4322 DMFP.Day08_sets <> member def
+R4326:4338 DMFP.Day08_sets <> evens_to_ten' def
+R4367:4372 DMFP.Day08_sets <> member def
+R4376:4387 DMFP.Day08_sets <> natset_yikes def
+def 4607:4616 <> is_setlike
+R4623:4628 DMFP.Day08_sets <> natset def
+binder 4619:4619 <> l:508
+R4633:4636 DMFP.Day01_intro <> bool ind
+R4649:4649 DMFP.Day08_sets <> l:508 var
+R4660:4661 DMFP.Day05_lists <> :::'['_']' not
+R4666:4669 DMFP.Day01_intro <> true constr
+R4676:4679 DMFP.Day05_lists <> :::x_'::'_x not
+R4689:4694 DMFP.Day08_sets <> member def
+R4732:4741 DMFP.Day08_sets <> is_setlike:509 def
+R4706:4710 DMFP.Day01_intro <> false constr
+def 4850:4859 <> set_insert
+R4866:4868 Coq.Init.Datatypes <> nat ind
+binder 4862:4862 <> x:511
+R4876:4881 DMFP.Day08_sets <> natset def
+binder 4872:4872 <> l:512
+R4886:4891 DMFP.Day08_sets <> natset def
+R4901:4906 DMFP.Day08_sets <> member def
+R4908:4908 DMFP.Day08_sets <> x:511 var
+R4910:4910 DMFP.Day08_sets <> l:512 var
+R4929:4932 DMFP.Day05_lists <> :::x_'::'_x not
+R4928:4928 DMFP.Day08_sets <> x:511 var
+R4933:4933 DMFP.Day08_sets <> l:512 var
+R4919:4919 DMFP.Day08_sets <> l:512 var
+def 5071:5075 <> union
+R5083:5088 DMFP.Day08_sets <> natset def
+binder 5078:5079 <> l1:513
+R5097:5102 DMFP.Day08_sets <> natset def
+binder 5092:5093 <> l2:514
+R5107:5112 DMFP.Day08_sets <> natset def
+R5125:5126 DMFP.Day08_sets <> l1:513 var
+R5137:5138 DMFP.Day05_lists <> :::'['_']' not
+R5143:5144 DMFP.Day08_sets <> l2:514 var
+R5152:5153 DMFP.Day05_lists <> :::x_'::'_x not
+R5162:5171 DMFP.Day08_sets <> set_insert def
+R5176:5180 DMFP.Day08_sets <> union:515 def
+R5186:5187 DMFP.Day08_sets <> l2:514 var
+def 5417:5428 <> intersection
+R5439:5444 DMFP.Day08_sets <> natset def
+binder 5431:5432 <> l1:517
+binder 5434:5435 <> l2:518
+R5449:5454 DMFP.Day08_sets <> natset def
+R5467:5468 DMFP.Day08_sets <> l1:517 var
+R5479:5480 DMFP.Day05_lists <> :::'['_']' not
+R5485:5486 DMFP.Day05_lists <> :::'['_']' not
+R5493:5496 DMFP.Day05_lists <> :::x_'::'_x not
+R5507:5512 DMFP.Day08_sets <> member def
+R5516:5517 DMFP.Day08_sets <> l2:518 var
+R5580:5591 DMFP.Day08_sets <> intersection:519 def
+R5597:5598 DMFP.Day08_sets <> l2:518 var
+R5524:5533 DMFP.Day08_sets <> set_insert def
+R5538:5549 DMFP.Day08_sets <> intersection:519 def
+R5555:5556 DMFP.Day08_sets <> l2:518 var
+R5627:5638 DMFP.Day08_sets <> intersection def
+R5640:5651 DMFP.Day08_sets <> evens_to_ten def
+R5653:5653 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5655:5655 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5657:5657 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5659:5659 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5661:5661 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5663:5663 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5697:5708 DMFP.Day08_sets <> intersection def
+R5710:5721 DMFP.Day08_sets <> evens_to_ten def
+R5723:5723 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5726:5726 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5729:5729 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R5732:5732 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 5953:5958 <> subset
+R5969:5974 DMFP.Day08_sets <> natset def
+binder 5961:5962 <> l1:521
+binder 5964:5965 <> l2:522
+R5979:5982 DMFP.Day01_intro <> bool ind
+R5995:5996 DMFP.Day08_sets <> l1:521 var
+R6007:6008 DMFP.Day05_lists <> :::'['_']' not
+R6013:6016 DMFP.Day01_intro <> true constr
+R6023:6026 DMFP.Day05_lists <> :::x_'::'_x not
+R6045:6048 DMFP.Day01_intro <> :::x_'&&'_x not
+R6034:6039 DMFP.Day08_sets <> member def
+R6043:6044 DMFP.Day08_sets <> l2:522 var
+R6049:6054 DMFP.Day08_sets <> subset:523 def
+R6060:6061 DMFP.Day08_sets <> l2:522 var
+def 6635:6643 <> set_equal
+R6654:6659 DMFP.Day08_sets <> natset def
+binder 6646:6647 <> l1:525
+binder 6649:6650 <> l2:526
+R6664:6667 DMFP.Day01_intro <> bool ind
+R6685:6686 DMFP.Day08_sets <> l2:526 var
+R6680:6681 DMFP.Day08_sets <> l1:525 var
+R6697:6698 DMFP.Day05_lists <> :::'['_']' not
+R6702:6703 DMFP.Day05_lists <> :::'['_']' not
+R6708:6711 DMFP.Day01_intro <> true constr
+R6717:6718 DMFP.Day05_lists <> :::'['_']' not
+R6726:6730 DMFP.Day01_intro <> false constr
+R6739:6740 DMFP.Day05_lists <> :::'['_']' not
+R6745:6749 DMFP.Day01_intro <> false constr
+R6756:6759 DMFP.Day05_lists <> :::x_'::'_x not
+R6766:6769 DMFP.Day05_lists <> :::x_'::'_x not
+R6789:6792 DMFP.Day01_intro <> :::x_'&&'_x not
+R6777:6782 DMFP.Day08_sets <> subset def
+R6784:6785 DMFP.Day08_sets <> l1:525 var
+R6787:6788 DMFP.Day08_sets <> l2:526 var
+R6793:6798 DMFP.Day08_sets <> subset def
+R6800:6801 DMFP.Day08_sets <> l2:526 var
+R6803:6804 DMFP.Day08_sets <> l1:525 var
+def 6865:6890 <> manual_grade_for_set_equal
+R6894:6899 Coq.Init.Datatypes <> option ind
+R6905:6905 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R6902:6904 Coq.Init.Datatypes <> nat ind
+R6906:6911 Coq.Strings.String <> string ind
+R6917:6920 Coq.Init.Datatypes <> None constr
+R6943:6951 DMFP.Day08_sets <> set_equal def
+R6953:6954 DMFP.Day05_lists <> :::'['_']' not
+R6956:6957 DMFP.Day05_lists <> :::'['_']' not
+R6991:6999 DMFP.Day08_sets <> set_equal def
+R7001:7001 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7003:7003 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7005:7005 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7007:7007 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7040:7048 DMFP.Day08_sets <> set_equal def
+R7050:7050 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7052:7052 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7054:7054 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7056:7056 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7058:7058 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7060:7060 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+mod 7195:7204 <> SortedSets
+def 7533:7544 SortedSets empty_natset
+R7548:7553 DMFP.Day08_sets <> natset def
+R7558:7559 DMFP.Day05_lists <> :::'['_']' not
+def 7820:7829 SortedSets is_setlike
+R7836:7839 DMFP.Day04_structures <> list ind
+R7841:7843 Coq.Init.Datatypes <> nat ind
+binder 7832:7832 <> l:529
+R7848:7851 DMFP.Day01_intro <> bool ind
+R7864:7864 DMFP.Day08_sets <> l:529 var
+R7875:7876 DMFP.Day05_lists <> :::'['_']' not
+R7881:7884 DMFP.Day01_intro <> true constr
+R7890:7890 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7892:7892 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R7897:7900 DMFP.Day01_intro <> true constr
+R7907:7908 DMFP.Day05_lists <> :::x_'::'_x not
+R7911:7912 DMFP.Day05_lists <> :::x_'::'_x not
+R7934:7940 DMFP.Day07_trees <> compare def
+R7957:7958 DMFP.Day07_trees <> LT constr
+R7963:7972 DMFP.Day08_sets <> is_setlike:530 def
+R7974:7974 DMFP.Day08_sets <> l:529 var
+R7982:7983 DMFP.Day07_trees <> EQ constr
+R7987:7988 DMFP.Day07_trees <> GT constr
+R7993:7997 DMFP.Day01_intro <> false constr
+R7993:7997 DMFP.Day01_intro <> false constr
+def 8453:8458 SortedSets member
+R8465:8467 Coq.Init.Datatypes <> nat ind
+binder 8461:8461 <> x:532
+R8474:8479 DMFP.Day08_sets <> natset def
+binder 8471:8471 <> l:533
+R8484:8487 DMFP.Day01_intro <> bool ind
+R8500:8500 DMFP.Day08_sets <> l:533 var
+R8511:8512 DMFP.Day05_lists <> :::'['_']' not
+R8517:8521 DMFP.Day01_intro <> false constr
+R8528:8531 DMFP.Day05_lists <> :::x_'::'_x not
+R8544:8550 DMFP.Day07_trees <> compare def
+R8552:8552 DMFP.Day08_sets <> x:532 var
+R8577:8578 DMFP.Day07_trees <> LT constr
+R8583:8587 DMFP.Day01_intro <> false constr
+R8605:8606 DMFP.Day07_trees <> EQ constr
+R8611:8614 DMFP.Day01_intro <> true constr
+R8632:8633 DMFP.Day07_trees <> GT constr
+R8638:8643 DMFP.Day08_sets <> member:534 def
+R8645:8645 DMFP.Day08_sets <> x:532 var
+def 9108:9112 SortedSets union
+R9123:9128 DMFP.Day08_sets <> natset def
+binder 9115:9116 <> l1:536
+binder 9118:9119 <> l2:537
+R9133:9138 DMFP.Day08_sets <> natset def
+R9151:9151 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9154:9155 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9158:9158 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9152:9153 DMFP.Day08_sets <> l1:536 var
+R9156:9157 DMFP.Day08_sets <> l2:537 var
+R9169:9169 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9172:9173 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9175:9175 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9170:9171 DMFP.Day05_lists <> :::'['_']' not
+R9180:9181 DMFP.Day08_sets <> l2:537 var
+R9187:9187 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9189:9190 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9193:9193 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9191:9192 DMFP.Day05_lists <> :::'['_']' not
+R9198:9199 DMFP.Day08_sets <> l1:536 var
+R9205:9205 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9213:9214 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9222:9222 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R9208:9209 DMFP.Day05_lists <> :::x_'::'_x not
+R9217:9218 DMFP.Day05_lists <> :::x_'::'_x not
+R9237:9243 DMFP.Day07_trees <> compare def
+R9262:9263 DMFP.Day07_trees <> LT constr
+R9270:9273 DMFP.Day05_lists <> :::x_'::'_x not
+R9274:9278 DMFP.Day08_sets <> union:538 def
+R9293:9294 DMFP.Day05_lists <> :::x_'::'_x not
+R9306:9307 DMFP.Day07_trees <> EQ constr
+R9314:9317 DMFP.Day05_lists <> :::x_'::'_x not
+R9318:9322 DMFP.Day08_sets <> union:538 def
+R9349:9350 DMFP.Day07_trees <> GT constr
+R9357:9360 DMFP.Day05_lists <> :::x_'::'_x not
+R9361:9365 DMFP.Day08_sets <> union:538 def
+R9370:9371 DMFP.Day05_lists <> :::x_'::'_x not
+def 10137:10141 SortedSets union
+R10152:10157 DMFP.Day08_sets <> natset def
+binder 10144:10145 <> l1:539
+binder 10147:10148 <> l2:540
+R10162:10167 DMFP.Day08_sets <> natset def
+binder 10188:10189 <> l2:542
+R10206:10206 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10209:10210 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10213:10213 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10207:10208 DMFP.Day08_sets <> l1:539 var
+R10211:10212 DMFP.Day08_sets <> l2:542 var
+R10228:10228 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10231:10232 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10234:10234 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10229:10230 DMFP.Day05_lists <> :::'['_']' not
+R10239:10240 DMFP.Day08_sets <> l2:542 var
+R10250:10250 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10252:10253 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10256:10256 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10254:10255 DMFP.Day05_lists <> :::'['_']' not
+R10261:10262 DMFP.Day08_sets <> l1:539 var
+R10272:10272 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10280:10281 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10289:10289 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R10275:10276 DMFP.Day05_lists <> :::x_'::'_x not
+R10284:10285 DMFP.Day05_lists <> :::x_'::'_x not
+R10308:10314 DMFP.Day07_trees <> compare def
+R10337:10338 DMFP.Day07_trees <> LT constr
+R10345:10348 DMFP.Day05_lists <> :::x_'::'_x not
+R10349:10353 DMFP.Day08_sets <> union:541 def
+R10368:10369 DMFP.Day05_lists <> :::x_'::'_x not
+R10385:10386 DMFP.Day07_trees <> EQ constr
+R10393:10396 DMFP.Day05_lists <> :::x_'::'_x not
+R10397:10401 DMFP.Day08_sets <> union:541 def
+R10432:10433 DMFP.Day07_trees <> GT constr
+R10440:10443 DMFP.Day05_lists <> :::x_'::'_x not
+R10444:10448 DMFP.Day08_sets <> inner:543 var
+binder 10182:10186 <> inner:544
+R10498:10502 DMFP.Day08_sets <> inner:544 var
+R10504:10505 DMFP.Day08_sets <> l2:540 var
+def 11102:11107 SortedSets subset
+R11118:11123 DMFP.Day08_sets <> natset def
+binder 11110:11111 <> l1:545
+binder 11113:11114 <> l2:546
+R11128:11131 DMFP.Day01_intro <> bool ind
+R11213:11222 DMFP.Day08_sets SortedSets <> mod
+mod 11331:11337 <> BSTSets
+def 11692:11697 BSTSets natset
+R11709:11710 DMFP.Day04_structures <> bt ind
+R11712:11714 Coq.Init.Datatypes <> nat ind
+def 11895:11906 BSTSets empty_natset
+R11910:11915 DMFP.Day08_sets BSTSets natset def
+R11920:11924 DMFP.Day04_structures <> empty constr
+def 11971:11980 BSTSets set_insert
+R11987:11990 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11984:11986 Coq.Init.Datatypes <> nat ind
+R11997:12000 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11991:11996 DMFP.Day08_sets BSTSets natset def
+R12001:12006 DMFP.Day08_sets BSTSets natset def
+R12011:12016 DMFP.Day07_trees <> insert def
+def 12070:12105 BSTSets manual_grade_for_bst_set_definitions
+R12109:12114 Coq.Init.Datatypes <> option ind
+R12120:12120 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R12117:12119 Coq.Init.Datatypes <> nat ind
+R12121:12126 Coq.Strings.String <> string ind
+R12132:12135 Coq.Init.Datatypes <> None constr
+def 12377:12381 BSTSets union
+R12392:12397 DMFP.Day08_sets BSTSets natset def
+binder 12384:12385 <> t1:548
+binder 12387:12388 <> t2:549
+R12402:12407 DMFP.Day08_sets BSTSets natset def
+R12420:12421 DMFP.Day08_sets <> t1:548 var
+R12433:12437 DMFP.Day04_structures <> empty constr
+R12444:12445 DMFP.Day08_sets <> t2:549 var
+R12451:12454 DMFP.Day04_structures <> node constr
+R12467:12471 DMFP.Day08_sets <> union:550 def
+R12476:12485 DMFP.Day08_sets BSTSets set_insert def
+R12490:12494 DMFP.Day08_sets <> union:550 def
+R12498:12499 DMFP.Day08_sets <> t2:549 var
+R12515:12521 DMFP.Day08_sets BSTSets <> mod

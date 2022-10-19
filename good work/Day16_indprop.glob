@@ -1,0 +1,832 @@
+DIGEST 498c060c889f6bc11cb3252703a1707d
+FDMFP.Day16_indprop
+R15:35 DMFP.Day15_induction2 <> <> lib
+ind 3547:3548 <> ev
+constr 3569:3572 <> ev_0
+constr 3583:3587 <> ev_SS
+R3555:3558 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3552:3554 Coq.Init.Datatypes <> nat ind
+R3576:3577 DMFP.Day16_indprop <> ev:1180 ind
+R3594:3596 Coq.Init.Datatypes <> nat ind
+binder 3590:3590 <> n:1182
+R3604:3605 DMFP.Day16_indprop <> ev:1180 ind
+R3607:3607 DMFP.Day16_indprop <> n:1182 var
+binder 3600:3600 <> H:1183
+R3612:3613 DMFP.Day16_indprop <> ev:1180 ind
+R3616:3616 Coq.Init.Datatypes <> S constr
+R3619:3619 Coq.Init.Datatypes <> S constr
+R3621:3621 DMFP.Day16_indprop <> n:1182 var
+ind 4531:4538 <> wrong_ev
+constr 4562:4571 <> wrong_ev_0
+constr 4588:4598 <> wrong_ev_SS
+R4545:4547 Coq.Init.Datatypes <> nat ind
+binder 4541:4541 <> n:1184
+R4575:4582 DMFP.Day16_indprop <> wrong_ev:1185 ind
+prf 5370:5373 <> ev_4
+R5377:5378 DMFP.Day16_indprop <> ev ind
+R5542:5546 DMFP.Day16_indprop <> ev_SS constr
+R5542:5546 DMFP.Day16_indprop <> ev_SS constr
+R5555:5559 DMFP.Day16_indprop <> ev_SS constr
+R5555:5559 DMFP.Day16_indprop <> ev_SS constr
+R5568:5571 DMFP.Day16_indprop <> ev_0 constr
+R5568:5571 DMFP.Day16_indprop <> ev_0 constr
+prf 5643:5647 <> ev_4'
+R5651:5652 DMFP.Day16_indprop <> ev ind
+R5671:5675 DMFP.Day16_indprop <> ev_SS constr
+R5680:5684 DMFP.Day16_indprop <> ev_SS constr
+R5688:5691 DMFP.Day16_indprop <> ev_0 constr
+R5671:5675 DMFP.Day16_indprop <> ev_SS constr
+R5680:5684 DMFP.Day16_indprop <> ev_SS constr
+R5688:5691 DMFP.Day16_indprop <> ev_0 constr
+prf 5782:5789 <> ev_plus4
+binder 5800:5800 <> n:1187
+R5807:5810 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5803:5804 DMFP.Day16_indprop <> ev ind
+R5806:5806 DMFP.Day16_indprop <> n:1187 var
+R5811:5812 DMFP.Day16_indprop <> ev ind
+R5816:5818 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R5819:5819 DMFP.Day16_indprop <> n:1187 var
+R5868:5872 DMFP.Day16_indprop <> ev_SS constr
+R5868:5872 DMFP.Day16_indprop <> ev_SS constr
+R5881:5885 DMFP.Day16_indprop <> ev_SS constr
+R5881:5885 DMFP.Day16_indprop <> ev_SS constr
+prf 6040:6048 <> ev_double
+binder 6059:6059 <> n:1188
+R6066:6067 DMFP.Day16_indprop <> ev ind
+R6070:6075 DMFP.Day13_induction <> double def
+R6077:6077 DMFP.Day16_indprop <> n:1188 var
+R6143:6146 DMFP.Day16_indprop <> ev_0 constr
+R6143:6146 DMFP.Day16_indprop <> ev_0 constr
+R6166:6170 DMFP.Day16_indprop <> ev_SS constr
+R6166:6170 DMFP.Day16_indprop <> ev_SS constr
+prf 8102:8113 <> ev_inversion
+R8131:8133 Coq.Init.Datatypes <> nat ind
+binder 8127:8127 <> n:1189
+R8141:8148 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8137:8138 DMFP.Day16_indprop <> ev ind
+R8140:8140 DMFP.Day16_indprop <> n:1189 var
+R8149:8149 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8155:8160 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8193:8193 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8151:8153 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8150:8150 DMFP.Day16_indprop <> n:1189 var
+R8161:8167 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R8170:8171 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 8168:8169 <> n':1190
+R8184:8187 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8173:8175 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8172:8172 DMFP.Day16_indprop <> n:1189 var
+R8176:8176 Coq.Init.Datatypes <> S constr
+R8179:8179 Coq.Init.Datatypes <> S constr
+R8181:8182 DMFP.Day16_indprop <> n':1190 var
+R8188:8189 DMFP.Day16_indprop <> ev ind
+R8191:8192 DMFP.Day16_indprop <> n':1190 var
+prf 8487:8495 <> ev_minus2
+binder 8506:8506 <> n:1191
+R8517:8520 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8513:8514 DMFP.Day16_indprop <> ev ind
+R8516:8516 DMFP.Day16_indprop <> n:1191 var
+R8521:8522 DMFP.Day16_indprop <> ev ind
+R8525:8528 Coq.Init.Peano <> pred syndef
+R8531:8534 Coq.Init.Peano <> pred syndef
+R8536:8536 DMFP.Day16_indprop <> n:1191 var
+R8621:8624 DMFP.Day16_indprop <> ev_0 constr
+R8621:8624 DMFP.Day16_indprop <> ev_0 constr
+prf 8768:8774 <> evSS_ev
+binder 8785:8785 <> n:1192
+R8804:8807 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8792:8793 DMFP.Day16_indprop <> ev ind
+R8796:8796 Coq.Init.Datatypes <> S constr
+R8799:8799 Coq.Init.Datatypes <> S constr
+R8801:8801 DMFP.Day16_indprop <> n:1192 var
+R8808:8809 DMFP.Day16_indprop <> ev ind
+R8811:8811 DMFP.Day16_indprop <> n:1192 var
+prf 9931:9937 <> evSS_ev
+binder 9948:9948 <> n:1193
+R9963:9966 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9951:9952 DMFP.Day16_indprop <> ev ind
+R9955:9955 Coq.Init.Datatypes <> S constr
+R9958:9958 Coq.Init.Datatypes <> S constr
+R9960:9960 DMFP.Day16_indprop <> n:1193 var
+R9967:9968 DMFP.Day16_indprop <> ev ind
+R9970:9970 DMFP.Day16_indprop <> n:1193 var
+R9998:10009 DMFP.Day16_indprop <> ev_inversion thm
+R9998:10009 DMFP.Day16_indprop <> ev_inversion thm
+prf 10784:10791 <> evSS_ev'
+binder 10802:10802 <> n:1194
+R10819:10822 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R10807:10808 DMFP.Day16_indprop <> ev ind
+R10811:10811 Coq.Init.Datatypes <> S constr
+R10814:10814 Coq.Init.Datatypes <> S constr
+R10816:10816 DMFP.Day16_indprop <> n:1194 var
+R10823:10824 DMFP.Day16_indprop <> ev ind
+R10826:10826 DMFP.Day16_indprop <> n:1194 var
+prf 11671:11684 <> evSS_ev'_subst
+binder 11695:11695 <> n:1195
+R11712:11715 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11700:11701 DMFP.Day16_indprop <> ev ind
+R11704:11704 Coq.Init.Datatypes <> S constr
+R11707:11707 Coq.Init.Datatypes <> S constr
+R11709:11709 DMFP.Day16_indprop <> n:1195 var
+R11716:11717 DMFP.Day16_indprop <> ev ind
+R11719:11719 DMFP.Day16_indprop <> n:1195 var
+prf 12065:12076 <> one_not_even
+R12080:12081 Coq.Init.Logic <> ::type_scope:'~'_x not
+R12082:12083 DMFP.Day16_indprop <> ev ind
+R12113:12124 DMFP.Day16_indprop <> ev_inversion thm
+R12113:12124 DMFP.Day16_indprop <> ev_inversion thm
+prf 12220:12232 <> one_not_even'
+R12236:12237 Coq.Init.Logic <> ::type_scope:'~'_x not
+R12238:12239 DMFP.Day16_indprop <> ev ind
+prf 12395:12406 <> SSSSev__even
+binder 12417:12417 <> n:1196
+R12444:12447 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12424:12425 DMFP.Day16_indprop <> ev ind
+R12428:12428 Coq.Init.Datatypes <> S constr
+R12431:12431 Coq.Init.Datatypes <> S constr
+R12434:12434 Coq.Init.Datatypes <> S constr
+R12437:12437 Coq.Init.Datatypes <> S constr
+R12439:12439 DMFP.Day16_indprop <> n:1196 var
+R12448:12449 DMFP.Day16_indprop <> ev ind
+R12451:12451 DMFP.Day16_indprop <> n:1196 var
+R12497:12504 DMFP.Day16_indprop <> evSS_ev' thm
+R12497:12504 DMFP.Day16_indprop <> evSS_ev' thm
+prf 12653:12664 <> ev5_nonsense
+R12674:12677 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12670:12671 DMFP.Day16_indprop <> ev ind
+R12683:12685 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12679:12681 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+prf 13419:13431 <> inversion_ex1
+R13451:13453 Coq.Init.Datatypes <> nat ind
+binder 13443:13443 <> n:1197
+binder 13445:13445 <> m:1198
+binder 13447:13447 <> o:1199
+R13474:13479 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13465:13467 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13459:13459 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13461:13462 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13464:13464 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13460:13460 DMFP.Day16_indprop <> n:1197 var
+R13463:13463 DMFP.Day16_indprop <> m:1198 var
+R13468:13468 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13470:13471 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13473:13473 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13469:13469 DMFP.Day16_indprop <> o:1199 var
+R13472:13472 DMFP.Day16_indprop <> o:1199 var
+R13483:13485 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13480:13480 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13482:13482 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13481:13481 DMFP.Day16_indprop <> n:1197 var
+R13486:13486 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13488:13488 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13487:13487 DMFP.Day16_indprop <> m:1198 var
+prf 13773:13785 <> inversion_ex2
+R13801:13803 Coq.Init.Datatypes <> nat ind
+binder 13797:13797 <> n:1200
+R13816:13821 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13812:13814 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13809:13809 Coq.Init.Datatypes <> S constr
+R13811:13811 DMFP.Day16_indprop <> n:1200 var
+R13815:13815 Coq.Init.Datatypes <> O constr
+R13827:13829 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13823:13825 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+prf 14953:14968 <> ev_even_firsttry
+binder 14979:14979 <> n:1201
+R14990:14993 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14986:14987 DMFP.Day16_indprop <> ev ind
+R14989:14989 DMFP.Day16_indprop <> n:1201 var
+R14994:15000 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R15002:15003 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 15001:15001 <> k:1202
+R15005:15007 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R15004:15004 DMFP.Day16_indprop <> n:1201 var
+R15008:15013 DMFP.Day13_induction <> double def
+R15015:15015 DMFP.Day16_indprop <> k:1202 var
+R16384:16384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16410:16431 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16461:16461 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16385:16391 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16394:16395 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16392:16393 <> k':1203
+R16398:16400 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16401:16406 DMFP.Day13_induction <> double def
+R16408:16409 DMFP.Day16_indprop <> k':1203 var
+R16432:16438 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16440:16441 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16439:16439 <> k:1204
+R16450:16452 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16442:16442 Coq.Init.Datatypes <> S constr
+R16445:16445 Coq.Init.Datatypes <> S constr
+R16453:16458 DMFP.Day13_induction <> double def
+R16460:16460 DMFP.Day16_indprop <> k:1204 var
+R16384:16384 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16410:16431 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16461:16461 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16385:16391 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16394:16395 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16392:16393 <> k':1205
+R16398:16400 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16401:16406 DMFP.Day13_induction <> double def
+R16408:16409 DMFP.Day16_indprop <> k':1205 var
+R16432:16438 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16440:16441 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16439:16439 <> k:1206
+R16450:16452 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16442:16442 Coq.Init.Datatypes <> S constr
+R16445:16445 Coq.Init.Datatypes <> S constr
+R16453:16458 DMFP.Day13_induction <> double def
+R16460:16460 DMFP.Day16_indprop <> k:1206 var
+R16509:16509 Coq.Init.Datatypes <> S constr
+R16509:16509 Coq.Init.Datatypes <> S constr
+prf 17501:17507 <> ev_even
+binder 17518:17518 <> n:1207
+R17529:17532 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R17525:17526 DMFP.Day16_indprop <> ev ind
+R17528:17528 DMFP.Day16_indprop <> n:1207 var
+R17533:17539 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R17541:17542 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 17540:17540 <> k:1208
+R17544:17546 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R17543:17543 DMFP.Day16_indprop <> n:1207 var
+R17547:17552 DMFP.Day13_induction <> double def
+R17554:17554 DMFP.Day16_indprop <> k:1208 var
+R17777:17777 Coq.Init.Datatypes <> S constr
+R17777:17777 Coq.Init.Datatypes <> S constr
+prf 18167:18177 <> ev_even_iff
+binder 18188:18188 <> n:1209
+R18199:18203 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R18195:18196 DMFP.Day16_indprop <> ev ind
+R18198:18198 DMFP.Day16_indprop <> n:1209 var
+R18204:18210 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R18212:18213 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 18211:18211 <> k:1210
+R18215:18217 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18214:18214 DMFP.Day16_indprop <> n:1209 var
+R18218:18223 DMFP.Day13_induction <> double def
+R18225:18225 DMFP.Day16_indprop <> k:1210 var
+R18273:18279 DMFP.Day16_indprop <> ev_even thm
+R18273:18279 DMFP.Day16_indprop <> ev_even thm
+R18328:18336 DMFP.Day16_indprop <> ev_double thm
+R18328:18336 DMFP.Day16_indprop <> ev_double thm
+prf 18649:18654 <> ev_sum
+binder 18665:18665 <> n:1211
+binder 18667:18667 <> m:1212
+R18674:18677 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18670:18671 DMFP.Day16_indprop <> ev ind
+R18673:18673 DMFP.Day16_indprop <> n:1211 var
+R18682:18685 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18678:18679 DMFP.Day16_indprop <> ev ind
+R18681:18681 DMFP.Day16_indprop <> m:1212 var
+R18686:18687 DMFP.Day16_indprop <> ev ind
+R18691:18693 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R18690:18690 DMFP.Day16_indprop <> n:1211 var
+R18694:18694 DMFP.Day16_indprop <> m:1212 var
+R18802:18805 DMFP.Day16_indprop <> ev_0 constr
+R18802:18805 DMFP.Day16_indprop <> ev_0 constr
+R18826:18830 DMFP.Day16_indprop <> ev_SS constr
+R18826:18830 DMFP.Day16_indprop <> ev_SS constr
+R18890:18894 DMFP.Day16_indprop <> ev_SS constr
+R18890:18894 DMFP.Day16_indprop <> ev_SS constr
+R18925:18929 DMFP.Day16_indprop <> ev_SS constr
+R18925:18929 DMFP.Day16_indprop <> ev_SS constr
+prf 19119:19127 <> ev_ev__ev
+binder 19138:19138 <> n:1213
+binder 19140:19140 <> m:1214
+R19155:19158 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19147:19148 DMFP.Day16_indprop <> ev ind
+R19152:19152 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R19151:19151 DMFP.Day16_indprop <> n:1213 var
+R19153:19153 DMFP.Day16_indprop <> m:1214 var
+R19163:19166 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19159:19160 DMFP.Day16_indprop <> ev ind
+R19162:19162 DMFP.Day16_indprop <> n:1213 var
+R19167:19168 DMFP.Day16_indprop <> ev ind
+R19170:19170 DMFP.Day16_indprop <> m:1214 var
+R19276:19282 DMFP.Day16_indprop <> evSS_ev thm
+R19276:19282 DMFP.Day16_indprop <> evSS_ev thm
+prf 19563:19574 <> ev_plus_plus
+binder 19585:19585 <> n:1215
+binder 19587:19587 <> m:1216
+binder 19589:19589 <> p:1217
+R19604:19607 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19596:19597 DMFP.Day16_indprop <> ev ind
+R19601:19601 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R19600:19600 DMFP.Day16_indprop <> n:1215 var
+R19602:19602 DMFP.Day16_indprop <> m:1216 var
+R19616:19619 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R19608:19609 DMFP.Day16_indprop <> ev ind
+R19613:19613 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R19612:19612 DMFP.Day16_indprop <> n:1215 var
+R19614:19614 DMFP.Day16_indprop <> p:1217 var
+R19620:19621 DMFP.Day16_indprop <> ev ind
+R19625:19625 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R19624:19624 DMFP.Day16_indprop <> m:1216 var
+R19626:19626 DMFP.Day16_indprop <> p:1217 var
+mod 20157:20166 <> Playground
+ind 20564:20565 Playground le
+constr 20593:20596 Playground le_n
+constr 20634:20637 Playground le_S
+R20572:20575 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20569:20571 Coq.Init.Datatypes <> nat ind
+R20579:20582 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20576:20578 Coq.Init.Datatypes <> nat ind
+R20603:20605 Coq.Init.Datatypes <> nat ind
+binder 20599:20599 <> n:1220
+R20625:20626 DMFP.Day16_indprop <> le:1218 ind
+R20630:20630 DMFP.Day16_indprop <> n:1220 var
+R20628:20628 DMFP.Day16_indprop <> n:1220 var
+R20646:20648 Coq.Init.Datatypes <> nat ind
+binder 20640:20640 <> n:1221
+binder 20642:20642 <> m:1222
+R20656:20657 DMFP.Day16_indprop <> le:1218 ind
+R20661:20661 DMFP.Day16_indprop <> m:1222 var
+R20659:20659 DMFP.Day16_indprop <> n:1221 var
+binder 20652:20652 <> H:1223
+R20666:20667 DMFP.Day16_indprop <> le:1218 ind
+R20672:20672 Coq.Init.Datatypes <> S constr
+R20674:20674 DMFP.Day16_indprop <> m:1222 var
+R20669:20669 DMFP.Day16_indprop <> n:1221 var
+R20701:20702 DMFP.Day16_indprop Playground le ind
+not 20688:20688 Playground :::x_'<='_x
+prf 21478:21485 Playground test_le1
+R21492:21495 DMFP.Day16_indprop Playground :::x_'<='_x not
+R21538:21541 DMFP.Day16_indprop Playground le_n constr
+R21538:21541 DMFP.Day16_indprop Playground le_n constr
+prf 21559:21566 Playground test_le2
+R21573:21576 DMFP.Day16_indprop Playground :::x_'<='_x not
+R21619:21622 DMFP.Day16_indprop Playground le_S constr
+R21619:21622 DMFP.Day16_indprop Playground le_S constr
+R21631:21634 DMFP.Day16_indprop Playground le_S constr
+R21631:21634 DMFP.Day16_indprop Playground le_S constr
+R21643:21646 DMFP.Day16_indprop Playground le_S constr
+R21643:21646 DMFP.Day16_indprop Playground le_S constr
+R21655:21658 DMFP.Day16_indprop Playground le_n constr
+R21655:21658 DMFP.Day16_indprop Playground le_n constr
+prf 21676:21683 Playground test_le3
+R21689:21689 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21696:21700 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21691:21694 DMFP.Day16_indprop Playground :::x_'<='_x not
+R21706:21708 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21702:21704 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R21882:21891 DMFP.Day16_indprop Playground <> mod
+def 21906:21907 <> lt
+R21914:21916 Coq.Init.Datatypes <> nat ind
+binder 21910:21910 <> n:1224
+binder 21912:21912 <> m:1225
+R21922:21923 Coq.Init.Peano <> le ind
+R21926:21926 Coq.Init.Datatypes <> S constr
+R21928:21928 DMFP.Day16_indprop <> n:1224 var
+R21931:21931 DMFP.Day16_indprop <> m:1225 var
+R21956:21957 DMFP.Day16_indprop <> lt def
+not 21944:21944 <> :::x_'<'_x
+ind 22033:22041 <> square_of
+constr 22071:22072 <> sq
+R22048:22051 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22045:22047 Coq.Init.Datatypes <> nat ind
+R22055:22058 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22052:22054 Coq.Init.Datatypes <> nat ind
+binder 22074:22074 <> n:1228
+R22078:22086 DMFP.Day16_indprop <> square_of:1226 ind
+R22092:22094 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R22091:22091 DMFP.Day16_indprop <> n:1228 var
+R22095:22095 DMFP.Day16_indprop <> n:1228 var
+R22088:22088 DMFP.Day16_indprop <> n:1228 var
+ind 22110:22117 <> next_nat
+constr 22147:22148 <> nn
+R22124:22127 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22121:22123 Coq.Init.Datatypes <> nat ind
+R22131:22134 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22128:22130 Coq.Init.Datatypes <> nat ind
+binder 22150:22150 <> n:1231
+R22154:22161 DMFP.Day16_indprop <> next_nat:1229 ind
+R22166:22166 Coq.Init.Datatypes <> S constr
+R22168:22168 DMFP.Day16_indprop <> n:1231 var
+R22163:22163 DMFP.Day16_indprop <> n:1231 var
+ind 22183:22189 <> next_ev
+constr 22219:22222 <> ne_1
+constr 22266:22269 <> ne_2
+R22196:22199 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22193:22195 Coq.Init.Datatypes <> nat ind
+R22203:22206 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22200:22202 Coq.Init.Datatypes <> nat ind
+binder 22224:22224 <> n:1234
+R22230:22231 DMFP.Day16_indprop <> ev ind
+R22234:22234 Coq.Init.Datatypes <> S constr
+R22236:22236 DMFP.Day16_indprop <> n:1234 var
+binder 22227:22227 <> H:1235
+R22246:22252 DMFP.Day16_indprop <> next_ev:1232 ind
+R22257:22257 Coq.Init.Datatypes <> S constr
+R22259:22259 DMFP.Day16_indprop <> n:1234 var
+R22254:22254 DMFP.Day16_indprop <> n:1234 var
+binder 22271:22271 <> n:1236
+R22277:22278 DMFP.Day16_indprop <> ev ind
+R22281:22281 Coq.Init.Datatypes <> S constr
+R22284:22284 Coq.Init.Datatypes <> S constr
+R22286:22286 DMFP.Day16_indprop <> n:1236 var
+binder 22274:22274 <> H:1237
+R22293:22299 DMFP.Day16_indprop <> next_ev:1232 ind
+R22304:22304 Coq.Init.Datatypes <> S constr
+R22307:22307 Coq.Init.Datatypes <> S constr
+R22309:22309 DMFP.Day16_indprop <> n:1236 var
+R22301:22301 DMFP.Day16_indprop <> n:1236 var
+ind 22415:22421 <> listnum
+constr 22465:22470 <> ln_nil
+constr 22491:22497 <> ln_cons
+binder 22424:22424 <> X:1238
+R22442:22445 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22436:22439 DMFP.Day04_structures <> list ind
+R22449:22452 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22446:22448 Coq.Init.Datatypes <> nat ind
+R22474:22480 DMFP.Day16_indprop <> listnum:1239 ind
+R22482:22483 DMFP.Day05_lists <> :::'['_']' not
+R22504:22504 DMFP.Day16_indprop <> X:1238 var
+binder 22500:22500 <> h:1241
+R22512:22515 DMFP.Day04_structures <> list ind
+R22517:22517 DMFP.Day16_indprop <> X:1238 var
+binder 22508:22508 <> t:1242
+R22525:22527 Coq.Init.Datatypes <> nat ind
+binder 22521:22521 <> n:1243
+R22534:22540 DMFP.Day16_indprop <> listnum:1239 ind
+R22544:22544 DMFP.Day16_indprop <> n:1243 var
+R22542:22542 DMFP.Day16_indprop <> t:1242 var
+binder 22531:22531 <> H:1244
+R22549:22555 DMFP.Day16_indprop <> listnum:1239 ind
+R22565:22565 Coq.Init.Datatypes <> S constr
+R22567:22567 DMFP.Day16_indprop <> n:1243 var
+R22559:22560 DMFP.Day05_lists <> :::x_'::'_x not
+R22558:22558 DMFP.Day16_indprop <> h:1241 var
+R22561:22561 DMFP.Day16_indprop <> t:1242 var
+prf 22640:22650 <> listnum_iff
+binder 22662:22662 <> X:1245
+R22677:22680 DMFP.Day04_structures <> list ind
+R22682:22682 DMFP.Day16_indprop <> X:1245 var
+binder 22673:22673 <> l:1246
+binder 22685:22685 <> n:1247
+R22703:22707 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R22692:22698 DMFP.Day16_indprop <> listnum ind
+R22702:22702 DMFP.Day16_indprop <> n:1247 var
+R22700:22700 DMFP.Day16_indprop <> l:1246 var
+R22716:22718 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R22708:22713 DMFP.Day04_structures <> length def
+R22715:22715 DMFP.Day16_indprop <> l:1246 var
+R22719:22719 DMFP.Day16_indprop <> n:1247 var
+R22858:22863 DMFP.Day16_indprop <> ln_nil constr
+R22858:22863 DMFP.Day16_indprop <> ln_nil constr
+R22957:22963 DMFP.Day15_induction2 <> f_equal thm
+R22957:22963 DMFP.Day15_induction2 <> f_equal thm
+R23074:23080 DMFP.Day16_indprop <> ln_cons constr
+R23074:23080 DMFP.Day16_indprop <> ln_cons constr
+ind 23224:23226 <> btx
+constr 23266:23273 <> bx_found
+constr 23344:23350 <> bx_left
+constr 23422:23429 <> bx_right
+binder 23229:23229 <> X:1248
+R23242:23245 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R23250:23253 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R23246:23247 DMFP.Day04_structures <> bt ind
+R23280:23280 DMFP.Day16_indprop <> X:1248 var
+binder 23276:23276 <> x:1251
+R23290:23291 DMFP.Day04_structures <> bt ind
+R23293:23293 DMFP.Day16_indprop <> X:1248 var
+binder 23284:23284 <> l:1252
+binder 23286:23286 <> r:1253
+R23321:23323 DMFP.Day16_indprop <> btx:1249 ind
+R23328:23331 DMFP.Day04_structures <> node constr
+R23337:23337 DMFP.Day16_indprop <> r:1253 var
+R23335:23335 DMFP.Day16_indprop <> x:1251 var
+R23333:23333 DMFP.Day16_indprop <> l:1252 var
+R23325:23325 DMFP.Day16_indprop <> x:1251 var
+R23358:23358 DMFP.Day16_indprop <> X:1248 var
+binder 23354:23354 <> x:1254
+R23368:23369 DMFP.Day04_structures <> bt ind
+R23371:23371 DMFP.Day16_indprop <> X:1248 var
+binder 23362:23362 <> l:1255
+binder 23364:23364 <> r:1256
+R23379:23379 DMFP.Day16_indprop <> X:1248 var
+binder 23375:23375 <> v:1257
+R23388:23390 DMFP.Day16_indprop <> btx:1249 ind
+R23394:23394 DMFP.Day16_indprop <> l:1255 var
+R23392:23392 DMFP.Day16_indprop <> x:1254 var
+binder 23383:23384 <> Hl:1258
+R23399:23401 DMFP.Day16_indprop <> btx:1249 ind
+R23406:23409 DMFP.Day04_structures <> node constr
+R23415:23415 DMFP.Day16_indprop <> r:1256 var
+R23413:23413 DMFP.Day16_indprop <> v:1257 var
+R23411:23411 DMFP.Day16_indprop <> l:1255 var
+R23403:23403 DMFP.Day16_indprop <> x:1254 var
+R23436:23436 DMFP.Day16_indprop <> X:1248 var
+binder 23432:23432 <> x:1259
+R23446:23447 DMFP.Day04_structures <> bt ind
+R23449:23449 DMFP.Day16_indprop <> X:1248 var
+binder 23440:23440 <> l:1260
+binder 23442:23442 <> r:1261
+R23457:23457 DMFP.Day16_indprop <> X:1248 var
+binder 23453:23453 <> v:1262
+R23466:23468 DMFP.Day16_indprop <> btx:1249 ind
+R23472:23472 DMFP.Day16_indprop <> r:1261 var
+R23470:23470 DMFP.Day16_indprop <> x:1259 var
+binder 23461:23462 <> Hr:1263
+R23477:23479 DMFP.Day16_indprop <> btx:1249 ind
+R23484:23487 DMFP.Day04_structures <> node constr
+R23493:23493 DMFP.Day16_indprop <> r:1261 var
+R23491:23491 DMFP.Day16_indprop <> v:1262 var
+R23489:23489 DMFP.Day16_indprop <> l:1260 var
+R23481:23481 DMFP.Day16_indprop <> x:1259 var
+def 23527:23537 <> nat_in_tree
+R23544:23546 Coq.Init.Datatypes <> nat ind
+binder 23540:23540 <> n:1264
+R23554:23555 DMFP.Day04_structures <> bt ind
+R23557:23559 Coq.Init.Datatypes <> nat ind
+binder 23550:23550 <> t:1265
+R23564:23567 DMFP.Day01_intro <> bool ind
+R23580:23580 DMFP.Day16_indprop <> t:1265 var
+R23591:23595 DMFP.Day04_structures <> empty constr
+R23600:23604 DMFP.Day01_intro <> false constr
+R23610:23613 DMFP.Day04_structures <> node constr
+R23650:23653 DMFP.Day01_intro <> :::x_'||'_x not
+R23631:23634 DMFP.Day01_intro <> :::x_'||'_x not
+R23624:23626 DMFP.Day02_types <> eqb def
+R23628:23628 DMFP.Day16_indprop <> n:1264 var
+R23635:23645 DMFP.Day16_indprop <> nat_in_tree:1266 def
+R23647:23647 DMFP.Day16_indprop <> n:1264 var
+R23654:23664 DMFP.Day16_indprop <> nat_in_tree:1266 def
+R23666:23666 DMFP.Day16_indprop <> n:1264 var
+prf 23684:23699 <> btx__nat_in_tree
+binder 23710:23710 <> n:1268
+binder 23712:23712 <> t:1269
+R23726:23730 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R23719:23721 DMFP.Day16_indprop <> btx ind
+R23725:23725 DMFP.Day16_indprop <> t:1269 var
+R23723:23723 DMFP.Day16_indprop <> n:1268 var
+R23746:23748 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23731:23741 DMFP.Day16_indprop <> nat_in_tree def
+R23743:23743 DMFP.Day16_indprop <> n:1268 var
+R23745:23745 DMFP.Day16_indprop <> t:1269 var
+R23749:23752 DMFP.Day01_intro <> true constr
+R23891:23902 DMFP.Day12_cases <> orb_true_iff thm
+R23891:23902 DMFP.Day12_cases <> orb_true_iff thm
+R23891:23902 DMFP.Day12_cases <> orb_true_iff thm
+R23913:23924 DMFP.Day12_cases <> orb_true_iff thm
+R23913:23924 DMFP.Day12_cases <> orb_true_iff thm
+R23913:23924 DMFP.Day12_cases <> orb_true_iff thm
+R24006:24013 DMFP.Day13_induction <> eqb_refl prfax
+R24006:24013 DMFP.Day13_induction <> eqb_refl prfax
+R24136:24147 DMFP.Day15_induction2 <> eqb_true_iff thm
+R24136:24147 DMFP.Day15_induction2 <> eqb_true_iff thm
+R24170:24177 DMFP.Day16_indprop <> bx_found constr
+R24170:24177 DMFP.Day16_indprop <> bx_found constr
+R24194:24200 DMFP.Day16_indprop <> bx_left constr
+R24194:24200 DMFP.Day16_indprop <> bx_left constr
+R24237:24244 DMFP.Day16_indprop <> bx_right constr
+R24237:24244 DMFP.Day16_indprop <> bx_right constr
+ind 24372:24377 <> btbase
+constr 24412:24419 <> bb_empty
+constr 24453:24459 <> bb_node
+R24385:24388 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24381:24384 DMFP.Day01_intro <> base ind
+R24396:24399 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24389:24390 DMFP.Day04_structures <> bt ind
+R24392:24395 DMFP.Day01_intro <> base ind
+R24426:24429 DMFP.Day01_intro <> base ind
+binder 24422:24422 <> b:1272
+R24434:24439 DMFP.Day16_indprop <> btbase:1270 ind
+R24443:24447 DMFP.Day04_structures <> empty constr
+R24441:24441 DMFP.Day16_indprop <> b:1272 var
+R24467:24470 DMFP.Day01_intro <> base ind
+binder 24463:24463 <> b:1273
+R24478:24479 DMFP.Day04_structures <> bt ind
+R24481:24484 DMFP.Day01_intro <> base ind
+binder 24474:24474 <> l:1274
+R24492:24495 DMFP.Day01_intro <> base ind
+binder 24488:24488 <> v:1275
+R24503:24504 DMFP.Day04_structures <> bt ind
+R24506:24509 DMFP.Day01_intro <> base ind
+binder 24499:24499 <> r:1276
+R24520:24523 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R24519:24519 DMFP.Day16_indprop <> v:1275 var
+R24524:24524 DMFP.Day16_indprop <> b:1273 var
+binder 24513:24515 <> Hne:1277
+R24533:24538 DMFP.Day16_indprop <> btbase:1270 ind
+R24542:24542 DMFP.Day16_indprop <> l:1274 var
+R24540:24540 DMFP.Day16_indprop <> b:1273 var
+binder 24528:24529 <> Hl:1278
+R24551:24556 DMFP.Day16_indprop <> btbase:1270 ind
+R24560:24560 DMFP.Day16_indprop <> r:1276 var
+R24558:24558 DMFP.Day16_indprop <> b:1273 var
+binder 24546:24547 <> Hr:1279
+R24565:24570 DMFP.Day16_indprop <> btbase:1270 ind
+R24575:24578 DMFP.Day04_structures <> node constr
+R24584:24584 DMFP.Day16_indprop <> r:1276 var
+R24582:24582 DMFP.Day16_indprop <> v:1275 var
+R24580:24580 DMFP.Day16_indprop <> l:1274 var
+R24572:24572 DMFP.Day16_indprop <> b:1273 var
+def 24619:24628 <> forallb_bt
+binder 24631:24631 <> X:1280
+R24647:24650 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24646:24646 DMFP.Day16_indprop <> X:1280 var
+R24651:24654 DMFP.Day01_intro <> bool ind
+binder 24642:24642 <> f:1281
+R24662:24663 DMFP.Day04_structures <> bt ind
+R24665:24665 DMFP.Day16_indprop <> X:1280 var
+binder 24658:24658 <> t:1282
+R24670:24673 DMFP.Day01_intro <> bool ind
+R24686:24686 DMFP.Day16_indprop <> t:1282 var
+R24697:24701 DMFP.Day04_structures <> empty constr
+R24706:24709 DMFP.Day01_intro <> true constr
+R24715:24718 DMFP.Day04_structures <> node constr
+R24750:24753 DMFP.Day01_intro <> :::x_'&&'_x not
+R24732:24735 DMFP.Day01_intro <> :::x_'&&'_x not
+R24729:24729 DMFP.Day16_indprop <> f:1281 var
+R24736:24745 DMFP.Day16_indprop <> forallb_bt:1283 def
+R24747:24747 DMFP.Day16_indprop <> f:1281 var
+R24754:24763 DMFP.Day16_indprop <> forallb_bt:1283 def
+R24765:24765 DMFP.Day16_indprop <> f:1281 var
+prf 24783:24799 <> btbase__not_found
+binder 24810:24810 <> b:1285
+binder 24812:24812 <> t:1286
+R24829:24833 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R24819:24824 DMFP.Day16_indprop <> btbase ind
+R24826:24826 DMFP.Day16_indprop <> b:1285 var
+R24828:24828 DMFP.Day16_indprop <> t:1286 var
+R24878:24880 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24834:24843 DMFP.Day16_indprop <> forallb_bt def
+R24877:24877 DMFP.Day16_indprop <> t:1286 var
+binder 24850:24851 <> b':1287
+R24856:24859 DMFP.Day01_intro <> negb def
+R24862:24868 DMFP.Day05_lists <> eq_base def
+R24870:24870 DMFP.Day16_indprop <> b:1285 var
+R24872:24873 DMFP.Day16_indprop <> b':1287 var
+R24881:24884 DMFP.Day01_intro <> true constr
+R24994:25001 DMFP.Day16_indprop <> bb_empty constr
+R24994:25001 DMFP.Day16_indprop <> bb_empty constr
+R25023:25035 DMFP.Day12_cases <> andb_true_iff prfax
+R25023:25035 DMFP.Day12_cases <> andb_true_iff prfax
+R25023:25035 DMFP.Day12_cases <> andb_true_iff prfax
+R25046:25058 DMFP.Day12_cases <> andb_true_iff prfax
+R25046:25058 DMFP.Day12_cases <> andb_true_iff prfax
+R25046:25058 DMFP.Day12_cases <> andb_true_iff prfax
+R25153:25159 DMFP.Day05_lists <> eq_base def
+R25153:25159 DMFP.Day05_lists <> eq_base def
+R25193:25203 DMFP.Day12_cases <> eq_base_iff prfax
+R25193:25203 DMFP.Day12_cases <> eq_base_iff prfax
+R25372:25378 DMFP.Day16_indprop <> bb_node constr
+R25372:25378 DMFP.Day16_indprop <> bb_node constr
+R25421:25432 DMFP.Day12_cases <> eq_base_refl prfax
+R25421:25432 DMFP.Day12_cases <> eq_base_refl prfax
+R25421:25432 DMFP.Day12_cases <> eq_base_refl prfax
+def 25875:25877 <> sum
+R25884:25887 DMFP.Day04_structures <> list ind
+R25889:25891 Coq.Init.Datatypes <> nat ind
+binder 25880:25880 <> l:1288
+R25896:25898 Coq.Init.Datatypes <> nat ind
+R25911:25911 DMFP.Day16_indprop <> l:1288 var
+R25922:25923 DMFP.Day05_lists <> :::'['_']' not
+R25935:25936 DMFP.Day05_lists <> :::x_'::'_x not
+R25944:25946 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R25947:25949 DMFP.Day16_indprop <> sum:1289 def
+ind 25972:25978 <> sums_to
+constr 26011:26021 <> sums_to_nil
+constr 26054:26065 <> sums_to_cons
+R25990:25993 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25982:25985 DMFP.Day04_structures <> list ind
+R25987:25989 Coq.Init.Datatypes <> nat ind
+R25997:26000 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25994:25996 Coq.Init.Datatypes <> nat ind
+R26039:26045 DMFP.Day16_indprop <> sums_to:1291 ind
+R26047:26048 DMFP.Day05_lists <> :::'['_']' not
+R26072:26074 Coq.Init.Datatypes <> nat ind
+binder 26068:26068 <> h:1293
+R26082:26085 DMFP.Day04_structures <> list ind
+R26087:26089 Coq.Init.Datatypes <> nat ind
+binder 26078:26078 <> t:1294
+R26097:26099 Coq.Init.Datatypes <> nat ind
+binder 26094:26094 <> n:1295
+R26105:26111 DMFP.Day16_indprop <> sums_to:1291 ind
+R26115:26115 DMFP.Day16_indprop <> n:1295 var
+R26113:26113 DMFP.Day16_indprop <> t:1294 var
+binder 26102:26102 <> H:1296
+R26121:26127 DMFP.Day16_indprop <> sums_to:1291 ind
+R26137:26137 Coq.Init.Datatypes <> S constr
+R26139:26139 DMFP.Day16_indprop <> n:1295 var
+R26131:26132 DMFP.Day05_lists <> :::x_'::'_x not
+R26130:26130 DMFP.Day16_indprop <> h:1293 var
+R26133:26133 DMFP.Day16_indprop <> t:1294 var
+prf 26153:26165 <> Sums_to_proof
+R26180:26182 Coq.Init.Datatypes <> nat ind
+binder 26176:26176 <> n:1297
+R26191:26194 DMFP.Day04_structures <> list ind
+R26196:26198 Coq.Init.Datatypes <> nat ind
+binder 26187:26187 <> l:1298
+R26206:26206 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R26218:26223 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R26207:26213 DMFP.Day16_indprop <> sums_to ind
+R26215:26215 DMFP.Day16_indprop <> l:1298 var
+R26217:26217 DMFP.Day16_indprop <> n:1297 var
+R26229:26231 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26224:26226 DMFP.Day16_indprop <> sum def
+R26228:26228 DMFP.Day16_indprop <> l:1298 var
+R26232:26232 DMFP.Day16_indprop <> n:1297 var
+def 26615:26638 <> manual_grade_for_sums_to
+R26642:26647 Coq.Init.Datatypes <> option ind
+R26653:26653 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R26650:26652 Coq.Init.Datatypes <> nat ind
+R26654:26659 Coq.Strings.String <> string ind
+R26665:26668 Coq.Init.Datatypes <> None constr
+mod 26689:26689 <> R
+ind 26904:26904 R R
+constr 26942:26943 R c1
+constr 26960:26961 R c2
+constr 27006:27007 R c3
+constr 27052:27053 R c4
+constr 27106:27107 R c5
+R26911:26914 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26908:26910 Coq.Init.Datatypes <> nat ind
+R26918:26921 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26915:26917 Coq.Init.Datatypes <> nat ind
+R26925:26928 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26922:26924 Coq.Init.Datatypes <> nat ind
+R26947:26947 DMFP.Day16_indprop <> R:1299 ind
+binder 26963:26963 <> m:1301
+binder 26965:26965 <> n:1302
+binder 26967:26967 <> o:1303
+R26974:26974 DMFP.Day16_indprop <> R:1299 ind
+R26980:26980 DMFP.Day16_indprop <> o:1303 var
+R26978:26978 DMFP.Day16_indprop <> n:1302 var
+R26976:26976 DMFP.Day16_indprop <> m:1301 var
+binder 26970:26970 <> H:1304
+R26985:26985 DMFP.Day16_indprop <> R:1299 ind
+R26996:26996 Coq.Init.Datatypes <> S constr
+R26998:26998 DMFP.Day16_indprop <> o:1303 var
+R26993:26993 DMFP.Day16_indprop <> n:1302 var
+R26988:26988 Coq.Init.Datatypes <> S constr
+R26990:26990 DMFP.Day16_indprop <> m:1301 var
+binder 27009:27009 <> m:1305
+binder 27011:27011 <> n:1306
+binder 27013:27013 <> o:1307
+R27020:27020 DMFP.Day16_indprop <> R:1299 ind
+R27026:27026 DMFP.Day16_indprop <> o:1307 var
+R27024:27024 DMFP.Day16_indprop <> n:1306 var
+R27022:27022 DMFP.Day16_indprop <> m:1305 var
+binder 27016:27016 <> H:1308
+R27031:27031 DMFP.Day16_indprop <> R:1299 ind
+R27042:27042 Coq.Init.Datatypes <> S constr
+R27044:27044 DMFP.Day16_indprop <> o:1307 var
+R27036:27036 Coq.Init.Datatypes <> S constr
+R27038:27038 DMFP.Day16_indprop <> n:1306 var
+R27033:27033 DMFP.Day16_indprop <> m:1305 var
+binder 27055:27055 <> m:1309
+binder 27057:27057 <> n:1310
+binder 27059:27059 <> o:1311
+R27066:27066 DMFP.Day16_indprop <> R:1299 ind
+R27081:27081 Coq.Init.Datatypes <> S constr
+R27084:27084 Coq.Init.Datatypes <> S constr
+R27086:27086 DMFP.Day16_indprop <> o:1311 var
+R27075:27075 Coq.Init.Datatypes <> S constr
+R27077:27077 DMFP.Day16_indprop <> n:1310 var
+R27069:27069 Coq.Init.Datatypes <> S constr
+R27071:27071 DMFP.Day16_indprop <> m:1309 var
+binder 27062:27062 <> H:1312
+R27093:27093 DMFP.Day16_indprop <> R:1299 ind
+R27099:27099 DMFP.Day16_indprop <> o:1311 var
+R27097:27097 DMFP.Day16_indprop <> n:1310 var
+R27095:27095 DMFP.Day16_indprop <> m:1309 var
+binder 27109:27109 <> m:1313
+binder 27111:27111 <> n:1314
+binder 27113:27113 <> o:1315
+R27120:27120 DMFP.Day16_indprop <> R:1299 ind
+R27126:27126 DMFP.Day16_indprop <> o:1315 var
+R27124:27124 DMFP.Day16_indprop <> n:1314 var
+R27122:27122 DMFP.Day16_indprop <> m:1313 var
+binder 27116:27116 <> H:1316
+R27131:27131 DMFP.Day16_indprop <> R:1299 ind
+R27137:27137 DMFP.Day16_indprop <> o:1315 var
+R27135:27135 DMFP.Day16_indprop <> m:1313 var
+R27133:27133 DMFP.Day16_indprop <> n:1314 var
+def 27361:27362 R fR
+R27369:27372 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27366:27368 Coq.Init.Datatypes <> nat ind
+R27376:27379 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27373:27375 Coq.Init.Datatypes <> nat ind
+R27380:27382 Coq.Init.Datatypes <> nat ind
+R27387:27390 Coq.Init.Peano <> plus syndef
+prf 27404:27413 R R_equiv_fR
+binder 27424:27424 <> m:1317
+binder 27426:27426 <> n:1318
+binder 27428:27428 <> o:1319
+R27438:27442 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R27431:27431 DMFP.Day16_indprop R R ind
+R27433:27433 DMFP.Day16_indprop <> m:1317 var
+R27435:27435 DMFP.Day16_indprop <> n:1318 var
+R27437:27437 DMFP.Day16_indprop <> o:1319 var
+R27449:27451 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27443:27444 DMFP.Day16_indprop R fR def
+R27446:27446 DMFP.Day16_indprop <> m:1317 var
+R27448:27448 DMFP.Day16_indprop <> n:1318 var
+R27452:27452 DMFP.Day16_indprop <> o:1319 var
+def 28090:28112 R manual_grade_for_R_fact
+R28116:28121 Coq.Init.Datatypes <> option ind
+R28127:28127 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R28124:28126 Coq.Init.Datatypes <> nat ind
+R28128:28133 Coq.Strings.String <> string ind
+R28139:28142 Coq.Init.Datatypes <> None constr
+R28162:28162 DMFP.Day16_indprop R <> mod

@@ -1,0 +1,645 @@
+DIGEST 9581763e2e62a32b305537263d27cf7d
+FDMFP.Day11_propositions
+R15:36 DMFP.Day10_expressions <> <> lib
+R54:71 Coq.Setoids.Setoid <> <> lib
+R2598:2600 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3140:3142 Coq.Init.Datatypes <> nat ind
+binder 3134:3134 <> n:683
+binder 3136:3136 <> m:684
+R3150:3152 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3146:3148 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R3145:3145 DMFP.Day11_propositions <> n:683 var
+R3149:3149 DMFP.Day11_propositions <> m:684 var
+R3154:3156 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R3153:3153 DMFP.Day11_propositions <> m:684 var
+R3157:3157 DMFP.Day11_propositions <> n:683 var
+R3837:3840 DMFP.Day01_intro <> base ind
+binder 3833:3833 <> b:685
+R3848:3850 Coq.Init.Datatypes <> nat ind
+binder 3844:3844 <> n:686
+R3873:3875 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3854:3859 DMFP.Day04_structures <> length def
+R3862:3867 DMFP.Day04_structures <> repeat def
+R3871:3871 DMFP.Day11_propositions <> n:686 var
+R3869:3869 DMFP.Day11_propositions <> b:685 var
+R3876:3876 DMFP.Day11_propositions <> n:686 var
+R4107:4109 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4525:4527 Coq.Init.Datatypes <> nat ind
+binder 4521:4521 <> n:687
+R4531:4533 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4530:4530 DMFP.Day11_propositions <> n:687 var
+R4690:4692 Coq.Init.Logic <> ::type_scope:x_'='_x not
+def 5082:5090 <> plus_fact
+R5107:5109 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5103:5105 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R5119:5127 DMFP.Day11_propositions <> plus_fact def
+def 5454:5461 <> is_three
+R5468:5470 Coq.Init.Datatypes <> nat ind
+binder 5464:5464 <> n:688
+R5486:5488 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5485:5485 DMFP.Day11_propositions <> n:688 var
+R5498:5505 DMFP.Day11_propositions <> is_three def
+def 5888:5896 <> injective
+binder 5899:5899 <> A:689
+binder 5901:5901 <> B:690
+R5910:5913 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5909:5909 DMFP.Day11_propositions <> A:689 var
+R5914:5914 DMFP.Day11_propositions <> B:690 var
+binder 5905:5905 <> f:691
+R5935:5935 DMFP.Day11_propositions <> A:689 var
+binder 5929:5929 <> x:692
+binder 5931:5931 <> y:693
+R5947:5950 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5941:5943 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5938:5938 DMFP.Day11_propositions <> f:691 var
+R5940:5940 DMFP.Day11_propositions <> x:692 var
+R5944:5944 DMFP.Day11_propositions <> f:691 var
+R5946:5946 DMFP.Day11_propositions <> y:693 var
+R5952:5954 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5951:5951 DMFP.Day11_propositions <> x:692 var
+R5955:5955 DMFP.Day11_propositions <> y:693 var
+R6062:6070 DMFP.Day11_propositions <> injective def
+R6072:6072 Coq.Init.Datatypes <> S constr
+R6213:6221 DMFP.Day11_propositions <> injective def
+R6223:6226 Coq.Init.Peano <> pred syndef
+R6561:6562 Coq.Init.Logic <> eq ind
+prf 7870:7877 <> plus_O_n
+R7892:7894 Coq.Init.Datatypes <> nat ind
+binder 7888:7888 <> n:694
+R7902:7904 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7898:7900 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R7901:7901 DMFP.Day11_propositions <> n:694 var
+R7905:7905 DMFP.Day11_propositions <> n:694 var
+prf 14628:14636 <> plus_O_n'
+R14651:14653 Coq.Init.Datatypes <> nat ind
+binder 14647:14647 <> n:695
+R14661:14663 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14657:14659 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R14660:14660 DMFP.Day11_propositions <> n:695 var
+R14664:14664 DMFP.Day11_propositions <> n:695 var
+prf 16593:16600 <> plus_1_l
+R16613:16615 Coq.Init.Datatypes <> nat ind
+binder 16611:16611 <> n:696
+R16623:16625 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16619:16621 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R16622:16622 DMFP.Day11_propositions <> n:696 var
+R16626:16626 Coq.Init.Datatypes <> S constr
+R16628:16628 DMFP.Day11_propositions <> n:696 var
+prf 16678:16685 <> mult_0_l
+R16698:16700 Coq.Init.Datatypes <> nat ind
+binder 16696:16696 <> n:697
+R16708:16710 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16704:16706 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R16707:16707 DMFP.Day11_propositions <> n:697 var
+prf 18632:18640 <> assumed_A
+binder 18651:18651 <> A:698
+R18662:18665 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18661:18661 DMFP.Day11_propositions <> A:698 var
+R18666:18666 DMFP.Day11_propositions <> A:698 var
+prf 18880:18891 <> modus_ponens
+binder 18902:18902 <> P:699
+binder 18904:18904 <> Q:700
+R18911:18911 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18918:18926 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18913:18916 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18912:18912 DMFP.Day11_propositions <> P:699 var
+R18917:18917 DMFP.Day11_propositions <> Q:700 var
+R18928:18935 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R18927:18927 DMFP.Day11_propositions <> P:699 var
+R18936:18936 DMFP.Day11_propositions <> Q:700 var
+prf 20297:20307 <> implies_PQR
+binder 20318:20318 <> P:701
+binder 20320:20320 <> Q:702
+binder 20322:20322 <> R:703
+R20334:20334 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20341:20347 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20336:20339 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20335:20335 DMFP.Day11_propositions <> P:701 var
+R20340:20340 DMFP.Day11_propositions <> Q:702 var
+R20348:20348 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20355:20361 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20350:20353 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20349:20349 DMFP.Day11_propositions <> Q:702 var
+R20354:20354 DMFP.Day11_propositions <> R:703 var
+R20363:20368 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R20362:20362 DMFP.Day11_propositions <> P:701 var
+R20369:20369 DMFP.Day11_propositions <> R:703 var
+prf 21688:21696 <> and_intro
+binder 21707:21707 <> A:704
+binder 21709:21709 <> B:705
+R21720:21723 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21719:21719 DMFP.Day11_propositions <> A:704 var
+R21725:21728 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R21724:21724 DMFP.Day11_propositions <> B:705 var
+R21730:21733 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R21729:21729 DMFP.Day11_propositions <> A:704 var
+R21734:21734 DMFP.Day11_propositions <> B:705 var
+prf 22884:22899 <> and_intro_braces
+binder 22910:22910 <> A:706
+binder 22912:22912 <> B:707
+R22923:22926 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22922:22922 DMFP.Day11_propositions <> A:706 var
+R22928:22931 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R22927:22927 DMFP.Day11_propositions <> B:707 var
+R22933:22936 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R22932:22932 DMFP.Day11_propositions <> A:706 var
+R22937:22937 DMFP.Day11_propositions <> B:707 var
+prf 23494:23509 <> and_intro_sloppy
+binder 23520:23520 <> A:708
+binder 23522:23522 <> B:709
+R23533:23536 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R23532:23532 DMFP.Day11_propositions <> A:708 var
+R23538:23541 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R23537:23537 DMFP.Day11_propositions <> B:709 var
+R23543:23546 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R23542:23542 DMFP.Day11_propositions <> A:708 var
+R23547:23547 DMFP.Day11_propositions <> B:709 var
+def 23618:23628 <> and_example
+R23641:23644 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R23637:23639 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23633:23635 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R23650:23652 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R23646:23648 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+def 24131:24142 <> and_example'
+R24155:24158 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R24151:24153 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24147:24149 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R24164:24166 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R24160:24162 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R24293:24301 DMFP.Day11_propositions <> and_intro thm
+R24293:24301 DMFP.Day11_propositions <> and_intro thm
+R24583:24585 Coq.Init.Logic <> and ind
+prf 24815:24820 <> and_PQ
+binder 24831:24831 <> P:710
+binder 24833:24833 <> Q:711
+R24847:24847 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24854:24862 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24849:24852 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24848:24848 DMFP.Day11_propositions <> P:710 var
+R24853:24853 DMFP.Day11_propositions <> Q:711 var
+R24864:24871 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R24863:24863 DMFP.Day11_propositions <> P:710 var
+R24873:24876 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R24872:24872 DMFP.Day11_propositions <> P:710 var
+R24877:24877 DMFP.Day11_propositions <> Q:711 var
+prf 25617:25626 <> or_intro_l
+binder 25637:25637 <> A:712
+binder 25639:25639 <> B:713
+R25650:25653 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25649:25649 DMFP.Day11_propositions <> A:712 var
+R25655:25658 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R25654:25654 DMFP.Day11_propositions <> A:712 var
+R25659:25659 DMFP.Day11_propositions <> B:713 var
+prf 25759:25768 <> or_intro_r
+binder 25779:25779 <> A:714
+binder 25781:25781 <> B:715
+R25792:25795 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R25791:25791 DMFP.Day11_propositions <> B:715 var
+R25797:25800 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R25796:25796 DMFP.Day11_propositions <> A:714 var
+R25801:25801 DMFP.Day11_propositions <> B:715 var
+R25901:25902 Coq.Init.Logic <> or ind
+prf 26378:26390 <> or_inclusive1
+R26399:26402 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R26395:26397 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26404:26406 Coq.Init.Logic <> ::type_scope:x_'='_x not
+prf 26448:26460 <> or_inclusive2
+R26469:26472 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R26465:26467 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R26474:26476 Coq.Init.Logic <> ::type_scope:x_'='_x not
+prf 26569:26576 <> or_which
+binder 26587:26587 <> P:716
+binder 26589:26589 <> Q:717
+R26602:26602 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26609:26617 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26604:26607 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26603:26603 DMFP.Day11_propositions <> P:716 var
+R26608:26608 DMFP.Day11_propositions <> Q:717 var
+R26619:26626 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R26618:26618 DMFP.Day11_propositions <> Q:717 var
+R26628:26631 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R26627:26627 DMFP.Day11_propositions <> P:716 var
+R26632:26632 DMFP.Day11_propositions <> Q:717 var
+prf 26948:26959 <> True_is_true
+R26963:26966 Coq.Init.Logic <> True ind
+R26982:26982 Coq.Init.Logic <> I constr
+R26982:26982 Coq.Init.Logic <> I constr
+prf 27118:27130 <> True_is_true'
+R27134:27137 Coq.Init.Logic <> True ind
+prf 27172:27182 <> True_and_id
+R27190:27193 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R27186:27189 Coq.Init.Logic <> True ind
+R27194:27197 Coq.Init.Logic <> True ind
+R27226:27226 Coq.Init.Logic <> I constr
+R27226:27226 Coq.Init.Logic <> I constr
+R27239:27239 Coq.Init.Logic <> I constr
+R27239:27239 Coq.Init.Logic <> I constr
+prf 27254:27262 <> True_or_l
+binder 27273:27273 <> A:718
+R27287:27290 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R27283:27286 Coq.Init.Logic <> True ind
+R27291:27291 DMFP.Day11_propositions <> A:718 var
+R27315:27315 Coq.Init.Logic <> I constr
+R27315:27315 Coq.Init.Logic <> I constr
+prf 27330:27338 <> True_or_r
+binder 27349:27349 <> A:719
+R27360:27363 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R27359:27359 DMFP.Day11_propositions <> A:719 var
+R27364:27367 Coq.Init.Logic <> True ind
+R27392:27392 Coq.Init.Logic <> I constr
+R27392:27392 Coq.Init.Logic <> I constr
+prf 27949:27963 <> plus_id_example
+R27978:27980 Coq.Init.Datatypes <> nat ind
+binder 27974:27974 <> n:720
+binder 27976:27976 <> m:721
+R27990:27995 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R27986:27988 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27985:27985 DMFP.Day11_propositions <> n:720 var
+R27989:27989 DMFP.Day11_propositions <> m:721 var
+R28001:28003 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R27997:27999 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R27996:27996 DMFP.Day11_propositions <> n:720 var
+R28000:28000 DMFP.Day11_propositions <> n:720 var
+R28005:28007 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R28004:28004 DMFP.Day11_propositions <> m:721 var
+R28008:28008 DMFP.Day11_propositions <> m:721 var
+prf 30742:30757 <> plus_id_exercise
+R30776:30778 Coq.Init.Datatypes <> nat ind
+binder 30768:30768 <> n:722
+binder 30770:30770 <> m:723
+binder 30772:30772 <> o:724
+R30788:30791 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30784:30786 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30783:30783 DMFP.Day11_propositions <> n:722 var
+R30787:30787 DMFP.Day11_propositions <> m:723 var
+R30797:30800 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R30793:30795 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30792:30792 DMFP.Day11_propositions <> m:723 var
+R30796:30796 DMFP.Day11_propositions <> o:724 var
+R30806:30808 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R30802:30804 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R30801:30801 DMFP.Day11_propositions <> n:722 var
+R30805:30805 DMFP.Day11_propositions <> m:723 var
+R30810:30812 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R30809:30809 DMFP.Day11_propositions <> m:723 var
+R30813:30813 DMFP.Day11_propositions <> o:724 var
+prf 31881:31891 <> mult_0_plus
+R31908:31910 Coq.Init.Datatypes <> nat ind
+binder 31902:31902 <> n:725
+binder 31904:31904 <> m:726
+R31926:31928 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R31915:31915 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R31921:31924 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R31917:31919 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R31920:31920 DMFP.Day11_propositions <> n:725 var
+R31925:31925 DMFP.Day11_propositions <> m:726 var
+R31930:31932 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R31929:31929 DMFP.Day11_propositions <> n:725 var
+R31933:31933 DMFP.Day11_propositions <> m:726 var
+R31970:31977 DMFP.Day11_propositions <> plus_O_n thm
+R31970:31977 DMFP.Day11_propositions <> plus_O_n thm
+R31970:31977 DMFP.Day11_propositions <> plus_O_n thm
+prf 32731:32738 <> mult_S_1
+R32755:32757 Coq.Init.Datatypes <> nat ind
+binder 32749:32749 <> n:727
+binder 32751:32751 <> m:728
+R32769:32774 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R32763:32765 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32762:32762 DMFP.Day11_propositions <> m:728 var
+R32766:32766 Coq.Init.Datatypes <> S constr
+R32768:32768 DMFP.Day11_propositions <> n:727 var
+R32786:32788 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R32776:32779 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R32785:32785 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R32775:32775 DMFP.Day11_propositions <> m:728 var
+R32781:32783 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R32784:32784 DMFP.Day11_propositions <> n:727 var
+R32790:32792 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R32789:32789 DMFP.Day11_propositions <> m:728 var
+R32793:32793 DMFP.Day11_propositions <> m:728 var
+prf 33192:33197 <> silly1
+R33219:33221 Coq.Init.Datatypes <> nat ind
+binder 33209:33209 <> n:729
+binder 33211:33211 <> m:730
+binder 33213:33213 <> o:731
+binder 33215:33215 <> p:732
+R33235:33244 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33231:33233 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33230:33230 DMFP.Day11_propositions <> n:729 var
+R33234:33234 DMFP.Day11_propositions <> m:730 var
+R33258:33266 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33250:33252 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33245:33245 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33247:33247 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33249:33249 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33246:33246 DMFP.Day11_propositions <> n:729 var
+R33248:33248 DMFP.Day11_propositions <> o:731 var
+R33253:33253 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33255:33255 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33257:33257 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33254:33254 DMFP.Day11_propositions <> n:729 var
+R33256:33256 DMFP.Day11_propositions <> p:732 var
+R33272:33274 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33267:33267 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33269:33269 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33271:33271 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33268:33268 DMFP.Day11_propositions <> n:729 var
+R33270:33270 DMFP.Day11_propositions <> o:731 var
+R33275:33275 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33277:33277 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33279:33279 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33276:33276 DMFP.Day11_propositions <> m:730 var
+R33278:33278 DMFP.Day11_propositions <> p:732 var
+prf 33884:33889 <> silly2
+R33911:33913 Coq.Init.Datatypes <> nat ind
+binder 33901:33901 <> n:733
+binder 33903:33903 <> m:734
+binder 33905:33905 <> o:735
+binder 33907:33907 <> p:736
+R33927:33936 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33923:33925 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33922:33922 DMFP.Day11_propositions <> n:733 var
+R33926:33926 DMFP.Day11_propositions <> m:734 var
+R33937:33937 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33980:33989 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33952:33954 Coq.Init.Datatypes <> nat ind
+binder 33946:33946 <> q:737
+binder 33948:33948 <> r:738
+R33963:33966 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R33959:33961 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33958:33958 DMFP.Day11_propositions <> q:737 var
+R33962:33962 DMFP.Day11_propositions <> r:738 var
+R33972:33974 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33967:33967 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33969:33969 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33971:33971 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33968:33968 DMFP.Day11_propositions <> q:737 var
+R33970:33970 DMFP.Day11_propositions <> o:735 var
+R33975:33975 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33977:33977 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33979:33979 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33976:33976 DMFP.Day11_propositions <> r:738 var
+R33978:33978 DMFP.Day11_propositions <> p:736 var
+R33995:33997 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R33990:33990 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33992:33992 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33994:33994 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33991:33991 DMFP.Day11_propositions <> n:733 var
+R33993:33993 DMFP.Day11_propositions <> o:735 var
+R33998:33998 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34000:34000 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34002:34002 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R33999:33999 DMFP.Day11_propositions <> m:734 var
+R34001:34001 DMFP.Day11_propositions <> p:736 var
+prf 34513:34519 <> silly2a
+R34537:34539 Coq.Init.Datatypes <> nat ind
+binder 34531:34531 <> n:739
+binder 34533:34533 <> m:740
+R34561:34570 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34553:34555 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34548:34548 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34550:34550 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34552:34552 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34549:34549 DMFP.Day11_propositions <> n:739 var
+R34551:34551 DMFP.Day11_propositions <> n:739 var
+R34556:34556 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34558:34558 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34560:34560 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34557:34557 DMFP.Day11_propositions <> m:740 var
+R34559:34559 DMFP.Day11_propositions <> m:740 var
+R34571:34571 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34618:34627 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34586:34588 Coq.Init.Datatypes <> nat ind
+binder 34580:34580 <> q:741
+binder 34582:34582 <> r:742
+R34605:34608 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34597:34599 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34592:34592 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34594:34594 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34596:34596 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34593:34593 DMFP.Day11_propositions <> q:741 var
+R34595:34595 DMFP.Day11_propositions <> q:741 var
+R34600:34600 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34602:34602 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34604:34604 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R34601:34601 DMFP.Day11_propositions <> r:742 var
+R34603:34603 DMFP.Day11_propositions <> r:742 var
+R34612:34614 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34609:34609 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34611:34611 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34610:34610 DMFP.Day11_propositions <> q:741 var
+R34615:34615 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34617:34617 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34616:34616 DMFP.Day11_propositions <> r:742 var
+R34631:34633 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34628:34628 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34630:34630 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34629:34629 DMFP.Day11_propositions <> n:739 var
+R34634:34634 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34636:34636 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R34635:34635 DMFP.Day11_propositions <> m:740 var
+R34814:34818 DMFP.Day02_types <> evenb def
+R34827:34830 DMFP.Day02_types <> oddb def
+prf 34912:34919 <> silly_ex
+R34928:34928 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34974:34983 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 34936:34936 <> n:743
+R34953:34956 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34946:34948 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34939:34943 DMFP.Day02_types <> evenb def
+R34945:34945 DMFP.Day11_propositions <> n:743 var
+R34949:34952 DMFP.Day01_intro <> true constr
+R34967:34969 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34957:34960 DMFP.Day02_types <> oddb def
+R34963:34963 Coq.Init.Datatypes <> S constr
+R34965:34965 DMFP.Day11_propositions <> n:743 var
+R34970:34973 DMFP.Day01_intro <> true constr
+R34998:35006 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R34991:34993 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R34984:34988 DMFP.Day02_types <> evenb def
+R34994:34997 DMFP.Day01_intro <> true constr
+R35013:35015 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35007:35010 DMFP.Day02_types <> oddb def
+R35016:35019 DMFP.Day01_intro <> true constr
+prf 35334:35348 <> silly3_firsttry
+R35364:35366 Coq.Init.Datatypes <> nat ind
+binder 35360:35360 <> n:744
+R35389:35398 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R35379:35381 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35375:35378 DMFP.Day01_intro <> true constr
+R35382:35384 DMFP.Day02_types <> eqb def
+R35386:35386 DMFP.Day11_propositions <> n:744 var
+R35414:35416 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R35399:35401 DMFP.Day02_types <> eqb def
+R35404:35404 Coq.Init.Datatypes <> S constr
+R35407:35407 Coq.Init.Datatypes <> S constr
+R35409:35409 DMFP.Day11_propositions <> n:744 var
+R35417:35420 DMFP.Day01_intro <> true constr
+def 36636:36651 <> trans_eq_example
+R36677:36679 Coq.Init.Datatypes <> nat ind
+binder 36663:36663 <> a:745
+binder 36665:36665 <> b:746
+binder 36667:36667 <> c:747
+binder 36669:36669 <> d:748
+binder 36671:36671 <> e:749
+binder 36673:36673 <> f:750
+R36701:36709 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36693:36695 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36688:36688 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36690:36690 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36692:36692 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36689:36689 DMFP.Day11_propositions <> a:745 var
+R36691:36691 DMFP.Day11_propositions <> b:746 var
+R36696:36696 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36698:36698 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36700:36700 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36697:36697 DMFP.Day11_propositions <> c:747 var
+R36699:36699 DMFP.Day11_propositions <> d:748 var
+R36723:36731 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R36715:36717 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36710:36710 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36712:36712 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36714:36714 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36711:36711 DMFP.Day11_propositions <> c:747 var
+R36713:36713 DMFP.Day11_propositions <> d:748 var
+R36718:36718 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36720:36720 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36722:36722 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36719:36719 DMFP.Day11_propositions <> e:749 var
+R36721:36721 DMFP.Day11_propositions <> f:750 var
+R36737:36739 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R36732:36732 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36734:36734 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36736:36736 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36733:36733 DMFP.Day11_propositions <> a:745 var
+R36735:36735 DMFP.Day11_propositions <> b:746 var
+R36740:36740 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36742:36742 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36744:36744 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R36741:36741 DMFP.Day11_propositions <> e:749 var
+R36743:36743 DMFP.Day11_propositions <> f:750 var
+prf 37001:37008 <> trans_eq
+binder 37020:37020 <> X:751
+R37037:37037 DMFP.Day11_propositions <> X:751 var
+binder 37029:37029 <> n:752
+binder 37031:37031 <> m:753
+binder 37033:37033 <> o:754
+R37048:37051 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37044:37046 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37043:37043 DMFP.Day11_propositions <> n:752 var
+R37047:37047 DMFP.Day11_propositions <> m:753 var
+R37057:37060 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37053:37055 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37052:37052 DMFP.Day11_propositions <> m:753 var
+R37056:37056 DMFP.Day11_propositions <> o:754 var
+R37062:37064 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37061:37061 DMFP.Day11_propositions <> n:752 var
+R37065:37065 DMFP.Day11_propositions <> o:754 var
+def 37331:37347 <> trans_eq_example'
+R37373:37375 Coq.Init.Datatypes <> nat ind
+binder 37359:37359 <> a:755
+binder 37361:37361 <> b:756
+binder 37363:37363 <> c:757
+binder 37365:37365 <> d:758
+binder 37367:37367 <> e:759
+binder 37369:37369 <> f:760
+R37397:37405 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37389:37391 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37384:37384 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37386:37386 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37388:37388 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37385:37385 DMFP.Day11_propositions <> a:755 var
+R37387:37387 DMFP.Day11_propositions <> b:756 var
+R37392:37392 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37394:37394 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37396:37396 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37393:37393 DMFP.Day11_propositions <> c:757 var
+R37395:37395 DMFP.Day11_propositions <> d:758 var
+R37419:37427 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R37411:37413 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37406:37406 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37408:37408 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37410:37410 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37407:37407 DMFP.Day11_propositions <> c:757 var
+R37409:37409 DMFP.Day11_propositions <> d:758 var
+R37414:37414 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37416:37416 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37418:37418 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37415:37415 DMFP.Day11_propositions <> e:759 var
+R37417:37417 DMFP.Day11_propositions <> f:760 var
+R37433:37435 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R37428:37428 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37430:37430 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37432:37432 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37429:37429 DMFP.Day11_propositions <> a:755 var
+R37431:37431 DMFP.Day11_propositions <> b:756 var
+R37436:37436 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37438:37438 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37440:37440 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R37437:37437 DMFP.Day11_propositions <> e:759 var
+R37439:37439 DMFP.Day11_propositions <> f:760 var
+R38031:38038 DMFP.Day11_propositions <> trans_eq thm
+R38041:38044 DMFP.Day04_structures <> list ind
+R38046:38048 Coq.Init.Datatypes <> nat ind
+R38051:38051 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38053:38053 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38055:38055 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38057:38057 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38059:38059 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38061:38061 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38063:38063 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38065:38065 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38067:38067 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38031:38038 DMFP.Day11_propositions <> trans_eq thm
+R38041:38044 DMFP.Day04_structures <> list ind
+R38046:38048 Coq.Init.Datatypes <> nat ind
+R38051:38051 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38053:38053 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38055:38055 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38057:38057 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38059:38059 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38061:38061 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38063:38063 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38065:38065 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R38067:38067 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+def 38821:38828 <> minustwo
+R38835:38837 Coq.Init.Datatypes <> nat ind
+binder 38831:38831 <> n:761
+R38842:38844 Coq.Init.Datatypes <> nat ind
+R38857:38857 DMFP.Day11_propositions <> n:761 var
+R38870:38870 Coq.Init.Datatypes <> O constr
+R38875:38875 Coq.Init.Datatypes <> O constr
+R38883:38883 Coq.Init.Datatypes <> S constr
+R38885:38885 Coq.Init.Datatypes <> O constr
+R38890:38890 Coq.Init.Datatypes <> O constr
+R38898:38898 Coq.Init.Datatypes <> S constr
+R38901:38901 Coq.Init.Datatypes <> S constr
+def 38929:38945 <> trans_eq_exercise
+R38967:38969 Coq.Init.Datatypes <> nat ind
+binder 38957:38957 <> n:763
+binder 38959:38959 <> m:764
+binder 38961:38961 <> o:765
+binder 38963:38963 <> p:766
+R38994:39002 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R38979:38982 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38993:38993 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R38978:38978 DMFP.Day11_propositions <> m:764 var
+R38983:38990 DMFP.Day11_propositions <> minustwo def
+R38992:38992 DMFP.Day11_propositions <> o:765 var
+R39014:39022 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R39003:39003 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39009:39012 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39005:39007 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R39004:39004 DMFP.Day11_propositions <> n:763 var
+R39008:39008 DMFP.Day11_propositions <> p:766 var
+R39013:39013 DMFP.Day11_propositions <> m:764 var
+R39023:39023 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39029:39033 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39044:39044 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R39025:39027 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R39024:39024 DMFP.Day11_propositions <> n:763 var
+R39028:39028 DMFP.Day11_propositions <> p:766 var
+R39034:39041 DMFP.Day11_propositions <> minustwo def
+R39043:39043 DMFP.Day11_propositions <> o:765 var
+R39089:39096 DMFP.Day11_propositions <> trans_eq thm
+R39089:39096 DMFP.Day11_propositions <> trans_eq thm

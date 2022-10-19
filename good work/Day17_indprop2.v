@@ -1,0 +1,368 @@
+Require Export DMFP.Day16_indprop.
+
+(* ################################################################# *)
+(** * Reasoning about minima *)
+
+(** As practice with [<=], we'll prove some properties about [min3]
+    and [argmin3]. We'll need these properties to show that some edit
+    functions are 'better' than others. *)
+
+(** To do so, we'll need a bunch of other results. These are _great_
+    practice problems. We won't grade them, but if you're having
+    trouble understanding inductive propositions, doing some of these
+    will defiitely help.  *)
+
+(** **** Exercise: 3 stars, standard, optional (le_exercises)
+
+    Here are a number of facts about the [<=] and [<] relations that
+    we are going to need later in the course.  The proofs make good
+    practice exercises.
+
+    Even if you don't _do_ these proofs, look carefully at the
+    properties... these are very useful facts!
+ *)
+
+Lemma le_trans : forall m n o, m <= n -> n <= o -> m <= o.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem O_le_n : forall n,
+    0 <= n.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem n_le_m__Sn_le_Sm : forall n m,
+    n <= m -> S n <= S m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem Sn_le_Sm__n_le_m : forall n m,
+    S n <= S m -> n <= m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Lemma leb_nm__leb_mn : forall (n m : nat),
+    leb n m = false -> leb m n = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Lemma leb_spec : forall (n m : nat),
+    leb n m = true \/ (leb n m = false /\ leb m n = true).
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+(** We can even view [leb_nm__leb_mn] as a specialization of [leb_spec]: *)
+
+Lemma leb_nm__leb_mn' : forall (n m : nat),
+    leb n m = false -> leb m n = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem leb_complete : forall n m,
+    leb n m = true -> n <= m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem le_plus_l : forall a b,
+    a <= a + b.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem plus_lt : forall n1 n2 m,
+    n1 + n2 < m ->
+    n1 < m /\ n2 < m.
+Proof.
+  unfold lt.
+  (* FILL IN HERE *) Admitted.
+
+Lemma minus_Sn_m: forall n m : nat,
+    m <= n -> S (n - m) = S n - m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem lt_S : forall n m,
+    n < m ->
+    n < S m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+(** Hint: The next one may be easiest to prove by induction on [m]. *)
+
+Theorem leb_correct : forall n m,
+    n <= m ->
+    leb n m = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+(** Hint: This theorem can easily be proved without using [induction]. *)
+
+Theorem leb_true_trans : forall n m o,
+    leb n m = true -> leb m o = true -> leb n o = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(** **** Exercise: 1 star, standard, optional (leb_iff)
+
+    Same here: just reuse some results. *)
+Theorem leb_iff : forall n m,
+    leb n m = true <-> n <= m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(** Okay: let's get down to business. This lemma is the
+    linchpin. You'll want to use [leb_nm__leb_mn] or [leb_spec] to get
+    things right here; also remember that you can destruct compound
+    expressions!
+
+    The key idea here is you need to find a way to simplify the min3
+    operations by thinking about the possible cases---here, the cases
+    you want are the ones that take you to different branches of min3.
+
+    This is not going to be an induction proof!  *)
+
+(** **** Exercise: 2 stars, standard (min3_min) *)
+
+Lemma false_leb : forall n1 n2,
+    ( leb n1 n2) = false -> leb n2 n1 = true.
+Proof.
+  intros n1 n2 h.
+  Check (leb_spec n1 n2).
+  destruct (leb_spec n1 n2).
+  -rewrite H in h. discriminate h.
+  -destruct H. apply H0.
+Qed.
+Lemma min3_min : forall n1 n2 n3,
+    min3 n1 n2 n3 <= n1 /\
+    min3 n1 n2 n3 <= n2 /\
+    min3 n1 n2 n3 <= n3.
+Proof.
+  unfold min3.
+  split.
+  -destruct (leb n1 n2) eqn: eq1.
+   +destruct (leb n1 n3) eqn: eq2.
+    *reflexivity.
+    *apply false_leb in eq2. apply leb_complete in eq2. apply eq2.
+   +destruct (leb n2 n3) eqn: eq2.
+    *apply false_leb in eq1. apply leb_complete in eq1. apply eq1.
+    *apply false_leb in eq2. apply false_leb in eq1. apply leb_complete in eq2.
+     apply leb_complete in eq1.  rewrite eq2. apply eq1.
+  -split.
+   +destruct (leb n1 n2) eqn: eq1.
+    *destruct (leb n1 n3) eqn: eq2.
+     apply leb_complete in eq1. apply eq1.
+     apply false_leb in eq2. apply leb_complete in eq1.  apply leb_complete in eq2.
+     rewrite eq2. apply eq1.
+    *destruct (leb n2 n3) eqn: eq2.
+     reflexivity.
+     apply false_leb in eq2. apply false_leb in eq1. apply leb_complete in eq2. apply eq2.
+   +destruct (leb n1 n2) eqn: eq1.
+    *destruct (leb n1 n3) eqn: eq2.
+     apply leb_complete in eq2. apply eq2.
+     reflexivity.
+    *destruct (leb n2 n3) eqn: eq2.
+     apply leb_complete in eq2. apply eq2.
+     reflexivity.
+Qed.
+(** [] *)
+
+(** These next three lemmas should all follow from [min3_min] and
+    previous lemmas. *)
+
+(** **** Exercise: 3 stars, standard, optional (min3_leb) *)
+Lemma min3_leb : forall n1 n2 n3 m,
+    n1 <= m \/ n2 <= m \/ n3 <= m ->
+    min3 n1 n2 n3 <= m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+(** A hint. *)
+Check argmin3_min3.
+
+Lemma argmin3_min : forall {A:Type} cost (o1 o2 o3:A),
+    cost (argmin3 cost o1 o2 o3) <= cost o1 /\
+    cost (argmin3 cost o1 o2 o3) <= cost o2 /\
+    cost (argmin3 cost o1 o2 o3) <= cost o3.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Lemma argmin3_leb : forall {A:Type} cost (o1 o2 o3:A) other,
+    cost o1 <= cost other \/ cost o2 <= cost other \/ cost o3 <= cost other ->
+    cost (argmin3 cost o1 o2 o3) <= cost other.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* ################################################################# *)
+(** * Case study: getting [natset] right *)
+
+(** There's an important set of properties that we haven't proved
+    about our no-duplicates invariant for list-based sets of naturals:
+    that we maintain the [natset] invariant that each element appears
+    at most once! *)
+
+(** Before we begin, we'll insert our own definitions of some
+    operations you defined a while back. *)
+
+Fixpoint is_setlike (l : natset) : bool :=
+  match l with
+  | [] => true
+  | x :: l' => negb (member x l') && is_setlike l'
+  end.
+
+Fixpoint intersection (l1 l2 : natset) : natset :=
+    match l1 with
+    | [] => []
+    | x::l1' => if member x l2
+                then x::intersection l1' l2
+                else intersection l1' l2
+    end.
+
+Fixpoint subset (l1 l2 : natset) : bool :=
+  match l1 with
+  | [] => true
+  | x::l1' => member x l2 && subset l1' l2
+  end.
+
+(** We can characterize those [natset]s which are [setlike] using an
+    inductive predicate. *)
+
+Inductive setlike : natset -> Prop :=
+| setlike_nil : setlike []
+| setlike_cons (x:nat) (l:natset) (Hin: ~ In x l) (H: setlike l) : setlike (x :: l).
+
+(** **** Exercise: 2 stars, standard (setlike_egs)
+
+    Let's get a feel for the [setlike] predicate. It's always
+    important to have positive examples---things that should satisfy
+    the property, like [setlike_eg1]---as well as negative
+    examples---things that should _not_ satisfy the property, like
+    [setlike_eg2]. *)
+Example setlike_eg1 :
+  setlike [1;2;3;4].
+Proof.
+  Search setlike. apply setlike_cons.
+  -simpl. intros H. destruct H.
+   +discriminate H.
+   +destruct H.
+    *discriminate H.
+    *destruct H.
+     discriminate H.
+     apply H.
+  -apply setlike_cons.
+   +simpl. intros H. destruct H.
+    *discriminate H.
+    *destruct H.
+     discriminate H.
+     apply H.
+   +apply setlike_cons.
+    *simpl. intros H. destruct H.
+     discriminate H.
+     apply H.
+    *apply setlike_cons.
+     simpl. intros H. apply H.
+     apply setlike_nil.
+Qed.
+
+Example setlike_eg2 :
+  ~ setlike [1;2;3;4;1].
+Proof.
+  unfold not. intros h. inversion h. simpl in Hin. Search False. apply not_False in Hin.
+  -apply Hin.
+  -right. right. right. left. reflexivity.
+Qed.
+(** [] *)
+
+(** **** Exercise: 3 stars, standard, optional (In_member_iff)
+
+    The [member] function returns [true] _exactly_ when the [In]
+    predicate holds. This is good practice about inductive proof; it's
+    needed for the next few exercises (but you can do them without
+    doing this proof!). *)
+Lemma In_member_iff : forall x l,
+    In x l <-> member x l = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard (is_setlike__setlike)
+
+    We should, as always, double check our ideas. We have a [setlike]
+    predicate on sets defined inductively and an [is_setlike] function
+    defined recursively. Do these notions coincide? *)
+Lemma is_setlike__setlike : forall l,
+    is_setlike l = true <-> setlike l.
+Proof.
+  split.
+  -intros h. induction l as [| x l' IHl'].
+   +apply setlike_nil.
+   +simpl in h. destruct member eqn : en.
+    *simpl in h. discriminate h.
+    *simpl in h. apply setlike_cons.
+     rewrite -> In_member_iff. Search false.  apply not_true_iff_false. apply en.
+     apply IHl'. apply h.
+  -intros h. induction l as [| x l' IHl'].
+   +simpl. reflexivity.
+   +simpl. inversion h. destruct negb eqn: en.
+    *simpl. apply IHl'. apply H0.
+    *simpl. rewrite -> In_member_iff in Hin.
+     apply not_true_is_false in Hin. rewrite Hin in en. simpl in en.
+     rewrite en. reflexivity.
+Qed.    
+(** [] *)
+
+(** **** Exercise: 2 stars, standard (insert_preserves_setlike) *)
+Lemma insert_preserves_setlike : forall x l,
+    setlike l ->
+    setlike (set_insert x l).
+Proof.
+  unfold set_insert.
+  intros x l H.  destruct ( member x l) eqn : H2.
+  - apply H.
+  -rewrite <- is_setlike__setlike. simpl.
+    rewrite  H2. simpl. rewrite is_setlike__setlike. apply H.
+ Qed.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard (union_preserves_setlike) *)
+Lemma union_preserves_setlike : forall l1 l2,
+    setlike l1 ->
+    setlike l2 ->
+    setlike (union l1 l2).
+Proof.
+  intros l1 l2 h1 h2.  generalize dependent l1. induction l2 as [| x l2' IHl2'].
+  -intros l1 h1. induction l1 as [| x1 l1' Ihl1'].
+   +simpl. apply setlike_nil.
+   +simpl. inversion h1. apply insert_preserves_setlike. apply Ihl1'. apply H0.
+  -intros l1 h1. induction l1 as [| x1 l1' IHl1'].
+   +simpl. apply h2.
+   +simpl. apply insert_preserves_setlike. inversion h1. apply IHl1'. apply H0.
+Qed.
+(** [] *)
+
+(** **** Exercise: 4 stars, standard, optional (union_intersection_dist)
+
+    The [setlike] predicate isn't just useful for checking that we've
+    implemented our operations correctly---sometimes we need to use
+    [setlike] in proofs!
+
+     Prove that [intersection] _distributes_ over [union]. (You may be
+     more familiar with distributivity from arithmetic: [x * (y + z) =
+     (x * y) + (x * z)].)
+
+    You'll need several helper lemmas to prove this! A useful tip for
+    helper lemmas: don't prove them right away, just use [Admitted] to
+    see if they would let you finish your proof. If you prove them
+    right away, you might spend a long time proving a helper lemma
+    that isn't so... helpful. *)
+
+Lemma union_intersection_dist : forall l1 l2 l3,
+    setlike l1 -> setlike l2 -> setlike l3 ->
+    intersection (union l1 l2) l3 =
+    union (intersection l1 l3) (intersection l2 l3).
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* 2021-09-28 15:37 *)

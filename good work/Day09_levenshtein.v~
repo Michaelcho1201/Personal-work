@@ -1,0 +1,358 @@
+Require Export DMFP.Day08_sets.
+
+(* ================================================================= *)
+(** ** Case study: DNA edit distance *)
+
+(** A key biological question of interest is _similarity_. How similar
+    are two individuals of the same species? How similar are two
+    species? When we see similarities or differences in expressed
+    behavior (_phenotype_), can we trace these to corresponding
+    similarities or differences in genetics (_genotype_)?
+ *)
+
+(** To ask these questions in a formal way, we need measures of
+    similarity. One popular quantitative measure for any list-based
+    data is called _edit distance_. Given two strands of DNA, how many
+    edits do we need to make to get from one to the other?
+
+    For example, consider the following DNA sequences.
+ *)
+
+Definition dna_src  : strand := [G; C; A; T].
+Definition dna_tgt1 : strand := [T; C; A; T].
+Definition dna_tgt2 : strand := [C; A; T].
+Definition dna_tgt3 : strand := [C; A; T; G].
+
+(** What edits might we need to make to get from [dna_src] to each of
+    the [dna_tgt]s?
+
+    To change [dna_src] into [dna_tgt1], we should replace the first
+    [G], substituting it with a [T].
+
+    To change [dna_src] into [dna_tgt2], we should delete the first
+    [G].
+
+    To change [dna_src] into [dna_tgt3], we should delete the first
+    [G] and add a [G] at the end.
+
+*)
+
+(** We can formalize this idea explicitly: we'll define a type [edit]
+    and say what it means to 'apply' an edit.
+
+    Here's what an edit is: you can either [copy] a nucleotide,
+    [delete] a nucleotide, [add] a nucleotide, or [substitute] a
+    nucleotide for what was already there.  *)
+
+Inductive edit : Type :=
+| copy
+| delete
+| add (e : base)
+| substitute (e : base).
+
+(** These aren't the only edits we could have defined. For example, we
+    don't _need_ [substitute], since we can always [delete] and then
+    [add] (or vice versa). We could add a [move] edit that somehow
+    said where to move the current base (i.e., in changing [dna_src]
+    to [dna_tgt3], we could say that that [G] _moves_ to the end).
+
+    We've chosen these edits because they correspond to the edits
+    invented by Vladimir Levenshtein in 1966, and are used to compute
+    the widely used Levenshtein distance (see
+    https://en.wikipedia.org/wiki/Levenshtein_distance). It's worth
+    noting that this distance is _very_ useful in computational
+    applications in a variety of domains, but (according to folklore),
+    Levenshtein didn't get to use computers at his Soviet institute!
+
+    In order to justify [substitute]'s presence when [add] and
+    [delete] would do, we define a notion of [cost]. It's free to
+    [copy], but every other edit has a cost of 1.
+ *)
+
+Definition cost (edit : edit) : nat :=
+  match edit with
+  | copy => 0
+  | delete => 1
+  | add _ => 1
+  | substitute _ => 1
+  end.
+
+(** Given a list of edits, the cost is just the sum of the costs of
+    every constituent edit. *)
+Fixpoint total_cost (edits : list edit) : nat :=
+  match edits with
+  | [] => 0
+  | e::edits' => cost e + total_cost edits'
+  end.
+
+(** We've only given an intuition for edits. How do they actually
+    work? We must define what it means to apply an edit. We'll do it
+    in two parts: first, given an edit and a strand of DNA we're
+    editing, [apply_edit] returns two things: first, an optional
+    nucleotide which will appear at the front of the new, edited
+    strand; and second, a (possibly modified) DNA strand that we're
+    working on. *)
+
+Definition apply_edit (edit : edit) (orig : strand) : option base * strand :=
+  match edit with
+  | copy =>
+    match orig with
+    | [] => (None, [])
+    | b::orig' => (Some b, orig')
+    end
+  | delete => (None, match orig with
+                     | [] => []
+                     | _::orig' => orig'
+                     end)
+  | add b => (Some b, orig)
+  | substitute b => (Some b, match orig with
+                             | [] => [] (* just act like add *)
+                             | _::orig' => orig'
+                             end)
+  end.
+
+(** It's worth paying close attention to this function, as there
+    are several corner cases.
+
+    - [copy] has two possibilities. Either the strand we're editing is
+      done, in which there's nothing to add and nothing to continue
+      with... or the strand has some base [b] at the front, which (a)
+      we'll make sure to copy to the front of the new strand ([Some
+      b]), and (b) we'll return the rest of the strand ([orig']).
+
+    - [delete] is slightly simpler. We'll never add anything to the
+      front ([None]), and we'll knock off the base at the front of the
+      strand we're working with, returning whatever may be left
+      ([orig']).
+
+    - [add b] is the simplest case: add [b] to the front and leave the
+      strand we're editing alone.
+
+    - [susbtitute b] is trickier. We'll put [b] at the front no matter
+      what ([Some b]), but what should we do if we're supposed to
+      substitute [b] but the strand we're editing is empty? We choose
+      to shrug and say, "That's fine, we'll pretend you meant [add b]
+      and not worry about having nothing to substitute for." If, on
+      the other hand, [orig = b'::orig'], then we'll ignore [b']
+      (which is what we substituted for) and give [orig'] to keep
+      editing.
+ *)
+
+(** Once we know how to apply an individual edit, it's easy enough to
+    apply a list of edits. We walk down the list and, for each edit,
+    we see what should be added to the front ([new]) and what remains
+    of the strand of DNA we're editing ([orig']). *)
+
+Fixpoint apply_edits (orig : strand) (edits : list edit) : strand :=
+  match edits with
+  | [] => orig
+  | edit::edits' =>
+    let (new, orig') := apply_edit edit orig in
+    match new with
+    | None => apply_edits orig' edits'
+    | Some b => b::apply_edits orig' edits'
+    end
+  end.
+
+(** With a notion of edits in hand, let's verify that our formal model
+    matches our intuition. Can we come up with the 'valid' edits that
+    match our informal descriptions above? *)
+
+Definition valid_edit (src : strand) (tgt : strand) (edits : list edit) :=
+  eq_strand (apply_edits src edits) tgt.
+
+Definition edit_tgt1 : list edit := [substitute T; copy; copy; copy].
+Definition edit_tgt1_worse : list edit := [delete; add T; copy; copy; copy].
+Definition edit_tgt1_same : list edit := [substitute T].
+
+Compute (valid_edit dna_src dna_tgt1 edit_tgt1).
+Compute (valid_edit dna_src dna_tgt1 edit_tgt1_worse).
+Compute (leb (total_cost edit_tgt1) (total_cost edit_tgt1_worse)).
+Compute (eqb (total_cost edit_tgt1) (total_cost edit_tgt1_same)).
+
+(** **** Exercise: 3 stars, standard (edit_tgt23)
+
+    Write edits that take [dna_src] to [dna_tgt2] and [dna_tgt3]. Your
+    edits should be _minimal_, i.e., the lowest cost possible, while
+    still being valid. *)
+
+Definition edit_tgt2 : list edit := [delete; copy; copy ; copy].
+
+Compute (valid_edit dna_src dna_tgt2 edit_tgt2).
+
+Definition edit_tgt3 : list edit := [delete; copy; copy; copy; add G].
+
+Compute (valid_edit dna_src dna_tgt3 edit_tgt3).
+(* Do not modify the following line: *)
+Definition manual_grade_for_edit_tgt23 : option (nat*string) := None.
+(** [] *)
+
+(** **** Exercise: 3 stars, standard (delete_add_edit)
+
+    With our notion of edits in hand, we can contemplate defining
+    algorithms that compute edits from one strand to another. Let's
+    begin with the simplest one: the [delete_add_edit].
+
+    To go from [src] to [tgt], first delete everything in [src] and
+    then add everything in [tgt].
+
+    Now, [delete_add_edit] won't be minimal, but it's a place to
+    start!
+
+    We'll define it in three parts: [delete_edit] takes a [src] strand
+    and produces the correct number of [delete] edits; [add_edit]
+    takes a [tgt] strand and produces the correct number of [add]
+    edits with the right bases; and [delete_add_edit] combines the
+    two.
+*)
+
+(** NOTE: your solutions should:
+
+    (a) be only line each
+
+    (b) for [delete_edit] and [add_edit], use the [map] function
+
+    (c) for [delete_add_edit], use [delete_edit] and [add_edit].
+ *)
+
+Definition delete_edit (src : strand) : list edit := map (fun n  => delete ) src.
+
+Definition add_edit (tgt : strand) : list edit := map add tgt.
+
+Definition delete_add_edit (src : strand) (tgt : strand) : list edit := delete_edit src ++ add_edit tgt.
+(** [] *)
+
+(** With those definitions under our belt, we can write a more
+    interesting edit function: substitute when possible, only adding
+    or deleting when one list runs out. *)
+
+Fixpoint naive_sub_edit (src : strand) (tgt : strand) : list edit :=
+  match (src, tgt) with
+  | ([], tgt) => add_edit tgt
+  | (src, []) => delete_edit src
+  | (_::src', b2::tgt') =>
+    substitute b2 :: naive_sub_edit src' tgt'
+  end.
+
+(** **** Exercise: 2 stars, standard (sub_edit)
+
+    [naive_sub_edit] is a little bit, well, naive. Give an example of
+    a pair of DNA strands [naive_src] and [naive_tgt] for which
+    [naive_sub_edit] gives a high cost when it could give a very low
+    cost. *)
+Definition naive_src : strand := [T; G; T; C].
+Definition naive_tgt : strand := [A; G; T; C].
+
+(** Explain why [naive_sub_edit naive_src naive_tgt] is so high
+    cost. What should happen differently?  *)
+
+(* It is because naive_sub_edit is just substituting the bases in naive_src with the bases in naive_tgt, regardless of whether the base in src matches the base in tgt.
+ What should be done is that it copys the base in tgt if the base in src matches the base in tgt  *)
+
+(** Define a function [sub_edit] that generates an edit similarly to
+    [naive_sub_edit], but without the naivete. *)
+Fixpoint sub_edit (src : strand) (tgt : strand) : list edit :=
+  match (src, tgt) with
+  | ([], tgt) => add_edit tgt
+  | (src, []) => delete_edit src
+  | (bl::src', b2::tgt') => match eq_base bl b2 with
+                            | true=> copy :: sub_edit src' tgt'
+                            | false => substitute b2 :: sub_edit src' tgt'
+                            end
+  end.
+(** [] *)
+
+(* ################################################################# *)
+(** * Levenshtein's edit distance *)
+
+(** **** Exercise: 3 stars, standard (levenshtein)
+
+    We've looked at a bunch of different edit functions: it's time to
+    look at Vladimir Levenshtein's!
+
+    The key idea is to consider four possible edits at each juncture
+    and choose the cheapest one. Suppose we're trying to edit [b1 ::
+    src] into [b2 :: tgt]. (When one is empty, things are simpler.)
+
+    - If [b1] and [b2] are the same, we can [copy], continuing with
+      [src] and [tgt].
+
+    - If [b1] and [b2] are different, we can [substitute b2],
+      continuing with [src] and [tgt].
+
+    - We can delete [b1], continuing with [src] and [b2 :: tgt].
+
+    - We can add [b2], continuing with [b1 :: src] and [tgt].
+
+    You'll want to use [argmin3] to select the best possible
+    choice. You'll also need to use the [let fix] trick we used to
+    define [merge] (and you used to define [subset]).  *)
+Fixpoint levenshtein (src tgt : strand) : list edit :=
+  let fix inner tgt :=
+      match src, tgt with
+      | src, [] => delete_edit src
+      | [], tgt  => add_edit tgt
+      | b1 :: src', b2 :: tgt' =>
+        let copy_sub_edit :=
+            (if eq_base b1 b2 then copy else substitute b2) :: levenshtein src' tgt' in
+        let add_edit := add b2 :: inner tgt' in
+        let delete_edit := delete :: levenshtein src' (b2 :: tgt) in
+        argmin3 total_cost copy_sub_edit add_edit delete_edit
+      end
+  in
+  inner tgt.
+                                   
+(** [] *)
+
+(** If you're stuck, here's a concrete example:
+
+    levenshtein [C; A; T] [C; G; T]
+
+    should generate [ [copy; substitute G; copy] ].
+
+    How will it do that? Well, looking at the bullet points in the
+    comments, it'll start by comparing [C] and [C], with [ [A; T] ]
+    remaining as [src'] and [ [G;T] ] remaining as [tgt'].
+
+    Since they're the same, a copy edit is possible and it's senseless
+    to use a substitute. But you could still end up with add or delete
+    edits being better (well, delete, at least). So consider each of
+    those.
+
+    So you have three possiblities:
+
+    - [ copy   :: levenshtein   [A;T]   [G;T] ]
+    - [ delete :: levenshtein   [A;T] [C;G;T] ]
+    - [ add C  :: levenshtein [C;A;T]   [G;T] ]
+
+    The Levenshtein algorithm looks at all three of these and picks
+    the best (this is where we use [argmin3]).
+*)
+Compute (sub_edit [C; G; A; T] [A; T]).
+(** **** Exercise: 1 star, standard (levenshtein__sub_edit)
+
+    Later on we'll prove that [levenshtein] produces _optimal_ edits,
+    i.e., you can't do better. That might not be obvious, though!
+
+    Give an example of a pair of DNA strands where [levenshtein] does
+    _much_ better than [sub_edit]. Our testing script asks for twice
+    as good. *)
+Definition levenshtein__sub_edit_src : strand := [A; T].
+Definition levenshtein__sub_edit_tgt : strand := [C; G; A; T].
+
+(** You've got it right when the first is less than or equal to the second. *)
+Compute (2 * (total_cost (levenshtein levenshtein__sub_edit_src levenshtein__sub_edit_tgt))).
+Compute      (total_cost (sub_edit    levenshtein__sub_edit_src levenshtein__sub_edit_tgt)).
+
+(** Why is [levenshtein] better than [sub_edit]? Try to make your
+    answer general. What can [levenshtein] do that [sub_edit] can't?
+    The best answer characterizes the difference, giving a _recipe_
+    for writing pairs of strands that will do better under
+    [levenshtein] than [sub_edit]. *)
+
+(* Levenshtein can utilize add and delete if and when they are needed at the beginning of editing src into tgt. However, sub_edit cannot use add and delete at the beginning of editing an src. Instead, sub_edit must use substitute first untill either src or tgt ends. Then it uses add and delete, even if some of the bases in tgt are in the same order  as those in src.That is why the cost of sub_edit is higher than the cost of levenshtein.    *)
+(* Do not modify the following line: *)
+Definition manual_grade_for_levenshtein__sub_edit_tgt : option (nat*string) := None.
+(** [] *)
+
+(* 2021-09-13 09:44 *)

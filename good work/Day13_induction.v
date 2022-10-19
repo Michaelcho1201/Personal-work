@@ -1,0 +1,729 @@
+Require Export DMFP.Day12_cases.
+
+(* ################################################################# *)
+(** * Induction: Proof by Induction *)
+
+(* ################################################################# *)
+(** * Overview *)
+
+(** In this chapter, we'll learn the fundamental method of computer
+    science proofs: _induction_, which is the process by which we can
+    prove things for all numbers (or other inductively defined
+    structures) that aren't immediately obvious by computation. *)
+
+Theorem plus_n_O : forall n:nat, n = n + 0.
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - (* n = 0 *)    reflexivity.
+  - (* n = S n' *) simpl. rewrite <- IHn'. reflexivity.  Qed.
+
+(** Like [destruct], the [induction] tactic takes an [as...]
+    clause that specifies the names of the variables to be introduced
+    in the subgoals.  Since there are two subgoals, the [as...] clause
+    has two parts, separated by [|].  (Strictly speaking, we can omit
+    the [as...] clause and Coq will choose names for us.  In practice,
+    this is a bad idea, as Coq's automatic choices tend to be
+    confusing.)
+
+    In the first subgoal, [n] is replaced by [0].  No new variables
+    are introduced (so the first part of the [as...] is empty), and
+    the goal becomes [0 = 0 + 0], which follows by simplification.
+
+    In the second subgoal, [n] is replaced by [S n'], and the
+    assumption [n' + 0 = n'] is added to the context with the name
+    [IHn'] (i.e., the Induction Hypothesis for [n']).  These two names
+    are specified in the second part of the [as...] clause.  The goal
+    in this case becomes [S n' = (S n') + 0], which simplifies to
+    [S n' = S (n' + 0)], which in turn follows from [IHn'].
+
+    Here's the same proof, as written on paper:
+ *)
+
+(** - _Theorem_: For any [n],
+
+      n = n + 0
+
+    _Proof_: By induction on [n].
+
+    - First, suppose [n = 0].  We must show
+
+        0 = 0 + 0.
+
+      This follows directly from the definition of [+].
+
+    - Next, suppose [n = S n'], where (as our IH)
+
+        n' = n' + 0.
+
+      We must show
+
+        S n' = (S n') + 0.
+
+      By the definition of [+], this follows from
+
+        S n' = S (n' + 0),
+
+      which is immediate from the induction hypothesis.  _Qed_. *)
+
+Theorem minus_diag : forall n,
+  minus n n = 0.
+Proof.
+  (* WORKED IN CLASS *)
+  intros n. induction n as [| n' IHn'].
+  - (* n = 0 *)
+    simpl. reflexivity.
+  - (* n = S n' *)
+    simpl. rewrite -> IHn'. reflexivity.  Qed.
+
+(** (The use of the [intros] tactic in these proofs is actually
+    redundant.  When applied to a goal that contains quantified
+    variables, the [induction] tactic will automatically move them
+    into the context as needed.) *)
+
+(** **** Exercise: 2 stars, standard (basic_induction)
+
+    Prove the following using induction. You might need previously
+    proven results. *)
+
+Theorem mult_0_r : forall n:nat,
+  n * 0 = 0.
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - simpl. reflexivity.
+  - simpl. rewrite -> IHn'. reflexivity.
+Qed.
+
+Theorem plus_n_Sm : forall n m : nat,
+  S (n + m) = n + (S m).
+Proof.
+  intros n m. induction n as [| n' IHn'].
+  - simpl. reflexivity.
+  - simpl. rewrite -> IHn'. reflexivity.
+Qed.
+
+Theorem plus_comm : forall n m : nat,
+  n + m = m + n.
+Proof.
+  intros n m. induction n as [| n' IHn'].
+  - apply plus_n_O.
+  - simpl. rewrite -> IHn'. apply plus_n_Sm.
+Qed.
+
+Theorem plus_assoc : forall n m p : nat,
+  n + (m + p) = (n + m) + p.
+Proof.
+  intros n m p. induction n as [| n' IHn'].
+  - simpl. reflexivity.
+  - simpl. rewrite -> IHn'.  reflexivity.
+Qed.
+(** [] *)
+
+(** **** Exercise: 1 star, standard (minus_Sn_n) *)
+Lemma minus_Sn_n : forall n, S n - n = 1.
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - simpl. reflexivity.
+  - rewrite <- IHn'.  simpl. reflexivity.
+Qed.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard (double_plus)
+
+    Use induction to prove this simple fact about [double]: *)
+
+Fixpoint double (n:nat) :=
+  match n with
+  | O => O
+  | S n' => S (S (double n'))
+  end.
+
+Lemma double_plus : forall n, double n = n + n.
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - simpl. reflexivity.
+  - simpl. rewrite -> IHn'. rewrite  plus_n_Sm. reflexivity.
+Qed.
+(** [] *)
+
+(** **** Exercise: 3 stars, standard, optional (more_exercises)
+
+    Take a piece of paper.  For each of the following theorems, first
+    _think_ about whether (a) it can be proved using only
+    simplification and rewriting, (b) it also requires case
+    analysis ([destruct]), or (c) it also requires induction.  Write
+    down your prediction.  Then fill in the proof.  (There is no need
+    to turn in your piece of paper; this is just to encourage you to
+    reflect before you hack!) *)
+
+Check leb.
+
+Theorem leb_refl : forall n:nat,
+  true = leb n n.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem zero_nbeq_S : forall n:nat,
+  eqb 0 (S n) = false.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem andb_false_r : forall b : bool,
+  andb b false = false.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem plus_ble_compat_l : forall n m p : nat,
+  leb n m = true -> leb (p + n) (p + m) = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem S_nbeq_0 : forall n:nat,
+  eqb (S n) 0 = false.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem mult_1_l : forall n:nat, 1 * n = n.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+(** A good additional exercise is to draw out the truth table for the
+    following combination of boolean operations, for all [b] and
+    [c]. *)
+
+Theorem all3_spec : forall b c : bool,
+    orb
+      (andb b c)
+      (orb (negb b)
+               (negb c))
+  = true.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem mult_plus_distr_r : forall n m p : nat,
+  (n + m) * p = (n * p) + (m * p).
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem mult_assoc : forall n m p : nat,
+  n * (m * p) = (n * m) * p.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard, optional (eqb_refl)
+
+    Prove the following theorem.  (Putting the [true] on the left-hand
+    side of the equality may look odd, but this is how the theorem is
+    stated in the Coq standard library, so we follow suit.  Rewriting
+    works equally well in either direction, so we will have no problem
+    using the theorem no matter which way we state it.) *)
+
+Theorem eqb_refl : forall n : nat,
+  true = eqb n n.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* ################################################################# *)
+(** * Applying Theorems to Arguments *)
+
+(** One feature of Coq that distinguishes it from many other
+    proof assistants is that it treats _proofs_ as first-class
+    objects.
+
+    There is a great deal to be said about this, but it is not
+    necessary to understand it in detail in order to use Coq.  This
+    section gives just a taste---ask Prof. if you want to know
+    more.  *)
+
+(** We have seen that we can use the [Check] command to ask Coq to
+    print the type of an expression.  We can also use [Check] to ask
+    what theorem a particular identifier refers to. *)
+
+Check plus_comm.
+(* ===> forall n m : nat, n + m = m + n *)
+
+(** Coq prints the _statement_ of the [plus_comm] theorem in the same
+    way that it prints the _type_ of any term that we ask it to
+    [Check].  Why? *)
+
+(**  The reason is that the identifier [plus_comm] actually refers to a
+    _proof object_ -- a data structure that represents a logical
+    derivation establishing of the truth of the statement [forall n m
+    : nat, n + m = m + n].  The type of this object _is_ the statement
+    of the theorem that it is a proof of. *)
+
+(** Intuitively, this makes sense because the statement of a theorem
+    tells us what we can use that theorem for, just as the type of a
+    computational object tells us what we can do with that object --
+    e.g., if we have a term of type [nat -> nat -> nat], we can give
+    it two [nat]s as arguments and get a [nat] back.  Similarly, if we
+    have an object of type [n = m -> n + n = m + m] and we provide it
+    an "argument" of type [n = m], we can derive [n + n = m + m]. *)
+
+(** Operationally, this analogy goes even further: by applying a
+    theorem, as if it were a function, to hypotheses with matching
+    types, we can specialize its result without having to resort to
+    intermediate assertions.  For example, suppose we wanted to prove
+    the following result: *)
+
+Lemma plus_comm3 :
+  forall x y z, x + (y + z) = (z + y) + x.
+
+(** It appears at first sight that we ought to be able to prove this
+    by rewriting with [plus_comm] twice to make the two sides match.
+    The problem, however, is that the second [rewrite] will undo the
+    effect of the first. *)
+
+Proof.
+  intros x y z.
+  rewrite plus_comm.
+  rewrite plus_comm.
+  (* We are back where we started... *)
+Abort.
+
+(** One simple way of fixing this problem, using only tools that we
+    already know, is to use [assert] to derive a specialized version
+    of [plus_comm] that can be used to rewrite exactly where we
+    want. Note that the [H] we get out is specialized to [y] and [z],
+    unlike the universally quantified [plus_comm]. *)
+Lemma plus_comm3_take2 :
+  forall x y z, x + (y + z) = (z + y) + x.
+Proof.
+  intros x y z.
+  rewrite plus_comm.
+  assert (H : y + z = z + y).
+  { rewrite plus_comm. reflexivity. }
+  rewrite H.
+  reflexivity.
+Qed.
+
+(** A more elegant alternative is to apply [plus_comm] directly to the
+    arguments we want to instantiate it with, in much the same way as
+    we apply a polymorphic function to a type argument. *)
+
+Lemma plus_comm3_take3 :
+  forall x y z, x + (y + z) = (z + y) + x.
+Proof.
+  intros x y z.
+  rewrite plus_comm.
+  rewrite (plus_comm y z).
+  reflexivity.
+Qed.
+
+(** You can "use theorems as functions" in this way with almost all
+    tactics that take a theorem name as an argument. Recall that we
+    did this with [apply]: *)
+
+Example lemma_application_ex1 :
+  forall (n m : nat),
+    47 = n ->
+    n = m ->
+    47 = m.
+Proof.
+  intros n m Hn Hnm.
+  apply (trans_eq _ _ _ _ Hn Hnm).
+Qed.
+
+(** Our second example uses this helper lemma from day 12 to use
+    [destruct] on an applied theorem. *)
+
+Lemma orb_true :
+  forall a b : bool, a || b = true -> a = true \/ b = true.
+Proof.
+  intros a b. apply orb_true_iff.
+Qed.
+
+Example lemma_application_ex2 :
+  forall b : bool, false || b = true -> b = true.
+Proof.
+  intros b H. destruct (orb_true _ _ H) as [Hcontra | Hb].
+  - discriminate Hcontra.
+  - apply Hb.
+Qed.
+
+(** We will see many more examples of the idioms from this section in
+    later chapters. *)
+
+(* ################################################################# *)
+(** * Structural induction *)
+
+(** So much for induction on natural numbers. You can do induction on
+    any type defined, well, _inductively_.
+
+    In Coq, the [Inductive] keyword introduces inductively defined
+    types. That includes [nat], but also "flat" types like [bool] or
+    [base]. From a technical point of view, you can do induction on
+    those types... but it's the same as a case analysis, i.e., what
+    the [destruct] tactic does.
+
+    More interestingly, you can do induction on [list]s and other
+    structures (e.g., [bt], [aexp]). Let's get some practice with that.
+*)
+
+(** Each [Inductive] declaration defines a set of data values
+    that can be built up using the declared constructors: a boolean
+    can be either [true] or [false]; a number can be either [O] or [S]
+    applied to another number; a list can be either [nil] or [cons]
+    applied to a number and a list.  Moreover, applications of the
+    declared constructors to one another are the _only_ possible
+    shapes that elements of an inductively defined set can have, and
+    this fact directly gives rise to a way of reasoning about
+    inductively defined sets: a number is either [O] or else it is [S]
+    applied to some _smaller_ number; a list is either [nil] or else
+    it is [cons] applied to some number and some _smaller_ list;
+    etc. So, if we have in mind some proposition [P] that mentions a
+    list [l] and we want to argue that [P] holds for _all_ lists, we
+    can reason as follows:
+
+      - First, show that [P] is true of [l] when [l] is [nil].
+
+      - Then show that [P] is true of [l] when [l] is [cons n l'] for
+        some number [n] and some smaller list [l'], assuming that [P]
+        is true for [l'].
+
+    Since larger lists can only be built up from smaller ones,
+    eventually reaching [nil], these two arguments together establish
+    the truth of [P] for all lists [l].  Here's a concrete example: *)
+
+Theorem app_assoc : forall A (l m n:list A),
+  l ++ m ++ n = (l ++ m) ++ n.
+Proof.
+  intros A l m n.
+  induction l as [|a l' IH].
+  - reflexivity.
+  - simpl. rewrite IH. reflexivity.
+Qed.
+
+(** Notice that, as when doing induction on natural numbers, the
+    [as...] clause provided to the [induction] tactic gives a name to
+    the induction hypothesis corresponding to the smaller list [l1']
+    in the [cons] case. Once again, this Coq proof is not especially
+    illuminating as a static written document -- it is easy to see
+    what's going on if you are reading the proof in an interactive Coq
+    session and you can see the current goal and context at each
+    point, but this state is not visible in the written-down parts of
+    the Coq proof.  So a natural-language proof -- one written for
+    human readers -- will need to include more explicit signposts; in
+    particular, it will help the reader stay oriented if we remind
+    them exactly what the induction hypothesis is in the second
+    case. *)
+
+(** _Theorem_: For all [A]-lists [l1], [l2], and [l3],
+   [(l1 ++ l2) ++ l3 = l1 ++ (l2 ++ l3)].
+   _Proof_: Given a type [A], let lists [l1], [l2], and [l3] be given.
+   By induction on [l1].
+
+   - First, suppose [l1 = []].  We must show
+
+       ([] ++ l2) ++ l3 = [] ++ (l2 ++ l3),
+
+     which follows directly from the definition of [++].
+   - Next, suppose [l1 = n::l1'], with
+
+       (l1' ++ l2) ++ l3 = l1' ++ (l2 ++ l3)
+
+     (the induction hypothesis). We must show
+
+       ((a :: l1') ++ l2) ++ l3 = (a :: l1') ++ (l2 ++ l3).
+
+     By the definition of [++], this follows from
+
+       a :: ((l1' ++ l2) ++ l3) = a :: (l1' ++ (l2 ++ l3)),
+
+     which is immediate from the induction hypothesis.  [] *)
+
+(* ----------------------------------------------------------------- *)
+(** *** Practice Exercises *)
+
+(** **** Exercise: 2 stars, standard, optional (poly_exercises)
+
+    Here are two simple exercises; they're optional, just for
+    practice. *)
+
+Theorem app_nil_r : forall (X:Type), forall l:list X,
+  l ++ [] = l.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Lemma app_length : forall (X:Type) (l1 l2 : list X),
+  length (l1 ++ l2) = length l1 + length l2.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* You can do structural induction on anything defined using
+   `Inductive`. Here's a lemma about binary trees. *)
+
+Fixpoint size {X : Type} (t : bt X) : nat :=
+  match t with
+  | empty => 0
+  | node l _ r => 1 + size l + size r
+  end.
+
+Lemma size_length_inorder : forall (X : Type) (t : bt X),
+    size t = length (inorder t).
+Proof.
+  induction t as [| l IHl v r IHr].
+  - reflexivity.
+  - simpl. rewrite app_length. simpl.
+    rewrite <- plus_n_Sm. rewrite IHl. rewrite IHr. reflexivity.
+Qed.
+
+(** **** Exercise: 2 stars, standard, optional (more_poly_exercises)
+
+    Here are some slightly more interesting ones... *)
+
+Theorem rev_app_distr: forall X (l1 l2 : list X),
+  rev (l1 ++ l2) = rev l2 ++ rev l1.
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+Theorem rev_involutive : forall X : Type, forall l : list X,
+  rev (rev l) = l.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* ----------------------------------------------------------------- *)
+(** *** Exercises *)
+
+(** **** Exercise: 1 star, standard (map_length)
+
+    Show that [map] preserves the length of lists. *)
+Lemma map_length :
+  forall A B (f:A->B) (l:list A),
+    length (map f l) = length l.
+Proof.
+  intros A B f l. induction l as [|a l' IH].
+  - simpl. reflexivity.
+  - simpl. rewrite -> IH. reflexivity.
+Qed.
+(** [] *)
+
+(** **** Exercise: 3 stars, standard (map_rev)
+
+    Show that [map] and [rev] commute.  You may need to define an
+    auxiliary lemma. *)
+Lemma map_comm :
+  forall( X Y : Type) ( x : X) (f : X -> Y) (l : list X),
+    map f ( l ++ [ x ] ) = (map f l) ++ [f x].
+Proof.
+  intros X Y x f l. induction l as [|x2 l' IH].
+  - simpl. reflexivity.
+  - simpl. rewrite -> IH. reflexivity.
+Qed.
+
+Theorem map_rev : forall (X Y : Type) (f : X -> Y) (l : list X),
+  map f (rev l) = rev (map f l).
+Proof.
+  intros X Y f l. induction l as [|x l' IH].
+  - simpl. reflexivity.
+  - simpl. rewrite <- IH. rewrite map_comm. reflexivity.
+Qed.
+(** [] *)
+
+(** **** Exercise: 1 star, standard (eq_strand_refl)
+
+    Here's our definition of [eq_strand]. *)
+Fixpoint eq_strand (dna1 dna2 : strand) : bool :=
+  match (dna1, dna2) with
+  | ([], []) => true
+  | ([], _)  => false
+  | (_, [])  => false
+  | (b1 :: dna1', b2 :: dna2') =>
+    eq_base b1 b2 && eq_strand dna1' dna2'
+  end.
+
+Lemma eq_strand_refl : forall (dna : strand),
+    eq_strand dna dna = true.
+Proof.
+  intros dna. induction dna as [| b dna' IH].
+  - simpl. reflexivity.
+  - simpl. rewrite IH. rewrite  eq_base_refl. simpl. reflexivity.
+Qed.
+(** [] *)
+
+(* ################################################################# *)
+(** * More Exercises *)
+
+(** **** Exercise: 3 stars, standard, optional (mult_comm)
+
+    Use [assert] to help prove this theorem.  You shouldn't need to
+    use induction on [plus_swap]. *)
+
+Theorem plus_swap : forall n m p : nat,
+  n + (m + p) = m + (n + p).
+Proof.
+  (* FILL IN HERE *) Admitted.
+
+(** Now prove commutativity of multiplication.  (You will probably
+    need to define and prove a separate subsidiary theorem to be used
+    in the proof of this one.  You may find that [plus_swap] comes in
+    handy.) *)
+
+(** A hint on helper lemmas: rather than just trying to prove some
+    other helper lemma, try stating it and using [Admitted] to treat
+    it as proven. Then check and see if your helper lemma actually,
+    well, helps!  If it does, great---it's worth trying to prove
+    it. If not, well... find something else.
+
+    Relatedly, the [admit] tactic is a nice way to ignore a case you
+    don't want to bother proving for now. If you've used [admit], then
+    you won't be able to finish the proof with a [Qed] (only
+    [Admitted]), but at least you can look ahead! *)
+
+Theorem mult_comm : forall m n : nat,
+  m * n = n * m.
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard, optional (plus_swap')
+
+    The [replace] tactic allows you to specify a particular subterm to
+   rewrite and what you want it rewritten to: [replace (t) with (u)]
+   replaces (all copies of) expression [t] in the goal by expression
+   [u], and generates [t = u] as an additional subgoal. This is often
+   useful when a plain [rewrite] acts on the wrong part of the goal.
+
+   After the [replace], you can add a sub-proof to continue proving
+   the goal you were working on before.  If successful, you then have
+   to justify that the replacement was valid (that's the new
+   subgoal!).  As with [assert], for simple replacements you can throw
+   a [by reflexivity] or [by (apply plus_comm)] onto the end instead
+   of having that extra subgoal to deal with.
+
+   Use the [replace] tactic to do a proof of [plus_swap'], just like
+   [plus_swap] but without needing [assert (n + m = m + n)]. *)
+
+Theorem plus_swap' : forall n m p : nat,
+  n + (m + p) = m + (n + p).
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* ################################################################# *)
+(** * One last hard one *)
+
+(** **** Exercise: 4 stars, standard (bin_nat_bin)
+
+    Recall the [incr] and [bin_to_nat] functions from our early work
+    on recursion. Here's one way to solve it: *)
+Fixpoint incr (m:bin) : bin :=
+  match m with
+  | BZ      => T2P1 BZ
+  | T2 m'   => T2P1 m'
+  | T2P1 m' => T2 (incr m')
+  end.
+
+Fixpoint bin_to_nat (m:bin) : nat :=
+  match m with
+  | BZ      => O
+  | T2   m' => 2 * bin_to_nat m'
+  | T2P1 m' => 1 + 2 * bin_to_nat m'
+  end.
+
+Fixpoint nat_to_bin (n:nat) : bin :=
+  match n with
+  | O    => BZ
+  | S n' => incr (nat_to_bin n')
+  end.
+
+Definition double_bin (b:bin) : bin :=
+  match b with
+  | BZ => BZ
+  | _  => T2 b
+  end.
+
+Fixpoint normalize (b:bin) : bin :=
+  match b with
+  | BZ      => BZ
+  | T2   b' => double_bin (normalize b')
+  | T2P1 b' => T2P1 (normalize b')
+  end.
+
+(** Prove (in Coq) that the following diagram commutes:
+
+                            incr
+              bin ----------------------> bin
+               |                           |
+    bin_to_nat |                           |  bin_to_nat
+               |                           |
+               v                           v
+              nat ----------------------> nat
+                             S
+
+    That is, incrementing a binary number and then converting it to
+    a (unary) natural number yields the same result as first converting
+    it to a natural number and then incrementing.
+    Name your theorem [bin_to_nat_pres_incr] ("pres" for "preserves").
+
+ *)
+
+
+Theorem bin_to_nat_pres_incr : forall b : bin, bin_to_nat (incr b)  = S(bin_to_nat b).
+Proof.
+  intros b. induction b as [| b' IHb' | b'' IHb''].
+  - simpl. reflexivity.
+  - simpl. rewrite plus_assoc.  reflexivity.
+  - simpl. rewrite IHb''. rewrite plus_n_Sm. simpl. reflexivity.
+Qed.
+
+(** Prove that [bin_to_nat] undoes the work of [nat_to_bin]. *)
+Theorem nat_bin_nat : forall n, bin_to_nat (nat_to_bin n) = n.
+Proof.
+  intros n.  induction n as [| n' IHn'].  - simpl. reflexivity.
+  - simpl. rewrite <- IHn'.  rewrite bin_to_nat_pres_incr.
+    rewrite IHn'. rewrite IHn'. reflexivity.
+Qed.
+
+(** Now prove that [nat_to_bin] undoes the work of [bin_to_nat]... up
+    to normalization.
+
+    Before trying to prove this lemma---which will need some helper
+    lemmas about [incr] and [double_bin]---ask yourself... why is
+    [normalize] there, and what is it doing?  *)
+
+Theorem incr_bin : forall b, incr (double_bin b) = T2P1 b.
+Proof.
+  intros b. induction b as [| b' IHb' | b' IHb'].
+  - simpl. reflexivity.
+  - simpl. reflexivity.
+  - simpl. reflexivity.
+Qed.
+
+Theorem double_incr_bin : forall b, T2 (incr b) = double_bin (incr b).
+Proof.
+  intros b. induction b as [| b' IHb'| b' IHb'].
+  - simpl. reflexivity.
+  - simpl. reflexivity.
+  - simpl. reflexivity.
+Qed.
+
+Theorem double_bin_double : forall n, nat_to_bin (double n) =  double_bin (nat_to_bin n).
+Proof.
+  intros n. induction n as [| n' IHn'].
+  - simpl. reflexivity.
+  - simpl. rewrite IHn'. rewrite incr_bin. simpl. apply double_incr_bin.
+Qed.
+
+Theorem bin_nat_bin : forall b, nat_to_bin (bin_to_nat b) = normalize b.
+Proof.
+  intros b. induction b as [| b' IHb' | b' IHb'].
+  - simpl. reflexivity.
+  - simpl.
+    rewrite <- plus_n_O.
+    rewrite <- double_plus.
+    rewrite <- IHb'. simpl.
+    apply double_bin_double.
+  - simpl.
+    rewrite <- IHb'.
+    rewrite <- plus_n_O.
+    rewrite <- double_plus.
+    rewrite double_bin_double.
+    apply incr_bin.
+Qed.
+(** [] *)
+
+(* 2021-10-04 14:37 *)

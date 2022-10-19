@@ -1,0 +1,269 @@
+DIGEST f479382be1607247d0d8e9b8abad2bca
+FDMFP.Day14_exists
+R15:34 DMFP.Day13_induction <> <> lib
+prf 2356:2367 <> four_is_even
+R2371:2377 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2385:2386 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2382:2384 Coq.Init.Datatypes <> nat ind
+binder 2378:2378 <> n:1050
+R2388:2390 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2392:2394 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R2391:2391 DMFP.Day14_exists <> n:1050 var
+R2395:2395 DMFP.Day14_exists <> n:1050 var
+prf 2785:2800 <> exists_example_2
+binder 2811:2811 <> n:1051
+R2816:2816 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2836:2843 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2863:2863 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2817:2823 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2825:2826 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2824:2824 <> m:1052
+R2828:2830 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2827:2827 DMFP.Day14_exists <> n:1051 var
+R2832:2834 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R2835:2835 DMFP.Day14_exists <> m:1052 var
+R2844:2850 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2852:2853 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 2851:2851 <> o:1053
+R2855:2857 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2854:2854 DMFP.Day14_exists <> n:1051 var
+R2859:2861 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R2862:2862 DMFP.Day14_exists <> o:1053 var
+R2963:2965 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R2963:2965 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+prf 3243:3257 <> dist_not_exists
+binder 3269:3269 <> X:1054
+R3283:3286 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3282:3282 DMFP.Day14_exists <> X:1054 var
+binder 3278:3278 <> P:1055
+R3296:3296 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3310:3314 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 3304:3304 <> x:1056
+R3307:3307 DMFP.Day14_exists <> P:1055 var
+R3309:3309 DMFP.Day14_exists <> x:1056 var
+R3315:3317 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3333:3333 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3318:3324 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3326:3327 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3325:3325 <> x:1057
+R3328:3329 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3330:3330 DMFP.Day14_exists <> P:1055 var
+R3332:3332 DMFP.Day14_exists <> x:1057 var
+prf 3684:3698 <> dist_not_forall
+binder 3710:3710 <> X:1058
+R3724:3727 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3723:3723 DMFP.Day14_exists <> X:1058 var
+binder 3719:3719 <> P:1059
+R3739:3739 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3753:3757 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3740:3746 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3748:3749 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 3747:3747 <> x:1060
+R3750:3750 DMFP.Day14_exists <> P:1059 var
+R3752:3752 DMFP.Day14_exists <> x:1060 var
+R3758:3760 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3776:3776 Coq.Init.Logic <> ::type_scope:'~'_x not
+binder 3768:3768 <> x:1061
+R3771:3772 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3773:3773 DMFP.Day14_exists <> P:1059 var
+R3775:3775 DMFP.Day14_exists <> x:1061 var
+R3795:3797 Coq.Init.Logic <> not def
+R3851:3854 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3855:3859 Coq.Init.Logic <> False ind
+R3851:3854 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3855:3859 Coq.Init.Logic <> False ind
+prf 4069:4082 <> dist_exists_or
+binder 4094:4094 <> X:1062
+R4110:4113 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4109:4109 DMFP.Day14_exists <> X:1062 var
+binder 4103:4103 <> P:1063
+binder 4105:4105 <> Q:1064
+R4123:4123 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R4144:4149 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R4124:4130 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4132:4133 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4131:4131 <> x:1065
+R4137:4140 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R4134:4134 DMFP.Day14_exists <> P:1063 var
+R4136:4136 DMFP.Day14_exists <> x:1065 var
+R4141:4141 DMFP.Day14_exists <> Q:1064 var
+R4143:4143 DMFP.Day14_exists <> x:1065 var
+R4150:4150 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R4164:4169 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R4183:4183 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R4151:4157 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4159:4160 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4158:4158 <> x:1066
+R4161:4161 DMFP.Day14_exists <> P:1063 var
+R4163:4163 DMFP.Day14_exists <> x:1066 var
+R4170:4176 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R4178:4179 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 4177:4177 <> x:1067
+R4180:4180 DMFP.Day14_exists <> Q:1064 var
+R4182:4182 DMFP.Day14_exists <> x:1067 var
+prf 5458:5464 <> evenb_S
+R5479:5481 Coq.Init.Datatypes <> nat ind
+binder 5475:5475 <> n:1068
+R5497:5499 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5486:5490 DMFP.Day02_types <> evenb def
+R5493:5493 Coq.Init.Datatypes <> S constr
+R5495:5495 DMFP.Day14_exists <> n:1068 var
+R5500:5503 DMFP.Day01_intro <> negb def
+R5506:5510 DMFP.Day02_types <> evenb def
+R5512:5512 DMFP.Day14_exists <> n:1068 var
+prf 5573:5584 <> evenb_double
+binder 5595:5595 <> k:1069
+R5614:5616 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5598:5602 DMFP.Day02_types <> evenb def
+R5605:5610 DMFP.Day13_induction <> double def
+R5612:5612 DMFP.Day14_exists <> k:1069 var
+R5617:5620 DMFP.Day01_intro <> true constr
+prf 5783:5799 <> evenb_double_conv
+binder 5810:5810 <> n:1070
+R5815:5821 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R5823:5824 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 5822:5822 <> k:1071
+R5826:5828 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5825:5825 DMFP.Day14_exists <> n:1070 var
+R5832:5836 DMFP.Day02_types <> evenb def
+R5838:5838 DMFP.Day14_exists <> n:1070 var
+R5875:5875 Coq.Init.Datatypes <> S constr
+R5878:5883 DMFP.Day13_induction <> double def
+R5885:5885 DMFP.Day14_exists <> k:1071 var
+R5845:5850 DMFP.Day13_induction <> double def
+R5852:5852 DMFP.Day14_exists <> k:1071 var
+R5994:6000 DMFP.Day14_exists <> evenb_S prfax
+R5994:6000 DMFP.Day14_exists <> evenb_S prfax
+R5994:6000 DMFP.Day14_exists <> evenb_S prfax
+R6012:6016 DMFP.Day02_types <> evenb def
+R6083:6083 Coq.Init.Datatypes <> S constr
+R6083:6083 Coq.Init.Datatypes <> S constr
+prf 6144:6157 <> even_bool_prop
+binder 6168:6168 <> n:1072
+R6187:6191 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R6180:6182 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6173:6177 DMFP.Day02_types <> evenb def
+R6179:6179 DMFP.Day14_exists <> n:1072 var
+R6183:6186 DMFP.Day01_intro <> true constr
+R6192:6198 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R6200:6201 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 6199:6199 <> k:1073
+R6203:6205 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6202:6202 DMFP.Day14_exists <> n:1072 var
+R6206:6211 DMFP.Day13_induction <> double def
+R6213:6213 DMFP.Day14_exists <> k:1073 var
+R6266:6282 DMFP.Day14_exists <> evenb_double_conv thm
+R6266:6282 DMFP.Day14_exists <> evenb_double_conv thm
+R6385:6396 DMFP.Day14_exists <> evenb_double thm
+R6385:6396 DMFP.Day14_exists <> evenb_double thm
+def 7762:7774 <> is_even_prime
+binder 7776:7776 <> n:1074
+R7787:7789 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7786:7786 DMFP.Day14_exists <> n:1074 var
+R7809:7813 DMFP.Day01_intro <> false constr
+R7797:7800 DMFP.Day01_intro <> true constr
+def 9403:9411 <> even_1000
+R9415:9421 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9423:9424 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9422:9422 <> k:1075
+R9429:9431 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9432:9437 DMFP.Day13_induction <> double def
+R9439:9439 DMFP.Day14_exists <> k:1075 var
+def 9673:9682 <> even_1000'
+R9696:9698 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9686:9690 DMFP.Day02_types <> evenb def
+R9699:9702 DMFP.Day01_intro <> true constr
+def 9925:9935 <> even_1000''
+R9939:9945 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R9947:9948 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 9946:9946 <> k:1076
+R9953:9955 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9956:9961 DMFP.Day13_induction <> double def
+R9963:9963 DMFP.Day14_exists <> k:1076 var
+R9979:9992 DMFP.Day14_exists <> even_bool_prop thm
+R9979:9992 DMFP.Day14_exists <> even_bool_prop thm
+def 11126:11140 <> excluded_middle
+binder 11152:11152 <> P:1077
+R11167:11170 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R11166:11166 DMFP.Day14_exists <> P:1077 var
+R11171:11172 Coq.Init.Logic <> ::type_scope:'~'_x not
+R11173:11173 DMFP.Day14_exists <> P:1077 var
+prf 11913:11938 <> restricted_excluded_middle
+binder 11949:11949 <> P:1078
+binder 11951:11951 <> b:1079
+R11956:11956 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11971:11975 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R11958:11962 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R11957:11957 DMFP.Day14_exists <> P:1078 var
+R11964:11966 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R11963:11963 DMFP.Day14_exists <> b:1079 var
+R11967:11970 DMFP.Day01_intro <> true constr
+R11977:11980 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R11976:11976 DMFP.Day14_exists <> P:1078 var
+R11981:11982 Coq.Init.Logic <> ::type_scope:'~'_x not
+R11983:11983 DMFP.Day14_exists <> P:1078 var
+prf 12566:12594 <> restricted_excluded_middle_eq
+R12612:12614 Coq.Init.Datatypes <> nat ind
+binder 12606:12606 <> n:1080
+binder 12608:12608 <> m:1081
+R12622:12622 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12659:12700 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+binder 12630:12630 <> n:1082
+binder 12632:12632 <> m:1083
+R12640:12644 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R12636:12638 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12635:12635 DMFP.Day14_exists <> n:1082 var
+R12639:12639 DMFP.Day14_exists <> m:1083 var
+R12652:12654 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12645:12647 DMFP.Day02_types <> eqb def
+R12649:12649 DMFP.Day14_exists <> n:1082 var
+R12651:12651 DMFP.Day14_exists <> m:1083 var
+R12655:12658 DMFP.Day01_intro <> true constr
+R12706:12709 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R12702:12704 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12701:12701 DMFP.Day14_exists <> n:1080 var
+R12705:12705 DMFP.Day14_exists <> m:1081 var
+R12711:12714 Coq.Init.Logic <> ::type_scope:x_'<>'_x not
+R12710:12710 DMFP.Day14_exists <> n:1080 var
+R12715:12715 DMFP.Day14_exists <> m:1081 var
+R12761:12786 DMFP.Day14_exists <> restricted_excluded_middle thm
+R12790:12792 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12797:12799 DMFP.Day02_types <> eqb def
+R12761:12786 DMFP.Day14_exists <> restricted_excluded_middle thm
+R12790:12792 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12797:12799 DMFP.Day02_types <> eqb def
+prf 16499:16520 <> not_exists__forall_not
+binder 16532:16532 <> X:1084
+R16548:16551 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16547:16547 DMFP.Day14_exists <> X:1084 var
+binder 16543:16543 <> P:1085
+R16563:16563 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16579:16583 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16564:16565 Coq.Init.Logic <> ::type_scope:'~'_x not
+R16566:16572 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16574:16575 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16573:16573 <> x:1086
+R16576:16576 DMFP.Day14_exists <> P:1085 var
+R16578:16578 DMFP.Day14_exists <> x:1086 var
+binder 16591:16591 <> x:1087
+R16594:16595 Coq.Init.Logic <> ::type_scope:'~'_x not
+R16596:16596 DMFP.Day14_exists <> P:1085 var
+R16598:16598 DMFP.Day14_exists <> x:1087 var
+prf 16675:16696 <> not_forall__exists_not
+binder 16708:16708 <> X:1088
+R16724:16727 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16723:16723 DMFP.Day14_exists <> X:1088 var
+binder 16719:16719 <> P:1089
+R16739:16739 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16755:16759 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16740:16741 Coq.Init.Logic <> ::type_scope:'~'_x not
+binder 16749:16749 <> x:1090
+R16752:16752 DMFP.Day14_exists <> P:1089 var
+R16754:16754 DMFP.Day14_exists <> x:1090 var
+R16760:16766 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R16768:16769 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 16767:16767 <> x:1091
+R16770:16771 Coq.Init.Logic <> ::type_scope:'~'_x not
+R16772:16772 DMFP.Day14_exists <> P:1089 var
+R16774:16774 DMFP.Day14_exists <> x:1091 var
+R16793:16795 Coq.Init.Logic <> not def

@@ -1,0 +1,550 @@
+DIGEST 823d9a523347c80ccf59d02b2ffcca05
+FDMFP.Day10_expressions
+R15:32 Coq.Strings.String <> <> lib
+R50:71 DMFP.Day09_levenshtein <> <> lib
+mod 522:525 <> AExp
+ind 774:777 AExp aexp
+constr 793:796 AExp ANum
+constr 812:816 AExp APlus
+constr 837:842 AExp AMinus
+constr 863:867 AExp AMult
+R803:805 Coq.Init.Datatypes <> nat ind
+binder 799:799 <> n:601
+R827:830 DMFP.Day10_expressions <> aexp:599 ind
+binder 819:820 <> a1:602
+binder 822:823 <> a2:603
+R853:856 DMFP.Day10_expressions <> aexp:599 ind
+binder 845:846 <> a1:604
+binder 848:849 <> a2:605
+R878:881 DMFP.Day10_expressions <> aexp:599 ind
+binder 870:871 <> a1:606
+binder 873:874 <> a2:607
+ind 896:899 AExp bexp
+constr 915:919 AExp BTrue
+constr 925:930 AExp BFalse
+constr 936:938 AExp BEq
+constr 959:961 AExp BLe
+constr 982:985 AExp BNot
+constr 1002:1005 AExp BAnd
+R949:952 DMFP.Day10_expressions AExp aexp ind
+binder 941:942 <> a1:610
+binder 944:945 <> a2:611
+R972:975 DMFP.Day10_expressions AExp aexp ind
+binder 964:965 <> a1:612
+binder 967:968 <> a2:613
+R992:995 DMFP.Day10_expressions <> bexp:608 ind
+binder 988:988 <> b:614
+R1016:1019 DMFP.Day10_expressions <> bexp:608 ind
+binder 1008:1009 <> b1:615
+binder 1011:1012 <> b2:616
+def 3561:3565 AExp aeval
+R3572:3575 DMFP.Day10_expressions AExp aexp ind
+binder 3568:3568 <> a:617
+R3580:3582 Coq.Init.Datatypes <> nat ind
+R3595:3595 DMFP.Day10_expressions <> a:617 var
+R3606:3609 DMFP.Day10_expressions AExp ANum constr
+R3622:3626 DMFP.Day10_expressions AExp APlus constr
+R3638:3638 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R3647:3651 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R3660:3660 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R3639:3643 DMFP.Day10_expressions <> aeval:618 def
+R3652:3656 DMFP.Day10_expressions <> aeval:618 def
+R3666:3671 DMFP.Day10_expressions AExp AMinus constr
+R3682:3682 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R3691:3695 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R3704:3704 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R3683:3687 DMFP.Day10_expressions <> aeval:618 def
+R3696:3700 DMFP.Day10_expressions <> aeval:618 def
+R3710:3714 DMFP.Day10_expressions AExp AMult constr
+R3726:3726 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R3735:3739 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R3748:3748 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R3727:3731 DMFP.Day10_expressions <> aeval:618 def
+R3740:3744 DMFP.Day10_expressions <> aeval:618 def
+R3767:3771 DMFP.Day10_expressions AExp aeval def
+R3774:3778 DMFP.Day10_expressions AExp APlus constr
+R3781:3784 DMFP.Day10_expressions AExp ANum constr
+R3790:3793 DMFP.Day10_expressions AExp ANum constr
+def 4089:4093 AExp beval
+R4100:4103 DMFP.Day10_expressions AExp bexp ind
+binder 4096:4096 <> b:620
+R4108:4111 DMFP.Day01_intro <> bool ind
+R4124:4124 DMFP.Day10_expressions <> b:620 var
+R4135:4139 DMFP.Day10_expressions AExp BTrue constr
+R4145:4148 DMFP.Day01_intro <> true constr
+R4154:4159 DMFP.Day10_expressions AExp BFalse constr
+R4165:4169 DMFP.Day01_intro <> false constr
+R4175:4177 DMFP.Day10_expressions AExp BEq constr
+R4188:4190 DMFP.Day02_types <> eqb def
+R4193:4197 DMFP.Day10_expressions AExp aeval def
+R4204:4208 DMFP.Day10_expressions AExp aeval def
+R4218:4220 DMFP.Day10_expressions AExp BLe constr
+R4231:4233 DMFP.Day02_types <> leb def
+R4236:4240 DMFP.Day10_expressions AExp aeval def
+R4247:4251 DMFP.Day10_expressions AExp aeval def
+R4261:4264 DMFP.Day10_expressions AExp BNot constr
+R4271:4274 DMFP.Day01_intro <> negb def
+R4277:4281 DMFP.Day10_expressions <> beval:621 def
+R4283:4283 DMFP.Day10_expressions <> b:620 var
+R4290:4293 DMFP.Day10_expressions AExp BAnd constr
+R4312:4315 DMFP.Day01_intro <> :::x_'&&'_x not
+R4304:4308 DMFP.Day10_expressions <> beval:621 def
+R4316:4320 DMFP.Day10_expressions <> beval:621 def
+def 4741:4754 AExp optimize_0plus
+R4759:4762 DMFP.Day10_expressions AExp aexp ind
+binder 4757:4757 <> a:623
+R4767:4770 DMFP.Day10_expressions AExp aexp ind
+R4783:4783 DMFP.Day10_expressions <> a:623 var
+R4794:4797 DMFP.Day10_expressions AExp ANum constr
+R4804:4807 DMFP.Day10_expressions AExp ANum constr
+R4815:4819 DMFP.Day10_expressions AExp APlus constr
+R4822:4825 DMFP.Day10_expressions AExp ANum constr
+R4836:4849 DMFP.Day10_expressions <> optimize_0plus:624 def
+R4858:4862 DMFP.Day10_expressions AExp APlus constr
+R4874:4878 DMFP.Day10_expressions AExp APlus constr
+R4882:4895 DMFP.Day10_expressions <> optimize_0plus:624 def
+R4902:4915 DMFP.Day10_expressions <> optimize_0plus:624 def
+R4925:4930 DMFP.Day10_expressions AExp AMinus constr
+R4941:4946 DMFP.Day10_expressions AExp AMinus constr
+R4949:4962 DMFP.Day10_expressions <> optimize_0plus:624 def
+R4969:4982 DMFP.Day10_expressions <> optimize_0plus:624 def
+R4992:4996 DMFP.Day10_expressions AExp AMult constr
+R5008:5012 DMFP.Day10_expressions AExp AMult constr
+R5016:5029 DMFP.Day10_expressions <> optimize_0plus:624 def
+R5036:5049 DMFP.Day10_expressions <> optimize_0plus:624 def
+R5203:5216 DMFP.Day10_expressions AExp optimize_0plus def
+R5219:5223 DMFP.Day10_expressions AExp APlus constr
+R5226:5229 DMFP.Day10_expressions AExp ANum constr
+R5266:5270 DMFP.Day10_expressions AExp APlus constr
+R5273:5276 DMFP.Day10_expressions AExp ANum constr
+R5320:5324 DMFP.Day10_expressions AExp APlus constr
+R5327:5330 DMFP.Day10_expressions AExp ANum constr
+R5336:5339 DMFP.Day10_expressions AExp ANum constr
+R5388:5391 DMFP.Day10_expressions AExp <> mod
+def 6649:6653 <> state
+R6664:6667 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6658:6663 Coq.Strings.String <> string ind
+R6668:6670 Coq.Init.Datatypes <> nat ind
+def 6685:6692 <> empty_st
+R6696:6700 DMFP.Day10_expressions <> state def
+binder 6709:6710 <> _x:626
+def 6730:6738 <> extend_st
+R6746:6750 DMFP.Day10_expressions <> state def
+binder 6741:6742 <> st:627
+R6758:6763 Coq.Strings.String <> string ind
+binder 6754:6754 <> x:628
+R6771:6773 Coq.Init.Datatypes <> nat ind
+binder 6767:6767 <> n:629
+binder 6785:6785 <> y:630
+R6793:6802 Coq.Strings.String <> eqb def
+R6804:6804 DMFP.Day10_expressions <> x:628 var
+R6806:6806 DMFP.Day10_expressions <> y:630 var
+R6820:6821 DMFP.Day10_expressions <> st:627 var
+R6823:6823 DMFP.Day10_expressions <> y:630 var
+R6813:6813 DMFP.Day10_expressions <> n:629 var
+def 6838:6838 <> W
+R6842:6847 Coq.Strings.String <> string ind
+def 6868:6868 <> X
+R6872:6877 Coq.Strings.String <> string ind
+def 6898:6898 <> Y
+R6902:6907 Coq.Strings.String <> string ind
+def 6928:6928 <> Z
+R6932:6937 Coq.Strings.String <> string ind
+ind 7165:7168 <> aexp
+constr 7184:7187 <> ANum
+constr 7203:7205 <> AId
+constr 7252:7256 <> APlus
+constr 7277:7282 <> AMinus
+constr 7303:7307 <> AMult
+R7194:7196 Coq.Init.Datatypes <> nat ind
+binder 7190:7190 <> n:633
+R7212:7217 Coq.Strings.String <> string ind
+binder 7208:7208 <> x:634
+R7267:7270 DMFP.Day10_expressions <> aexp:631 ind
+binder 7259:7260 <> a1:635
+binder 7262:7263 <> a2:636
+R7293:7296 DMFP.Day10_expressions <> aexp:631 ind
+binder 7285:7286 <> a1:637
+binder 7288:7289 <> a2:638
+R7318:7321 DMFP.Day10_expressions <> aexp:631 ind
+binder 7310:7311 <> a1:639
+binder 7313:7314 <> a2:640
+ind 7435:7438 <> bexp
+constr 7454:7458 <> BTrue
+constr 7464:7469 <> BFalse
+constr 7475:7477 <> BEq
+constr 7498:7500 <> BLe
+constr 7521:7524 <> BNot
+constr 7541:7544 <> BAnd
+R7488:7491 DMFP.Day10_expressions <> aexp ind
+binder 7480:7481 <> a1:643
+binder 7483:7484 <> a2:644
+R7511:7514 DMFP.Day10_expressions <> aexp ind
+binder 7503:7504 <> a1:645
+binder 7506:7507 <> a2:646
+R7531:7534 DMFP.Day10_expressions <> bexp:641 ind
+binder 7527:7527 <> b:647
+R7555:7558 DMFP.Day10_expressions <> bexp:641 ind
+binder 7547:7548 <> b1:648
+binder 7550:7551 <> b2:649
+def 7805:7809 <> aeval
+R7817:7821 DMFP.Day10_expressions <> state def
+binder 7812:7813 <> st:650
+R7829:7832 DMFP.Day10_expressions <> aexp ind
+binder 7825:7825 <> a:651
+R7837:7839 Coq.Init.Datatypes <> nat ind
+R7852:7852 DMFP.Day10_expressions <> a:651 var
+R7863:7866 DMFP.Day10_expressions <> ANum constr
+R7879:7881 DMFP.Day10_expressions <> AId constr
+R7888:7889 DMFP.Day10_expressions <> st:650 var
+R7897:7901 DMFP.Day10_expressions <> APlus constr
+R7912:7912 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R7924:7928 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R7940:7940 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R7913:7917 DMFP.Day10_expressions <> aeval:652 def
+R7919:7920 DMFP.Day10_expressions <> st:650 var
+R7929:7933 DMFP.Day10_expressions <> aeval:652 def
+R7935:7936 DMFP.Day10_expressions <> st:650 var
+R7946:7951 DMFP.Day10_expressions <> AMinus constr
+R7963:7963 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R7975:7979 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R7991:7991 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R7964:7968 DMFP.Day10_expressions <> aeval:652 def
+R7970:7971 DMFP.Day10_expressions <> st:650 var
+R7980:7984 DMFP.Day10_expressions <> aeval:652 def
+R7986:7987 DMFP.Day10_expressions <> st:650 var
+R7997:8001 DMFP.Day10_expressions <> AMult constr
+R8012:8012 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R8024:8028 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R8040:8040 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R8013:8017 DMFP.Day10_expressions <> aeval:652 def
+R8019:8020 DMFP.Day10_expressions <> st:650 var
+R8029:8033 DMFP.Day10_expressions <> aeval:652 def
+R8035:8036 DMFP.Day10_expressions <> st:650 var
+def 8137:8141 <> beval
+R8149:8153 DMFP.Day10_expressions <> state def
+binder 8144:8145 <> st:654
+R8161:8164 DMFP.Day10_expressions <> bexp ind
+binder 8157:8157 <> b:655
+R8169:8172 DMFP.Day01_intro <> bool ind
+R8185:8185 DMFP.Day10_expressions <> b:655 var
+R8196:8200 DMFP.Day10_expressions <> BTrue constr
+R8205:8208 DMFP.Day01_intro <> true constr
+R8214:8219 DMFP.Day10_expressions <> BFalse constr
+R8224:8228 DMFP.Day01_intro <> false constr
+R8234:8236 DMFP.Day10_expressions <> BEq constr
+R8247:8249 DMFP.Day02_types <> eqb def
+R8252:8256 DMFP.Day10_expressions <> aeval def
+R8258:8259 DMFP.Day10_expressions <> st:654 var
+R8266:8270 DMFP.Day10_expressions <> aeval def
+R8272:8273 DMFP.Day10_expressions <> st:654 var
+R8283:8285 DMFP.Day10_expressions <> BLe constr
+R8296:8298 DMFP.Day02_types <> leb def
+R8301:8305 DMFP.Day10_expressions <> aeval def
+R8307:8308 DMFP.Day10_expressions <> st:654 var
+R8316:8320 DMFP.Day10_expressions <> aeval def
+R8322:8323 DMFP.Day10_expressions <> st:654 var
+R8333:8336 DMFP.Day10_expressions <> BNot constr
+R8343:8346 DMFP.Day01_intro <> negb def
+R8349:8353 DMFP.Day10_expressions <> beval:656 def
+R8358:8358 DMFP.Day10_expressions <> b:655 var
+R8355:8356 DMFP.Day10_expressions <> st:654 var
+R8365:8368 DMFP.Day10_expressions <> BAnd constr
+R8390:8393 DMFP.Day01_intro <> :::x_'&&'_x not
+R8379:8383 DMFP.Day10_expressions <> beval:656 def
+R8385:8386 DMFP.Day10_expressions <> st:654 var
+R8394:8398 DMFP.Day10_expressions <> beval:656 def
+R8400:8401 DMFP.Day10_expressions <> st:654 var
+R8434:8438 DMFP.Day10_expressions <> aeval def
+R8441:8449 DMFP.Day10_expressions <> extend_st def
+R8451:8458 DMFP.Day10_expressions <> empty_st def
+R8460:8460 DMFP.Day10_expressions <> X def
+R8466:8470 DMFP.Day10_expressions <> APlus constr
+R8473:8476 DMFP.Day10_expressions <> ANum constr
+R8482:8486 DMFP.Day10_expressions <> AMult constr
+R8489:8491 DMFP.Day10_expressions <> AId constr
+R8493:8493 DMFP.Day10_expressions <> X def
+R8497:8500 DMFP.Day10_expressions <> ANum constr
+R8533:8537 DMFP.Day10_expressions <> beval def
+R8540:8548 DMFP.Day10_expressions <> extend_st def
+R8550:8557 DMFP.Day10_expressions <> empty_st def
+R8559:8559 DMFP.Day10_expressions <> X def
+R8566:8569 DMFP.Day10_expressions <> BAnd constr
+R8571:8575 DMFP.Day10_expressions <> BTrue constr
+R8578:8581 DMFP.Day10_expressions <> BNot constr
+R8584:8586 DMFP.Day10_expressions <> BLe constr
+R8589:8591 DMFP.Day10_expressions <> AId constr
+R8593:8593 DMFP.Day10_expressions <> X def
+R8597:8600 DMFP.Day10_expressions <> ANum constr
+def 9053:9055 <> bor
+R9066:9069 DMFP.Day10_expressions <> bexp ind
+binder 9058:9059 <> b1:658
+binder 9061:9062 <> b2:659
+R9074:9077 DMFP.Day10_expressions <> bexp ind
+R9084:9087 DMFP.Day10_expressions <> BNot constr
+R9090:9093 DMFP.Day10_expressions <> BAnd constr
+R9096:9099 DMFP.Day10_expressions <> BNot constr
+R9101:9102 DMFP.Day10_expressions <> b1:658 var
+R9106:9109 DMFP.Day10_expressions <> BNot constr
+R9111:9112 DMFP.Day10_expressions <> b2:659 var
+R9127:9131 DMFP.Day10_expressions <> beval def
+R9133:9140 DMFP.Day10_expressions <> empty_st def
+R9143:9145 DMFP.Day10_expressions <> bor def
+R9147:9151 DMFP.Day10_expressions <> BTrue constr
+R9154:9158 DMFP.Day10_expressions <> BTrue constr
+R9172:9176 DMFP.Day10_expressions <> beval def
+R9178:9185 DMFP.Day10_expressions <> empty_st def
+R9188:9190 DMFP.Day10_expressions <> bor def
+R9192:9196 DMFP.Day10_expressions <> BTrue constr
+R9199:9204 DMFP.Day10_expressions <> BFalse constr
+R9218:9222 DMFP.Day10_expressions <> beval def
+R9224:9231 DMFP.Day10_expressions <> empty_st def
+R9234:9236 DMFP.Day10_expressions <> bor def
+R9238:9243 DMFP.Day10_expressions <> BFalse constr
+R9245:9249 DMFP.Day10_expressions <> BTrue constr
+R9263:9267 DMFP.Day10_expressions <> beval def
+R9269:9276 DMFP.Day10_expressions <> empty_st def
+R9279:9281 DMFP.Day10_expressions <> bor def
+R9283:9288 DMFP.Day10_expressions <> BFalse constr
+R9290:9295 DMFP.Day10_expressions <> BFalse constr
+R9309:9313 DMFP.Day10_expressions <> beval def
+R9315:9322 DMFP.Day10_expressions <> empty_st def
+R9325:9327 DMFP.Day10_expressions <> bor def
+R9330:9333 DMFP.Day10_expressions <> BNot constr
+R9336:9338 DMFP.Day10_expressions <> BLe constr
+R9341:9344 DMFP.Day10_expressions <> ANum constr
+R9350:9353 DMFP.Day10_expressions <> ANum constr
+R9361:9363 DMFP.Day10_expressions <> BEq constr
+R9366:9369 DMFP.Day10_expressions <> ANum constr
+R9375:9378 DMFP.Day10_expressions <> ANum constr
+def 10058:10060 <> blt
+R10071:10074 DMFP.Day10_expressions <> aexp ind
+binder 10063:10064 <> a1:660
+binder 10066:10067 <> a2:661
+R10079:10082 DMFP.Day10_expressions <> bexp ind
+R10087:10090 DMFP.Day10_expressions <> BNot constr
+R10093:10095 DMFP.Day10_expressions <> BLe constr
+R10097:10098 DMFP.Day10_expressions <> a2:661 var
+R10100:10101 DMFP.Day10_expressions <> a1:660 var
+def 10117:10119 <> bgt
+R10130:10133 DMFP.Day10_expressions <> aexp ind
+binder 10122:10123 <> a1:662
+binder 10125:10126 <> a2:663
+R10138:10141 DMFP.Day10_expressions <> bexp ind
+R10146:10149 DMFP.Day10_expressions <> BNot constr
+R10152:10154 DMFP.Day10_expressions <> BLe constr
+R10156:10157 DMFP.Day10_expressions <> a1:662 var
+R10159:10160 DMFP.Day10_expressions <> a2:663 var
+def 10176:10178 <> bge
+R10189:10192 DMFP.Day10_expressions <> aexp ind
+binder 10181:10182 <> a1:664
+binder 10184:10185 <> a2:665
+R10197:10200 DMFP.Day10_expressions <> bexp ind
+R10205:10207 DMFP.Day10_expressions <> BLe constr
+R10209:10210 DMFP.Day10_expressions <> a2:665 var
+R10212:10213 DMFP.Day10_expressions <> a1:664 var
+def 10228:10230 <> bne
+R10241:10244 DMFP.Day10_expressions <> aexp ind
+binder 10233:10234 <> a1:666
+binder 10236:10237 <> a2:667
+R10249:10252 DMFP.Day10_expressions <> bexp ind
+R10257:10260 DMFP.Day10_expressions <> BNot constr
+R10263:10265 DMFP.Day10_expressions <> BEq constr
+R10267:10268 DMFP.Day10_expressions <> a1:666 var
+R10270:10271 DMFP.Day10_expressions <> a2:667 var
+def 10326:10351 <> manual_grade_for_encodings
+R10355:10360 Coq.Init.Datatypes <> option ind
+R10366:10366 DMFP.Day04_structures <> ::type_scope:x_'*'_x not
+R10363:10365 Coq.Init.Datatypes <> nat ind
+R10367:10372 Coq.Strings.String <> string ind
+R10378:10381 Coq.Init.Datatypes <> None constr
+ind 13083:13088 <> sinstr
+constr 13102:13106 <> SPush
+constr 13120:13124 <> SLoad
+constr 13141:13145 <> SPlus
+constr 13149:13154 <> SMinus
+constr 13158:13162 <> SMult
+R13113:13115 Coq.Init.Datatypes <> nat ind
+binder 13109:13109 <> n:670
+R13131:13136 Coq.Strings.String <> string ind
+binder 13127:13127 <> x:671
+def 13217:13223 <> prog_eg
+R13227:13230 DMFP.Day04_structures <> list ind
+R13232:13237 DMFP.Day10_expressions <> sinstr ind
+R13244:13245 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13253:13254 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13262:13263 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13269:13270 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13278:13279 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13287:13288 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13296:13297 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13304:13305 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13311:13312 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13318:13319 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R13246:13250 DMFP.Day10_expressions <> SPush constr
+R13255:13259 DMFP.Day10_expressions <> SPush constr
+R13264:13268 DMFP.Day10_expressions <> SMult constr
+R13271:13275 DMFP.Day10_expressions <> SPush constr
+R13280:13284 DMFP.Day10_expressions <> SPush constr
+R13289:13293 DMFP.Day10_expressions <> SPush constr
+R13298:13303 DMFP.Day10_expressions <> SMinus constr
+R13306:13310 DMFP.Day10_expressions <> SMult constr
+R13313:13317 DMFP.Day10_expressions <> SPlus constr
+def 14253:14258 <> s_insn
+R14266:14270 DMFP.Day10_expressions <> state def
+binder 14261:14262 <> st:672
+R14282:14285 DMFP.Day04_structures <> list ind
+R14287:14289 Coq.Init.Datatypes <> nat ind
+binder 14274:14278 <> stack:673
+R14300:14305 DMFP.Day10_expressions <> sinstr ind
+binder 14293:14296 <> insn:674
+R14310:14313 DMFP.Day04_structures <> list ind
+R14315:14317 Coq.Init.Datatypes <> nat ind
+R14330:14330 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14335:14336 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14342:14342 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14331:14334 DMFP.Day10_expressions <> insn:674 var
+R14337:14341 DMFP.Day10_expressions <> stack:673 var
+R14353:14353 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14361:14362 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14364:14364 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14354:14358 DMFP.Day10_expressions <> SPush constr
+R14380:14383 DMFP.Day05_lists <> :::x_'::'_x not
+R14384:14388 DMFP.Day10_expressions <> stack:673 var
+R14394:14394 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14402:14403 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14405:14405 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14395:14399 DMFP.Day10_expressions <> SLoad constr
+R14424:14427 DMFP.Day05_lists <> :::x_'::'_x not
+R14420:14421 DMFP.Day10_expressions <> st:672 var
+R14428:14432 DMFP.Day10_expressions <> stack:673 var
+R14438:14438 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14444:14445 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14458:14458 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14439:14443 DMFP.Day10_expressions <> SPlus constr
+R14447:14448 DMFP.Day05_lists <> :::x_'::'_x not
+R14450:14451 DMFP.Day05_lists <> :::x_'::'_x not
+R14464:14464 DMFP.Day05_lists <> :::x_'::'_x not
+R14468:14470 DMFP.Day05_lists <> :::x_'::'_x not
+R14466:14466 DMFP.Day02_types <> ::nat_scope:x_'+'_x not
+R14482:14482 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14489:14490 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14503:14503 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14483:14488 DMFP.Day10_expressions <> SMinus constr
+R14492:14493 DMFP.Day05_lists <> :::x_'::'_x not
+R14495:14496 DMFP.Day05_lists <> :::x_'::'_x not
+R14508:14508 DMFP.Day05_lists <> :::x_'::'_x not
+R14512:14514 DMFP.Day05_lists <> :::x_'::'_x not
+R14510:14510 DMFP.Day02_types <> ::nat_scope:x_'-'_x not
+R14526:14526 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14532:14533 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14546:14546 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14527:14531 DMFP.Day10_expressions <> SMult constr
+R14535:14536 DMFP.Day05_lists <> :::x_'::'_x not
+R14538:14539 DMFP.Day05_lists <> :::x_'::'_x not
+R14552:14552 DMFP.Day05_lists <> :::x_'::'_x not
+R14556:14558 DMFP.Day05_lists <> :::x_'::'_x not
+R14554:14554 DMFP.Day02_types <> ::nat_scope:x_'*'_x not
+R14570:14570 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14572:14573 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14575:14575 DMFP.Day04_structures <> :::'('_x_','_x_')' not
+R14596:14600 DMFP.Day10_expressions <> stack:673 var
+def 14743:14751 <> s_execute
+R14759:14763 DMFP.Day10_expressions <> state def
+binder 14754:14755 <> st:675
+R14775:14778 DMFP.Day04_structures <> list ind
+R14780:14782 Coq.Init.Datatypes <> nat ind
+binder 14767:14771 <> stack:676
+R14812:14815 DMFP.Day04_structures <> list ind
+R14817:14822 DMFP.Day10_expressions <> sinstr ind
+binder 14805:14808 <> prog:677
+R14844:14847 DMFP.Day04_structures <> list ind
+R14849:14851 Coq.Init.Datatypes <> nat ind
+R14864:14867 DMFP.Day10_expressions <> prog:677 var
+R14878:14880 DMFP.Day04_structures <> nil constr
+R14893:14897 DMFP.Day10_expressions <> stack:676 var
+R14907:14908 DMFP.Day05_lists <> :::x_'::'_x not
+R14918:14926 DMFP.Day10_expressions <> s_execute:678 def
+R14932:14937 DMFP.Day10_expressions <> s_insn def
+R14939:14940 DMFP.Day10_expressions <> st:675 var
+R14942:14946 DMFP.Day10_expressions <> stack:676 var
+R14928:14929 DMFP.Day10_expressions <> st:675 var
+R14976:14984 DMFP.Day10_expressions <> s_execute def
+R14986:14993 DMFP.Day10_expressions <> empty_st def
+R14995:14996 DMFP.Day05_lists <> :::'['_']' not
+R14998:15004 DMFP.Day10_expressions <> prog_eg def
+R15033:15041 DMFP.Day10_expressions <> s_execute def
+R15043:15050 DMFP.Day10_expressions <> empty_st def
+R15052:15053 DMFP.Day05_lists <> :::'['_']' not
+R15055:15055 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15063:15064 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15072:15073 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15081:15082 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15089:15089 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15056:15060 DMFP.Day10_expressions <> SPush constr
+R15065:15069 DMFP.Day10_expressions <> SPush constr
+R15074:15078 DMFP.Day10_expressions <> SPush constr
+R15083:15088 DMFP.Day10_expressions <> SMinus constr
+R15121:15129 DMFP.Day10_expressions <> s_execute def
+R15132:15140 DMFP.Day10_expressions <> extend_st def
+R15142:15149 DMFP.Day10_expressions <> empty_st def
+R15151:15151 DMFP.Day10_expressions <> X def
+R15156:15156 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15158:15158 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15160:15160 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15162:15162 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15170:15171 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15179:15180 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15186:15187 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15193:15193 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15163:15167 DMFP.Day10_expressions <> SPush constr
+R15172:15176 DMFP.Day10_expressions <> SLoad constr
+R15178:15178 DMFP.Day10_expressions <> X def
+R15181:15185 DMFP.Day10_expressions <> SMult constr
+R15188:15192 DMFP.Day10_expressions <> SPlus constr
+def 15645:15653 <> s_compile
+R15660:15663 DMFP.Day10_expressions <> aexp ind
+binder 15656:15656 <> e:680
+R15668:15671 DMFP.Day04_structures <> list ind
+R15673:15678 DMFP.Day10_expressions <> sinstr ind
+R15691:15691 DMFP.Day10_expressions <> e:680 var
+R15702:15705 DMFP.Day10_expressions <> ANum constr
+R15712:15712 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15720:15720 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15713:15717 DMFP.Day10_expressions <> SPush constr
+R15726:15728 DMFP.Day10_expressions <> AId constr
+R15735:15735 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15743:15743 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15736:15740 DMFP.Day10_expressions <> SLoad constr
+R15749:15753 DMFP.Day10_expressions <> APlus constr
+R15777:15780 DMFP.Day05_lists <> :::x_'++'_x not
+R15765:15773 DMFP.Day10_expressions <> s_compile:681 def
+R15793:15796 DMFP.Day05_lists <> :::x_'++'_x not
+R15781:15789 DMFP.Day10_expressions <> s_compile:681 def
+R15797:15797 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15803:15803 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15798:15802 DMFP.Day10_expressions <> SPlus constr
+R15809:15814 DMFP.Day10_expressions <> AMinus constr
+R15838:15841 DMFP.Day05_lists <> :::x_'++'_x not
+R15826:15834 DMFP.Day10_expressions <> s_compile:681 def
+R15854:15857 DMFP.Day05_lists <> :::x_'++'_x not
+R15842:15850 DMFP.Day10_expressions <> s_compile:681 def
+R15858:15858 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15865:15865 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15859:15864 DMFP.Day10_expressions <> SMinus constr
+R15871:15875 DMFP.Day10_expressions <> AMult constr
+R15900:15903 DMFP.Day05_lists <> :::x_'++'_x not
+R15888:15896 DMFP.Day10_expressions <> s_compile:681 def
+R15916:15919 DMFP.Day05_lists <> :::x_'++'_x not
+R15904:15912 DMFP.Day10_expressions <> s_compile:681 def
+R15920:15920 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15926:15926 DMFP.Day05_lists <> :::'['_x_';'_'..'_';'_x_']' not
+R15921:15925 DMFP.Day10_expressions <> SMult constr
+R16087:16095 DMFP.Day10_expressions <> s_compile def
+R16098:16103 DMFP.Day10_expressions <> AMinus constr
+R16106:16108 DMFP.Day10_expressions <> AId constr
+R16110:16110 DMFP.Day10_expressions <> X def
+R16114:16118 DMFP.Day10_expressions <> AMult constr
+R16121:16124 DMFP.Day10_expressions <> ANum constr
+R16130:16132 DMFP.Day10_expressions <> AId constr
+R16134:16134 DMFP.Day10_expressions <> Y def

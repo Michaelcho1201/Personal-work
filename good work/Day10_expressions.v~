@@ -1,0 +1,504 @@
+Require Import Coq.Strings.String.
+Require Export DMFP.Day09_levenshtein.
+
+(* ################################################################# *)
+(** * Arithmetic and Boolean Expressions *)
+
+(** We'll present our expressions in two parts: first a core language
+    of _arithmetic and boolean expressions_, followed by an extension
+    of these expressions with _variables_. At the end, we'll build a
+    small compiler. *)
+
+(* ================================================================= *)
+(** ** Syntax *)
+
+Module AExp.
+
+(** These two definitions specify the _abstract syntax_ of
+    arithmetic and boolean expressions. Since abstract syntax usually
+    takes the form of a tree, people call these structures ASTs,
+    meaning "abstract syntax trees". *)
+
+Inductive aexp : Type :=
+  | ANum (n : nat)
+  | APlus (a1 a2 : aexp)
+  | AMinus (a1 a2 : aexp)
+  | AMult (a1 a2 : aexp).
+
+Inductive bexp : Type :=
+  | BTrue
+  | BFalse
+  | BEq (a1 a2 : aexp)
+  | BLe (a1 a2 : aexp)
+  | BNot (b : bexp)
+  | BAnd (b1 b2 : bexp).
+
+(** In this chapter, we'll mostly elide the translation from the
+    concrete syntax that a programmer would actually write to these
+    abstract syntax trees -- the process that, for example, would
+    translate the string ["1 + 2 * 3"] to the AST
+
+      APlus (ANum 1) (AMult (ANum 2) (ANum 3)).
+
+    Which corresponds to the tree:
+
+            +
+           / \
+          /   \
+         1     *
+              / \
+             /   \
+            2     3
+
+    For your future reference, the process that takes a string to an
+    AST is called _parsing_.
+ *)
+
+
+
+(** For comparison, here's a conventional BNF (Backus-Naur Form)
+    grammar defining the same abstract syntax:
+
+    a ::= n
+        | a + a
+        | a - a
+        | a * a
+
+    b ::= true
+        | false
+        | a = a
+        | a <= a
+        | ~ b
+        | b && b
+*)
+
+(** Compared to the Coq version above...
+
+       - The BNF is more informal -- for example, it gives some
+         suggestions about the surface syntax of expressions (like the
+         fact that the addition operation is written with an infix
+         [+]) while leaving other aspects of lexical analysis and
+         parsing (like the relative precedence of [+], [-], and
+         [*], the use of parens to group subexpressions, etc.)
+         unspecified.  Some additional information -- and human
+         intelligence -- would be required to turn this description
+         into a formal definition, e.g., for implementing a compiler.
+
+         The Coq version consistently omits all this information and
+         concentrates on the abstract syntax only.
+
+       - Conversely, the BNF version is lighter and easier to read.
+         Its informality makes it flexible, a big advantage in
+         situations like discussions at the blackboard, where
+         conveying general ideas is more important than getting every
+         detail nailed down precisely.
+
+         Indeed, there are dozens of BNF-like notations and people
+         switch freely among them, usually without bothering to say
+         which kind of BNF they're using because there is no need to:
+         a rough-and-ready informal understanding is all that's
+         important.
+
+    It's good to be comfortable with both sorts of notations: informal
+    ones for communicating between humans and formal ones for carrying
+    out implementations and proofs. *)
+
+(* ================================================================= *)
+(** ** Evaluation *)
+
+(** _Evaluating_ an arithmetic expression produces a number. *)
+
+Fixpoint aeval (a : aexp) : nat :=
+  match a with
+  | ANum n => n
+  | APlus  a1 a2 => (aeval a1) + (aeval a2)
+  | AMinus a1 a2 => (aeval a1) - (aeval a2)
+  | AMult  a1 a2 => (aeval a1) * (aeval a2)
+  end.
+
+Compute (aeval (APlus (ANum 2) (ANum 2))). (* ===> 4 *)
+
+(** **** Exercise: 3 stars, standard (AExp.beval)
+
+    Similarly, evaluating a boolean expression yields a boolean. You
+    write this one; [BEq a1 a2] should check whether or not
+    (evaluating) [a1] is equal to (evaluating) [a2]; [BLe] should
+    check [<=].*)
+
+Fixpoint beval (b : bexp) : bool :=
+  match b with
+  | BTrue  => true
+  | BFalse  => false
+  | BEq a1 a2 => eqb (aeval a1) (aeval a2)
+  | BLe a1 a2 => leb (aeval a1) (aeval a2)
+  | BNot b => negb (beval b)
+  | BAnd b1 b2 => beval b1 && beval b2
+  end.
+
+(** [] *)
+
+(* ================================================================= *)
+(** ** Optimization *)
+
+(** We haven't defined very much yet, but we can already get
+    some mileage out of the definitions.  Suppose we define a function
+    that takes an arithmetic expression and slightly simplifies it,
+    changing every occurrence of [0 + e] (i.e., [(APlus (ANum 0) e])
+    into just [e]. *)
+
+Fixpoint optimize_0plus (a:aexp) : aexp :=
+  match a with
+  | ANum n => ANum n
+  | APlus (ANum 0) e2 => optimize_0plus e2
+  | APlus  e1 e2 => APlus  (optimize_0plus e1) (optimize_0plus e2)
+  | AMinus e1 e2 => AMinus (optimize_0plus e1) (optimize_0plus e2)
+  | AMult  e1 e2 => AMult  (optimize_0plus e1) (optimize_0plus e2)
+  end.
+
+(** To make sure our optimization is doing the right thing we
+    can test it on some examples and see if the output looks OK. *)
+
+Compute (optimize_0plus (APlus (ANum 2)
+                               (APlus (ANum 0)
+                                      (APlus (ANum 0) (ANum 1))))).
+(* ==> APlus (ANum 2) (ANum 1) *)
+
+End AExp.
+
+(* ################################################################# *)
+(** * Expressions With Variables *)
+
+(** The next thing we need to do is to enrich our arithmetic and
+    boolean expressions with variables.
+
+    To keep things simple, we'll assume that all variables are global
+    and that they only hold numbers. *)
+
+(* ================================================================= *)
+(** ** States *)
+
+(** Since we'll want to look variables up to find out their current
+    values, we'll use _maps_ to translate [string]s representing
+    variables to their numerical value.
+
+    A _machine state_ (or just _state_) represents the current values
+    of _all_ variables at some point in the execution of a program. *)
+
+(** For simplicity, we assume that the state is defined for
+    _all_ variables, even though any given program is only going to
+    mention a finite number of them.  The state captures all of the
+    information stored in memory.  For our simple programs, because
+    each variable stores a natural number, we can represent the state
+    as a mapping from strings to [nat], and will use [0] as default
+    value in the store. For more complex programming languages, the
+    state might have more structure. *)
+
+Definition state := string -> nat.
+
+Definition empty_st : state := fun _x => 0.
+
+Definition extend_st (st : state) (x : string) (n : nat) :=
+  fun y => if String.eqb x y then n else st y.
+
+Definition W : string := "W".
+Definition X : string := "X".
+Definition Y : string := "Y".
+Definition Z : string := "Z".
+
+(* ================================================================= *)
+(** ** Syntax  *)
+
+(** We can add variables to the arithmetic expressions we had before by
+    simply adding one more constructor: *)
+
+Inductive aexp : Type :=
+  | ANum (n : nat)
+  | AId (x : string)              (* <--- NEW *)
+  | APlus (a1 a2 : aexp)
+  | AMinus (a1 a2 : aexp)
+  | AMult (a1 a2 : aexp).
+
+(** The definition of [bexp]s is unchanged (except that it now refers
+    to the new [aexp]s): *)
+
+Inductive bexp : Type :=
+  | BTrue
+  | BFalse
+  | BEq (a1 a2 : aexp)
+  | BLe (a1 a2 : aexp)
+  | BNot (b : bexp)
+  | BAnd (b1 b2 : bexp).
+
+(* ================================================================= *)
+(** ** Evaluation *)
+
+(** The arith and boolean evaluators are extended to handle
+    variables in the obvious way, taking a state as an extra
+    argument: *)
+
+Fixpoint aeval (st : state) (a : aexp) : nat :=
+  match a with
+  | ANum n => n
+  | AId x => st x
+  | APlus a1 a2 => (aeval st a1) + (aeval st a2)
+  | AMinus a1 a2  => (aeval st a1) - (aeval st a2)
+  | AMult a1 a2 => (aeval st a1) * (aeval st a2)
+  end.
+
+(** **** Exercise: 2 stars, standard (beval)
+
+    Now define this [beval]. *)
+Fixpoint beval (st : state) (b : bexp) : bool :=
+  match b with
+  | BTrue => true
+  | BFalse => false
+  | BEq a1 a2 => eqb (aeval st a1) (aeval st a2)
+  | BLe a1 a2 => leb (aeval st  a1) (aeval st a2)
+  | BNot b => negb (beval st b)
+  | BAnd b1 b2 => beval st b1 && beval st b2
+  end.
+
+(** [] *)
+
+Compute (aeval (extend_st empty_st X 5) (APlus (ANum 3) (AMult (AId X) (ANum 2)))).
+(* ===> 13 *)
+
+Compute (beval (extend_st empty_st X  5) (BAnd BTrue (BNot (BLe (AId X) (ANum 4))))).
+(* ===> true *)
+
+(* ================================================================= *)
+(** ** Encodings *)
+
+(** Our language of boolean expressions is pretty meager. We have
+    [BAnd], but no [BOr]. We have [BEq] and [BLe] but no [<] or [>] or
+    [>=] or [!=] ("not equals"). *)
+
+(** But don't worry: we can solve this problem by [encoding] the more
+    complex forms in our existing, simpler ones.
+
+    Here's one example:
+*)
+
+Definition bor (b1 b2 : bexp) : bexp :=
+  BNot (BAnd (BNot b1) (BNot b2)).
+
+Compute (beval empty_st (bor BTrue  BTrue)).
+Compute (beval empty_st (bor BTrue  BFalse)).
+Compute (beval empty_st (bor BFalse BTrue)).
+Compute (beval empty_st (bor BFalse BFalse)).
+Compute (beval empty_st (bor (BNot (BLe (ANum 6) (ANum 5))) (BEq (ANum 6) (ANum 5)))).
+
+(** Notice that we write the function name as [bor]. We could have
+    written [BOr], so it looked like other constructors, but then
+    folks would be confused if they ever tried to use [BOr] in a
+    [match]... because it's not _really_ a constructor. *)
+
+(** **** Exercise: 3 stars, standard (encodings)
+
+    Write encodings for [blt] (less than), [bgt] (greater than), [bge]
+    (greater than-or-equal-to), and [bne] (not equal to).
+
+    Each of these can be defined using only a single comparison
+    between [b1] and [b2].
+
+    To get full credit, you should (a) use only a single instance of
+    [BLe] or [BEq], and (b) not duplicate [a1] or [a2]. *)
+
+Definition blt (a1 a2 : aexp) : bexp := BNot (BLe a2 a1).
+
+Definition bgt (a1 a2 : aexp) : bexp := BNot (BLe a1 a2).
+
+Definition bge (a1 a2 : aexp) : bexp := bor (BNot (BLe a1 a2)) (BEq a1 a2).
+
+Definition bne (a1 a2 : aexp) : bexp := BNot (BEq a1 a2).
+(* Do not modify the following line: *)
+Definition manual_grade_for_encodings : option (nat*string) := None.
+(** [] *)
+
+(* ================================================================= *)
+(** ** Compilation *)
+
+(** The [aeval] and [beval] functions are _interpreters_: they take an
+    AST and directly run it.
+
+    It is quite common, however, to _compile_ programs before
+    running. We use the word 'compiler' for a program that:
+
+    1. Takes a program in a 'source language' as input.
+
+    2. Produces a program in a 'target language' as output.
+
+    Compilers _typically_ translate "high-level" source languages into
+    "lower-level" target languages, but that's not always the
+    case. People will call a compiler a 'translator' if it's very
+    simple. They'll call it a 'transpiler' if... well, I'm not sure
+    why anyone would say that. But they do!
+
+    The main motivation for compilation is efficiency, typically time
+    efficiency (i.e., make the program go fast) but also for size
+    (i.e., make the program small). *)
+
+(** Compilers have an arcane aura about them, but don't let yourself
+    be intimidated. They're just programs like any other. It's true
+    that they're often quite complex artifacts, but we'll write a
+    simple one right now. *)
+
+(** Old HP Calculators, programming languages like Forth and
+    Postscript, and abstract machines like the Java Virtual Machine
+    and WebAssembly all evaluate programs using a _stack_. For instance,
+    the expression
+
+      (2*3)+(3*(4-2))
+
+   would be written as
+
+      2 3 * 3 4 2 - * +
+
+   and evaluated like this (where we show the program being evaluated
+   on the right and the contents of the stack on the left):
+
+      [ ]           |    2 3 * 3 4 2 - * +
+      [2]           |    3 * 3 4 2 - * +
+      [3, 2]        |    * 3 4 2 - * +
+      [6]           |    3 4 2 - * +
+      [3, 6]        |    4 2 - * +
+      [4, 3, 6]     |    2 - * +
+      [2, 4, 3, 6]  |    - * +
+      [2, 3, 6]     |    * +
+      [6, 6]        |    +
+      [12]          |
+
+  Looking closely, for us a stack is merely a [list nat], where
+  "push"ing on the stack means "cons"ing and the "top" of the stack
+  is the head of the list (i.e., the leftmost element).
+
+  The goal of this exercise is to write a small compiler that
+  translates [aexp]s into stack machine instructions.
+
+  The instruction set for our stack language will consist of the
+  following instructions:
+     - [SPush n]: Push the number [n] on the stack.
+     - [SLoad x]: Load the identifier [x] from the store and push it
+                  on the stack
+     - [SPlus]:   Pop the two top numbers from the stack, add them, and
+                  push the result onto the stack.
+     - [SMinus]:  Similar, but subtract.
+     - [SMult]:   Similar, but multiply. *)
+
+Inductive sinstr : Type :=
+| SPush (n : nat)
+| SLoad (x : string)
+| SPlus
+| SMinus
+| SMult.
+
+(* We'd write our program above as: *)
+
+Definition prog_eg : list sinstr :=
+  [ SPush 2; SPush 3; SMult; SPush 3; SPush 4; SPush 2; SMinus; SMult; SPlus ].
+
+(** Let's write a function to evaluate programs in the stack language.
+
+    We'll split the task in two: first we'll write a function that
+    evaluates a single instruction, then we'll write another that
+    evaluates a program (i.e., a list of instructions).
+ *)
+
+(** The [s_insn] function runs a single instruction. Given a state
+    [st], a stack [stack], and an instruction [insn], it returns a new
+    stack.
+
+    - [SPush n] should return a stack with [n] pushed on (i.e.,
+      consed).
+
+    - [SLoad x] should return a stack with the value of [x] in [st]
+      pushed on.
+
+    - [SPlus], [SMinus], and [SMult] can only run when there are two
+      arguments on the stack. If your stack looks like [n::m::stack'],
+      you want to run [m OP n], where [OP] is one of [+], [-], or [*].
+
+    - If an instruction is missing its operands on the stack, leave
+      everything alone: just return the stack as-is.
+*)
+
+Definition s_insn (st : state) (stack : list nat) (insn : sinstr) : list nat :=
+  match (insn, stack) with
+  | (SPush n, _)           => n :: stack
+  | (SLoad x, _)           => st x :: stack
+  | (SPlus, n::m::stack')  => (m+n)::stack'
+  | (SMinus, n::m::stack') => (m-n)::stack'
+  | (SMult, n::m::stack')  => (m*n)::stack'
+  | (_, _)                 => stack
+  end.
+
+(** The [s_execute] function will run a whole program using
+    [s_insn]. (It's an interpreter for our stack language!) *)
+
+Fixpoint s_execute (st : state) (stack : list nat)
+                   (prog : list sinstr)
+                 : list nat :=
+  match prog with
+  | nil         => stack
+  | insn::prog' => s_execute st (s_insn st stack insn) prog'
+  end.
+
+Compute s_execute empty_st [] prog_eg.
+(* ===> [12] *)
+
+Compute (s_execute empty_st [] [SPush 5; SPush 3; SPush 1; SMinus]).
+(* ===> [2; 5] *)
+
+Compute (s_execute (extend_st empty_st X 3) [3;4] [SPush 4; SLoad X; SMult; SPlus]).
+(* ===> [15; 4] *)
+
+(** **** Exercise: 3 stars, standard (s_compile) *)
+
+(** Finally, write a function that compiles an [aexp] into a stack
+    machine program. The effect of running the program should be the
+    same as pushing the value of the expression on the stack.
+
+    The trickiest bit here is argument order! Look carefully at the
+    specification for [s_insn]. We can give you a hint, too: it's a
+    _postorder_ traversal. *)
+
+Fixpoint s_compile (e : aexp) : list sinstr :=
+  match e with
+  | ANum n => [SPush n]
+  | AId x => [SLoad x]
+  | APlus  a1 a2 => s_compile a1 ++ s_compile a2 ++ [SPlus]
+  | AMinus a1 a2 =>  s_compile a1 ++ s_compile a2 ++ [SMinus]
+  | AMult  a1 a2 =>  s_compile a1 ++ s_compile a2 ++ [SMult]
+  end.
+
+(** After you've defined [s_compile], check the following to test that
+    it works. You'll probably want to write some more of your own! *)
+
+Compute (s_compile (AMinus (AId X) (AMult (ANum 2) (AId Y)))).
+(* ==> [SLoad X; SPush 2; SLoad Y; SMult; SMinus] *)
+
+(** Congratulations: you're a compiler writer!
+
+    [] *)
+
+(* ################################################################# *)
+(** * Formal proof *)
+
+(** We've spent the last five weeks learning how to program in
+    Gallina. There will be a short take-home midterm (think "a
+    cumulative survey of the homework problems"), and then we'll be
+    switching gears to think about _proof_.
+
+    While we've been writing programs, we've made various arguments
+    for why certain choices are "correct". Hopefully you've developed
+    some intuition about why, say, Levenshtein edit distance is
+    correct (i.e. , generates good edits) and optimal (i.e., beats all
+    of the others). Intuition is very important, but nothing beats
+    _proof_.
+
+    The remainder of the course has two equally sized parts: first
+    we'll use Coq to do proofs about our Gallina programs using
+    something called _tactics_; once you've got a good grasp on the
+    "rules of the game", we'll transition to informal paper proofs. *)
+
+(* 2021-09-13 09:44 *)

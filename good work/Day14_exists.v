@@ -1,0 +1,429 @@
+Require Export DMFP.Day13_induction.
+
+(* ################################################################# *)
+(** * Existential Quantification *)
+
+(** Another important logical connective is _existential
+    quantification_.  To say that there is some [x] of type [T] such
+    that some property [P] holds of [x], we write [exists x : T,
+    P]. As with [forall], the type annotation [: T] can be omitted if
+    Coq is able to infer from the context what the type of [x] should
+    be.
+
+    The notion of "existential" is a common one in mathematics, but
+    you may not be familiar with its precise meaning. It might be
+    easier to understand [exists] as the "dual" of [forall]. When we
+    say [forall x : T, P], we mean to say that:
+
+    - Given any possible value [v] of type [T],
+
+    - the proposition [P] holds when we replace [x] with [v].
+
+    So, for example, when we say [forall n : nat, n + 0 = n], we mean
+    that we [0 + 0 = 0] (choosen [0] for [n]) and [1 + 0 = 1]
+    (choosing [1] for [n]) and [47 + 0 = 47] (choosing [47] for [n]).
+    When we say that [exists x : T, P], we mean that
+
+    - There is at least one value [v] of type [T], such that
+
+    - the proposition [P] holds when we replace [x] with [v].
+
+    For example, [exists n : nat, S n = 48] means "there is (at least
+    one) natural number [n] such that the successor of [n] is 48". It
+    turns out that this [S n = 48] for exactly _one_ [n]: 47. But it
+    need not be so: the proposition [exists l : list nat, length l =
+    1] means that "there exists a list of naturals [l] such that
+    [length l] is 1". There are many such lists: [ [1] ], [ [1337] ],
+    and so on.
+
+ *)
+
+(** PROP ::= EXPR1 = EXPR2
+           | forall x : TYPE, PROP
+           | PROP1 -> PROP2
+           | PROP1 /\ PROP2
+           | PROP1 \/ PROP2
+           | True
+           | ~ PROP
+           | False
+           | PROP1 <-> PROP2
+           | exists x : TYPE, PROP     <---- NEW!
+ *)
+
+(** To prove a statement of the form [exists x, P], we must show that
+    [P] holds for some specific choice of value for [x], known as the
+    _witness_ of the existential.  This is done in two steps: First,
+    we explicitly tell Coq which witness [t] we have in mind by
+    invoking the tactic [exists t].  Then we prove that [P] holds after
+    all occurrences of [x] are replaced by [t]. *)
+
+Lemma four_is_even : exists n : nat, 4 = n + n.
+Proof.
+  (* We want to show 4 is even, so we need to find a number [n] such
+     that [n + n = 4].  If we try 2 we have [2 + 2 = 4], which seems
+     to work. *)
+  exists 2. reflexivity.
+Qed.
+
+(** Conversely, if we have an existential hypothesis [exists x, P] in
+    the context, we can destruct it to obtain a witness [x] and a
+    hypothesis stating that [P] holds of [x]. *)
+
+Theorem exists_example_2 : forall n,
+  (exists m, n = 4 + m) ->
+  (exists o, n = 2 + o).
+Proof.
+  (* WORKED IN CLASS *)
+  intros n [m Hm]. (* note implicit [destruct] here *)
+  exists (2 + m).
+  apply Hm.  Qed.
+
+(** **** Exercise: 1 star, standard, especially useful (dist_not_exists)
+
+    Prove that "[P] holds for all [x]" implies "there is no [x] for
+    which [P] does not hold."  (Hint: [destruct H as [x E]] works on
+    existential assumptions!)  *)
+
+Theorem dist_not_exists : forall (X:Type) (P : X -> Prop),
+  (forall x, P x) -> ~ (exists x, ~ P x).
+Proof.
+  intros X P H [x Hx].
+  apply Hx. apply H.
+Qed.
+(** [] *)
+
+(** **** Exercise: 1 star, standard, especially useful (dist_not_forall)
+
+    Prove that "there exists an [x] for which [P] holds" implies "it
+    is not the case that for all [x] [P] does not hold."  (Hint:
+    [destruct H as [x E]] works on existential assumptions!)  *)
+Theorem dist_not_forall : forall (X:Type) (P : X -> Prop),
+    (exists x, P x) -> ~ (forall x, ~ P x).
+Proof.
+  unfold not.
+  intros X P [x Hx].
+  intros H. assert ( Hx' : P x -> False).
+  -apply H.
+  -apply Hx'.  apply Hx.
+Qed.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard, optional (dist_exists_or)
+
+    Prove that existential quantification distributes over
+    disjunction. *)
+
+Theorem dist_exists_or : forall (X:Type) (P Q : X -> Prop),
+  (exists x, P x \/ Q x) <-> (exists x, P x) \/ (exists x, Q x).
+Proof.
+   (* FILL IN HERE *) Admitted.
+(** [] *)
+
+(* ################################################################# *)
+(** * Propositions and Booleans *)
+
+(** We've seen two different ways of encoding logical facts in Coq:
+    with _booleans_ (of type [bool]), and with _propositions_ (of type
+    [Prop]).
+
+    For instance, to claim that a number [n] is even, we can say
+    either
+       - (1) that [evenb n] returns [true], or
+       - (2) that there exists some [k] such that [n = double k].
+
+    Indeed, these two notions of evenness are equivalent, as
+    can easily be shown with a couple of auxiliary lemmas.
+
+    Of course, it would be very strange if these two characterizations
+    of evenness did not describe the same set of natural numbers!
+    Fortunately, we can prove that they do... *)
+
+(** We first need three helper lemmas. *)
+(** **** Exercise: 2 stars, standard, optional (evenb_S)
+
+    One inconvenient aspect of our definition of [evenb n] is the
+    recursive call on [n - 2]. This makes proofs about [evenb n]
+    harder when done by induction on [n], since we may need an
+    induction hypothesis about [n - 2]. The following lemma gives an
+    alternative characterization of [evenb (S n)] that works better
+    with induction: *)
+
+Theorem evenb_S : forall n : nat,
+  evenb (S n) = negb (evenb n).
+Proof.
+  (* FILL IN HERE *) Admitted.
+(** [] *)
+
+Theorem evenb_double : forall k, evenb (double k) = true.
+Proof.
+  intros k. induction k as [|k' IHk'].
+  - reflexivity.
+  - simpl. apply IHk'.
+Qed.
+
+(** **** Exercise: 3 stars, standard (evenb_double_conv) *)
+Theorem evenb_double_conv : forall n,
+  exists k, n = if evenb n then double k
+                else S (double k).
+Proof.
+  intros n. induction n as [| n' Hn'].
+  -exists 0.  simpl. reflexivity.
+  -destruct Hn'. rewrite evenb_S. destruct evenb.
+   +simpl. exists x. rewrite H. reflexivity.
+   +simpl. exists (S x). simpl. rewrite H. reflexivity.
+Qed.
+(** [] *)
+
+Theorem even_bool_prop : forall n,
+  evenb n = true <-> exists k, n = double k.
+Proof.
+  intros n. split.
+  - intros H. destruct (evenb_double_conv n) as [k Hk].
+    rewrite Hk. rewrite H. exists k. reflexivity.
+  - intros [k Hk]. rewrite Hk. apply evenb_double.
+Qed.
+
+(** In view of this theorem, we say that the boolean
+    computation [evenb n] _reflects_ the logical proposition
+    [exists k, n = double k]. *)
+
+(** However, even when the boolean and propositional formulations of a
+    claim are equivalent from a purely logical perspective, they need
+    not be equivalent _operationally_.
+
+    Equality provides an extreme example: knowing that [eqb n m =
+    true] is generally of little direct help in the middle of a proof
+    involving [n] and [m]; however, if we convert the statement to the
+    equivalent form [n = m], we can rewrite with it. *)
+
+(** The case of even numbers is also interesting.  Recall that,
+    when proving the backwards direction of [even_bool_prop] (i.e.,
+    [evenb_double], going from the propositional to the boolean
+    claim), we used a simple induction on [k].  On the other hand, the
+    converse (the [evenb_double_conv] exercise) required a clever
+    generalization, since we can't directly prove [(exists k, n =
+    double k) -> evenb n = true]. *)
+
+(** For these examples, the propositional claims are more useful than
+    their boolean counterparts, but this is not always the case.  For
+    instance, we cannot test whether a general proposition is true or
+    not in a function definition; as a consequence, the following code
+    fragment is rejected: *)
+
+Fail Definition is_even_prime n :=
+  if n = 2 then true
+  else false.
+
+(** Coq complains that [n = 2] has type [Prop], while it expects
+    an elements of [bool] (or some other inductive type with two
+    elements).  The reason for this error message has to do with the
+    _computational_ nature of Coq's core language, which is designed
+    so that every function that it can express is computable and
+    total.  One reason for this is to allow the extraction of
+    executable programs from Coq developments.  As a consequence,
+    [Prop] in Coq does _not_ have a universal case analysis operation
+    telling whether any given proposition is true or false, since such
+    an operation would allow us to write non-computable functions.
+
+    Although general non-computable properties cannot be phrased as
+    boolean computations, it is worth noting that even many
+    _computable_ properties are easier to express using [Prop] than
+    [bool], since recursive function definitions are subject to
+    significant restrictions in Coq.  For instance, later we'll shows
+    how to define the property that two lists are permutations of each
+    a given string using [Prop].  Doing the same with [bool] would
+    amount to the [is_permutation_of] function we wrote on day
+    6... which (as we'll see) is more complicated, harder to
+    understand, and harder to reason about than the [Prop] we'll
+    define.
+
+    Conversely, an important side benefit of stating facts using
+    booleans is enabling some proof automation through computation
+    with Coq terms, a technique known as _proof by reflection_.
+    Consider the following statement: *)
+
+Example even_1000 : exists k, 1000 = double k.
+
+(** The most direct proof of this fact is to give the value of [k]
+    explicitly. *)
+
+Proof. exists 500. reflexivity. Qed.
+
+(** On the other hand, the proof of the corresponding boolean
+    statement is even simpler: *)
+
+Example even_1000' : evenb 1000 = true.
+Proof. reflexivity. Qed.
+
+(** What is interesting is that, since the two notions are equivalent,
+    we can use the boolean formulation to prove the other one without
+    mentioning the value 500 explicitly: *)
+
+Example even_1000'' : exists k, 1000 = double k.
+Proof. apply even_bool_prop. reflexivity. Qed.
+
+(** Although we haven't gained much in terms of proof size in
+    this case, larger proofs can often be made considerably simpler by
+    the use of reflection.  As an extreme example, the Coq proof of
+    the famous _4-color theorem_ uses reflection to reduce the
+    analysis of hundreds of different cases to a boolean computation.
+    We won't cover reflection in any real detail, but it serves as a
+    good example showing the complementary strengths of booleans and
+    general propositions. *)
+
+(** As we go on to prove more interesting (and challenging!) things
+    about our programs, the various iff lemmas relating computation to
+    logic will surely come in handy. *)
+
+(* ================================================================= *)
+(** ** Classical vs. Constructive Logic *)
+
+(** We have seen that it is not possible to test whether or not a
+    proposition [P] holds while defining a Coq function.  You may be
+    surprised to learn that a similar restriction applies to _proofs_!
+    In other words, the following intuitive reasoning principle is not
+    derivable in Coq: *)
+
+Definition excluded_middle := forall P : Prop,
+    P \/ ~ P.
+
+(** To understand operationally why this is the case, recall
+  that, to prove a statement of the form [P \/ Q], we use the [left]
+  and [right] tactics, which effectively require knowing which side
+  of the disjunction holds.  But the universally quantified [P] in
+  [excluded_middle] is an _arbitrary_ proposition, which we know
+  nothing about.  We don't have enough information to choose which
+  of [left] or [right] to apply, just as Coq doesn't have enough
+  information to mechanically decide whether [P] holds or not inside
+  a function. *)
+
+(** However, if we happen to know that [P] is reflected in some
+  boolean term [b], then knowing whether it holds or not is trivial:
+  we just have to check the value of [b]. *)
+
+Theorem restricted_excluded_middle : forall P b,
+  (P <-> b = true) -> P \/ ~ P.
+Proof.
+  (* Let a proposition P and boolean b be given.
+     Assume that P holds if and only if [b = true].
+     We must show [P \/ ~ P].
+   *)
+  intros P [] H.
+  (* We go by cases on [b].
+
+     If b is true, by our assumption we know P holds, so we have [P].
+
+     Otherwise, we likewise know by our assumption that P does not
+     hold, so we have [~P].  *)
+  - left. rewrite H. reflexivity.
+  - right. rewrite H. intros contra. discriminate contra.
+Qed.
+
+(** In particular, the excluded middle is valid for equations [n = m],
+  between natural numbers [n] and [m]. *)
+
+Theorem restricted_excluded_middle_eq : forall (n m : nat),
+    (forall n m, n = m <-> eqb n m = true) -> (* we'll prove this on day 15 *)
+    n = m \/ n <> m.
+Proof.
+  intros n m eqb_true_iff.
+  apply (restricted_excluded_middle (n = m) (eqb n m)).
+  apply eqb_true_iff.
+Qed.
+
+(** It may seem strange that the general excluded middle is not
+  available by default in Coq; after all, any given claim must be
+  either true or false.  Nonetheless, there is an advantage in not
+  assuming the excluded middle: statements in Coq can make stronger
+  claims than the analogous statements in standard mathematics.
+  Notably, if there is a Coq proof of [exists x, P x], it is
+  possible to explicitly exhibit a value of [x] for which we can
+  prove [P x] -- in other words, every proof of existence is
+  necessarily _constructive_. *)
+
+(** Logics like Coq's, which do not assume the excluded middle, are
+  referred to as _constructive logics_.
+
+  More conventional logical systems such as ZFC, in which the
+  excluded middle does hold for arbitrary propositions, are referred
+  to as _classical_. *)
+
+(** The following example illustrates why assuming the excluded middle
+  may lead to non-constructive proofs:
+
+  _Claim_: There exist irrational numbers [a] and [b] such that [a ^
+  b] is rational.
+
+  _Proof_: It is not difficult to show that [sqrt 2] is irrational.
+  If [sqrt 2 ^ sqrt 2] is rational, it suffices to take [a = b =
+  sqrt 2] and we are done.  Otherwise, [sqrt 2 ^ sqrt 2] is
+  irrational.  In this case, we can take [a = sqrt 2 ^ sqrt 2] and
+  [b = sqrt 2], since [a ^ b = sqrt 2 ^ (sqrt 2 * sqrt 2) = sqrt 2 ^
+  2 = 2].  []
+
+  Do you see what happened here?  We used the excluded middle to
+  consider separately the cases where [sqrt 2 ^ sqrt 2] is rational
+  and where it is not, without knowing which one actually holds!
+  Because of that, we wind up knowing that such [a] and [b] exist but
+  we cannot determine what their actual values are (at least, using
+  this line of argument).
+
+  As useful as constructive logic is, it does have its limitations:
+  There are many statements that can easily be proven in classical
+  logic but that have much more complicated constructive proofs, and
+  there are some that are known to have no constructive proof at all!
+  Fortunately, the excluded middle is known to be compatible with
+  Coq's logic, allowing us to add it safely as an axiom.  However, we
+  will not need to do so in this book: the results that we cover can
+  be developed entirely within constructive logic at negligible extra
+  cost.
+
+  It takes some practice to understand which proof techniques must be
+  avoided in constructive reasoning, but arguments by contradiction,
+  in particular, are infamous for leading to non-constructive proofs.
+  Here's a typical example: suppose that we want to show that there
+  exists [x] with some property [P], i.e., such that [P x].  We start
+  by assuming that our conclusion is false; that is, [~ exists x, P
+  x]. From this premise, it is not hard to derive [forall x, ~ P x].
+  If we manage to show that this intermediate fact results in a
+  contradiction, we arrive at an existence proof without ever
+  exhibiting a value of [x] for which [P x] holds!
+
+  The technical flaw here, from a constructive standpoint, is that we
+  claimed to prove [exists x, P x] using a proof of [~ ~ (exists x, P
+  x)].  Allowing ourselves to remove double negations from arbitrary
+  statements is equivalent to assuming the excluded middle.  Thus,
+  this line of reasoning cannot be encoded in Coq without assuming
+  additional axioms. *)
+
+(** **** Exercise: 2 stars, standard (forall_exists)
+
+    In classical logic, [forall] and [exists] are _dual_: negating one
+    gets you to the other. We saw some of this duality with
+    [dist_not_exists] and [dist_not_forall].
+
+    Only one of the following lemmas is provable in constructive
+    logic. Which? Why isn't the other provable?  *)
+Lemma not_exists__forall_not : forall {X : Type} (P : X -> Prop),
+    (~ exists x, P x) -> forall x, ~ P x.
+Proof.
+  intros X P H x H1. destruct H.
+  exists x. apply H1.
+Qed.
+
+Lemma not_forall__exists_not : forall {X : Type} (P : X -> Prop),
+    (~ forall x, P x) -> exists x, ~ P x.
+Proof.
+  unfold not.
+  intros X P H. destruct H.
+  intros x. 
+Abort.
+
+(** In addition to doing one of these proofs, please briefly explain
+    why the other doesn't work. *)
+
+(*The not_forall_exists_not does not work. It is because in the second one, you have to prove that P holds for all not X implies, there exists an x that does not hold for P. The issue is that exist is in the subgoal of the proof. Thus, when destruct or induction is applied on the forall statement, like in not_exists_forall_not, the exists x is destructed. And when we introduce x, we get up with property of x, which we cannot prove.   *)
+
+(** [] *)
+
+(* 2021-10-04 14:37 *)

@@ -1,0 +1,336 @@
+Require Export DMFP.Day07_trees.
+
+(* ################################################################# *)
+(** * Sets *)
+
+(** _Sets_ are perhaps the most important mathematical concept after
+    numbers. You've probably heard math-y people talk about them. What
+    is a set?
+
+    - A set is a collection of zero or more distinct elements.
+
+    Let's unpack that. A set is a _collection_, i.e., it's a grouping
+    or mass of things. A set has _zero or more_ elements---that is, an
+    _empty_ set could have zero things in it while other sets could
+    have many more. And the elements in a set are _distinct_, i.e.,
+    there's no notion of something occurring more than once in a
+    set. A given _element_ of a set occurs at most once, because
+    having two occurrences of the same element in a set would mean
+    those two elements wouldn't be distinct.  *)
+
+(** Mathematicians often think of sets in terms of a "is in"
+    predicate, written ∈. For example, here's an axiom characterizing
+    the empty set:
+
+    - forall x, x is not in the empty set
+
+    In mathematical notation, we might write:
+
+    - ∀x, x ∉ ∅
+
+    Here's a definition of subset relationship, written ⊆:
+
+    - A is a subset of B precisely when forall x, if x is in A, then x
+      is in B
+
+    Also written:
+
+    - A ⊆ B iff ∀x, x ∈ A ⇒ x ∈ B
+
+    Here's a definition of the union operation, ∪:
+
+    - The union of sets A and B is a set C such that forall x, x is an
+      element of C if and only if x is an element f A or an element of
+      B.
+
+    Also written:
+
+    - A ∪ B = C iff ∀x, x ∈ C ⇔ x ∈ A ∨ x ∈ B
+ *)
+
+(** These axioms may not make sense to you yet. That's fine! We'll
+    meet them again soon. For now, let's develop an _operational_
+    understanding of sets by defining functions that work with sets.
+*)
+
+(* ================================================================= *)
+(** ** Sets from lists *)
+
+(** We'll work with sets of natural numbers, implementing them as
+    lists. *)
+
+Definition natset : Type := list nat.
+
+(** The elements of a set should be _distinct_. Lists have no
+    constraints on their elements, so we need to be careful! Just like
+    we did for BSTs, we'll need an _invariant_.
+
+    To start with, we'll say that a 'well formed' [natset] won't have
+    any duplicates. Here are some examples.
+*)
+
+(** The empty set is just the empty list. *)
+Definition empty_natset : natset := [].
+
+(** Here are two different ways to write down the set of even naturals
+    less than or equal to 10.
+
+    Notice that these two _concrete representations_ are different,
+    but both of these definitions represent the _same set_. *)
+Definition evens_to_ten  : natset := [0; 2; 4; 6; 8; 10].
+Definition evens_to_ten' : natset := [2; 4; 0; 10; 8; 6].
+
+(** Here's a list that isn't a set: the number 2 appears twice,
+    breaking the "distinct" part. *)
+Definition non_set_list : list nat := [0; 1; 2; 2].
+
+(** Coq doesn't know anything about our invariant. Just as we could
+    write a [bt nat] that didn't have the search property, we can
+    write something of type [natset] that isn't 'setlike'!
+*)
+Definition natset_yikes : natset := [0; 1; 2; 2].
+
+(** It's quite common to have our problem: when you define a datatype,
+    the language will let you freely combine all of the
+    constructors. But you might not want to allow _every_ such
+    combination! It can be very hard to rule out bad combinations in
+    advance, so you instead opt to be very careful.
+
+    What does it mean to 'be very careful' about a type's invariant?
+
+    The general idea is that the invariant should be _guaranteed_ by
+    the functions that construct your type and _preserved_ by all of
+    the functions that manipulate it.
+*)
+
+(* ================================================================= *)
+(** ** Set operations *)
+
+(** First, we'll define the "is in" predicate as a function
+    [member]. This function will give the right answer whether or not
+    [l] is setlike, i.e., has no duplicates. *)
+Fixpoint member (x : nat) (l : natset) : bool :=
+  match l with
+  | [] => false
+  | y::l' => eqb x y || member x l'
+  end.
+
+Compute (member 1 empty_natset).  (* ===> false *)
+Compute (member 1 evens_to_ten).  (* ===> false *)
+Compute (member 2 evens_to_ten).  (* ===> true *)
+Compute (member 2 evens_to_ten'). (* ===> true *)
+Compute (member 2 natset_yikes).  (* ===> true *)
+
+(** **** Exercise: 2 stars, standard (is_setlike)
+
+    Write a function [is_setlike] that determines whether or not a
+    list of natural numbers is 'setlike', i.e., has no duplicates.  *)
+Fixpoint is_setlike (l : natset) : bool (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(** [] *)
+
+(** Here's an operation that [set_insert]s or adds an element to a set. *)
+Definition set_insert (x : nat) (l : natset) : natset :=
+  if member x l
+  then l
+  else x :: l.
+
+(** Here's [union], which combines two sets so that elements of either
+    consituent set are members of the their union. *)
+Fixpoint union (l1 : natset) (l2 : natset) : natset :=
+  match l1 with
+  | [] => l2
+  | (x::l1') => set_insert x (union l1' l2)
+  end.
+
+(** **** Exercise: 3 stars, standard (intersection)
+
+    Define [intersection]. The intersection of sets A and B, written A
+    ∩ B, is defined as containing those elements that are in _both_ A and
+    B. *)
+Fixpoint intersection (l1 l2 : natset) : natset
+  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(** [] *)
+
+Compute (intersection evens_to_ten [0;1;2;3;4]). (* ===> [0; 2; 4] *)
+Compute (intersection evens_to_ten [47;29;13]).  (* ===> [] *)
+
+(** **** Exercise: 3 stars, standard (subset)
+
+    Now define the [subset] predicate. We say the set A is a subset of
+    a set B when everything that's a [member] of A is a member of [B]. *)
+Fixpoint subset (l1 l2 : natset) : bool
+  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard (set_equal)
+
+    Define a function [set_equal] that takes two sets and returns true
+    when two sets are equal. Note that their _concrete representations_
+    may not be equal! You may assume that the inputs are setlike,
+    i.e., satisfy the invariant.
+
+    We'd like you to write the whole definition yourself. As usual,
+    our autograder will need a well typed definition even if you can't
+    figure out the right answer---use [Definition] and [Admitted]. Ask
+    Prof. for help if you're stuck.  *)
+(* FILL IN HERE *)
+(* Do not modify the following line: *)
+Definition manual_grade_for_set_equal : option (nat*string) := None.
+(** [] *)
+
+(** Uncomment these to test your definition. *)
+(*
+Compute (set_equal [] []).      (* ===> true *)
+Compute (set_equal [0] [1]).    (* ===> false *)
+Compute (set_equal [1;0] [0;1]). (* ===> true *)
+*)
+
+(* ================================================================= *)
+(** ** Sets from sorted lists *)
+
+Module SortedSets.
+
+(** The invariant we used above was "no duplicates". But we could use
+    a stronger invariant: keep the list sorted ascending.
+
+    Stronger invariants typically come with tradeoffs: they can be
+    harder to enforce and more expensive to check, but they often
+    allow for more efficient (or simpler) code. *)
+
+Definition empty_natset : natset := [].
+
+(** To test our current invariant, we basically run [is_sorted], but
+    we forbid duplicates.
+
+    Note that we're reusing the name `is_setlike`, but we're inside of
+    the `SortedSets` module, so there's no risk of Coq getting
+    confused.  *)
+Fixpoint is_setlike (l : list nat) : bool :=
+  match l with
+  | [] => true
+  | [_] => true
+  | x::(y::_) as l =>
+    match compare x y with
+    | LT => is_setlike l
+    | EQ | GT => false
+    end
+  end.
+
+(** **** Exercise: 2 stars, standard (member)
+
+    Define [member] for the 'sorted list' invariant, i.e., assume that
+    your input set is sorted ascending. (You can return a wrong answer
+    if it isn't.)
+
+    Before you write any code... would the old [member] work? Can you
+    use the sortedness invariant to make things more efficient?
+    Solutions that always traverse the whole list will not receive
+    full credit. *)
+Fixpoint member (x : nat) (l: natset) : bool (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(** [] *)
+
+(** One place sorted sets excel is in their union operation. While the
+    unsorted sets iterate through just one set, we can work through
+    both sets at once, using sortedness to choose which set to pull
+    from.
+
+    This function is also called [merge], because it merges two sorted
+    lists into one. One of the most efficient
+    sorts---mergesort---relies critically on the [merge] operation. *)
+Fail Fixpoint union (l1 l2 : natset) : natset :=
+  match (l1, l2) with
+  | ([], _) => l2
+  | (_, []) => l1
+  | (x1::l1', x2::l2') =>
+    match compare x1 x2 with
+    | LT => x1 :: union      l1'  (x2::l2')
+    | EQ => x1 :: union      l1'       l2'
+    | GT => x2 :: union (x1::l1')      l2'
+    end
+  end.
+(* ===> Error: Cannot guess decreasing argument of fix. *)
+
+(** Huh? Why didn't Coq like our function? Coq only allows terminating
+    functions, and [union] definitely terminates: one of the two lists
+    shrinks every time and neither ever grows! What gives?
+
+    Coq's notion of termination is pretty simple: it wants to pick a
+    _single_ argument that decreases _every_ time. It's a little too
+    simple, but we have a trick up our sleeve: let's just define an
+    extra, _inner_ function. We'll call [union] normally when [l1]
+    shrinks and we'll call [inner] when [l1] stays the same and only
+    [l2] shrinks.
+
+    Coq will see that [union] is decreasing in [l1] and [inner] is
+    decreasing in [l2]. Perfect! *)
+
+Fixpoint union (l1 l2 : natset) : natset :=
+  let fix inner l2 :=
+      match (l1, l2) with
+      | ([], _) => l2
+      | (_, []) => l1
+      | (x1::l1', x2::l2') =>
+        match compare x1 x2 with
+        | LT => x1 :: union      l1'  (x2::l2')
+        | EQ => x1 :: union      l1'       l2'
+        | GT => x2 :: inner                l2'
+        end
+      end
+  in
+  inner l2.
+
+(** More conventional programming languages don't make you jump
+    through these hoops, we know. It _is_ too bad. *)
+
+(** **** Exercise: 4 stars, standard, optional (subset)
+
+    Write [subset] for sorted-list [natset]s.
+
+    Make it efficient, walking through both lists at once.
+
+    If you're not sure what to do, think carefully about
+    sortedness. If you're walking through [l1] and [l2] and find
+    elements [x1] and [x2], what relationships are possible between
+    [x1] and [x2] to have [l1] be a subset of [l2]? Can [x1] be less
+    then to [x2]? Equal? Greater than?
+*)
+Fixpoint subset (l1 l2 : natset) : bool (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(** [] *)
+
+End SortedSets.
+
+(* ================================================================= *)
+(** ** Sets from BSTs *)
+
+Module BSTSets.
+
+(** BSTs (and trees in general) make very good implementations of
+    sets. Sets are another example of an _abstract data type_--we can
+    realize them as data in programs in a variety of ways with
+    differing tradeoffs, but we expect to be able to perform the same
+    sorts of operations on them no matter how they're represented. *)
+
+Definition natset : Type := bt nat.
+
+(** **** Exercise: 2 stars, standard (bst_set_definitions)
+
+    What would [empty_natset] be? You can reuse definitions and names
+    from [Day07_trees] directly. *)
+Definition empty_natset : natset (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+
+(** What about [set_insert]? *)
+Definition set_insert : nat -> natset -> natset (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(* Do not modify the following line: *)
+Definition manual_grade_for_bst_set_definitions : option (nat*string) := None.
+(** [] *)
+
+(** **** Exercise: 2 stars, standard (bst_union)
+
+    Define [union] for BSTs. Feel free to try to be efficient, but
+    make sure your code is _correct_. If it's more than five or six
+    lines, you're in too deep. *)
+Fixpoint union (t1 t2 : natset) : natset (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+
+End BSTSets.
+
+(* 2021-09-13 09:44 *)
